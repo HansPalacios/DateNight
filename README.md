@@ -4,9 +4,9 @@
 Installed Devise for User sign in
 And CarrierWave for image uploads
 
+Using Rails version: 5.1.2
 
 Gemfile:
-
 
     gem 'devise'
 
@@ -66,16 +66,13 @@ Told the router to use this controller:
 
 	  devise_for :users, controllers: { sessions: 'users/sessions' }
 
+Added the CarrierWave uploaders to the User model
 
-I then added bootstrap to the layout application.html.erb page:
+	  mount_uploader :avatar, AvatarUploader
 
-	  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.6/css/bootstrap-grid.css">
+Added the CarrierWave uploaders to the models Posts and Locations
 
-
-
-Then added a github repository: 
-
-	  *https://github.com/HansPalacios/DateNight*
+	  mount_uploader :image, ImageUploader
 
 Created the rest of my tables:
 	
@@ -89,23 +86,13 @@ Created the rest of my tables:
 
     rails g scaffold Favorites location_id:integer user_id:integer post_id:integer user:belongs_to location:belongs_to post:belongs_to
 
-Then added on the has_manys and required: false for the location_id and post_id in ratings and favorites because they belong to both the posts and locations
+Then added all the has_manys and required: false for the location_id and post_id in ratings and favorites because they each belong to both the posts and locations
 
-* Ruby version
+I then added bootstrap to the layout application.html.erb page:
 
-* System dependencies
+	  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.6/css/bootstrap-grid.css">
 
-* Configuration
+Then added a github repository: 
 
-* Database creation
+	  *https://github.com/HansPalacios/DateNight*
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-# DateNight
