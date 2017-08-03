@@ -1,17 +1,21 @@
 # Date Night 
 
 
-Installed Devise for Users 
+Installed Devise for User sign in
+And CarrierWave for image uploads
+
+
+Gemfile:
 
 '''
 
-gem 'devise'
+    gem 'devise'
+    
+    gem 'carrierwave', '~> 1.0'
+    
+'''
 
-Then ran 
-
-	bundle install
-
-In terminal ran the generator
+'''
 
 	rails g devise:install
 
@@ -31,7 +35,23 @@ Added notices and alerts to layout
 
  Made a model
 
-	rails g devise MODEL
+	rails g devise User
+
+Added fields:
+
+	t.text :bio
+
+  t.string :fname
+
+  t.string :lname
+
+  t.string :phone
+
+  t.string :avatar
+
+  t.boolean :member
+
+  t.boolean :admin
 
 Migrated:
 
@@ -49,8 +69,6 @@ Told the router to use this controller:
 
 	devise_for :users, controllers: { sessions: 'users/sessions' }
 
- And copied the views from devise/sessions to users/sessions
-
 '''
 
 I then added bootstrap to the layout application.html.erb page:
@@ -63,8 +81,19 @@ Then added a github repository:
 
 	*https://github.com/HansPalacios/DateNight*
 
-Things you may want to cover:
+Created the rest of my tables:
+	
+rails g scaffold Locations name:string bio:text address:string phone:string image:string rating_id:integer favorite_id:integer bar:boolean restaurant:boolean activity:boolean  sponsor:boolean 
 
+rails g scaffold Posts post_name:string location_name:string address:string phone:string text:text image:string rating_id:integer favorite_id:integer bar:boolean restaurant:boolean activity:boolean user:belongs_to location:belongs_to
+
+rails g scaffold Comments text:text post_id:integer user_id:integer post:belongs_to user:belongs_to timestamp:datetime
+
+rails g scaffold Ratings location_id:integer user_id:integer post_id:integer rating:integer user:belongs_to location:belongs_to post:belongs_to
+
+rails g scaffold Favorites location_id:integer user_id:integer post_id:integer user:belongs_to location:belongs_to post:belongs_to
+
+Then added on the has_manys and required: false for the location_id and post_id in ratings and favorites because they belong to both the posts and locations
 
 * Ruby version
 

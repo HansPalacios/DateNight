@@ -1,0 +1,69 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Post name:</strong>
+  <%= @post.post_name %>
+</p>
+
+<p>
+  <strong>Location name:</strong>
+  <%= @post.location_name %>
+</p>
+
+<p>
+  <strong>Address:</strong>
+  <%= @post.address %>
+</p>
+
+<p>
+  <strong>Phone:</strong>
+  <%= @post.phone %>
+</p>
+
+<p>
+  <strong>Text:</strong>
+  <%= @post.text %>
+</p>
+
+<p>
+  <strong>Image:</strong>
+  <%= @post.image %>
+</p>
+
+<p>
+  <strong>Rating:</strong>
+  <%= @post.rating_id %>
+</p>
+
+<p>
+  <strong>Favorite:</strong>
+  <%= @post.favorite_id %>
+</p>
+
+<p>
+  <strong>Bar:</strong>
+  <%= @post.bar %>
+</p>
+
+<p>
+  <strong>Restaurant:</strong>
+  <%= @post.restaurant %>
+</p>
+
+<p>
+  <strong>Activity:</strong>
+  <%= @post.activity %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @post.user %>
+</p>
+
+<p>
+  <strong>Location:</strong>
+  <%= @post.location %>
+</p>
+
+<%= link_to 'Edit', edit_post_path(@post) %> |
+<%= link_to 'Back', posts_path %>

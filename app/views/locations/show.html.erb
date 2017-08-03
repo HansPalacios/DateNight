@@ -1,0 +1,59 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @location.name %>
+</p>
+
+<p>
+  <strong>Bio:</strong>
+  <%= @location.bio %>
+</p>
+
+<p>
+  <strong>Address:</strong>
+  <%= @location.address %>
+</p>
+
+<p>
+  <strong>Phone:</strong>
+  <%= @location.phone %>
+</p>
+
+<p>
+  <strong>Image:</strong>
+  <%= @location.image %>
+</p>
+
+<p>
+  <strong>Rating:</strong>
+  <%= @location.rating_id %>
+</p>
+
+<p>
+  <strong>Favorite:</strong>
+  <%= @location.favorite_id %>
+</p>
+
+<p>
+  <strong>Bar:</strong>
+  <%= @location.bar %>
+</p>
+
+<p>
+  <strong>Restaurant:</strong>
+  <%= @location.restaurant %>
+</p>
+
+<p>
+  <strong>Activity:</strong>
+  <%= @location.activity %>
+</p>
+
+<p>
+  <strong>Sponsor:</strong>
+  <%= @location.sponsor %>
+</p>
+
+<%= link_to 'Edit', edit_location_path(@location) %> |
+<%= link_to 'Back', locations_path %>
