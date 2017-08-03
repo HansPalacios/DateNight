@@ -12,7 +12,9 @@ Gemfile:
 
     gem 'carrierwave', '~> 1.0'
 
-Installed devise:
+Installed devise and newest version of CarrierWave:
+	
+		bundle install
 
     rails g devise:install
 
@@ -65,6 +67,10 @@ Generated Controllers
 Told the router to use this controller:
 
 	  devise_for :users, controllers: { sessions: 'users/sessions' }
+
+Generated the uploaders for CarrierWave
+    rails generate uploader Avatar
+    rails generate uploader Image
 
 Added the CarrierWave uploaders to the User model
 
