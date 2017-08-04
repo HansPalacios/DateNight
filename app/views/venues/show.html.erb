@@ -1,0 +1,49 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @venue.name %>
+</p>
+
+<p>
+  <strong>Bio:</strong>
+  <%= @venue.bio %>
+</p>
+
+<p>
+  <strong>Address:</strong>
+  <%= @venue.address %>
+</p>
+
+<p>
+  <strong>Phone:</strong>
+  <%= @venue.phone %>
+</p>
+
+<p>
+  <strong>Image:</strong>
+  <%= @venue.image %>
+</p>
+
+<p>
+  <strong>Rating:</strong>
+  <%= @venue.rating_id %>
+</p>
+
+<p>
+  <strong>Favorite:</strong>
+  <%= @venue.favorite_id %>
+</p>
+
+<p>
+  <strong>Bar:</strong>
+  <%= @venue.venuecategory_id %>
+</p>
+
+<p>
+  <strong>Sponsor:</strong>
+  <%= @venue.sponsor %>
+</p>
+
+<%= link_to 'Edit', edit_venue_path(@venue) %> |
+<%= link_to 'Back', venues_path %>

@@ -1,0 +1,72 @@
+<%= form_with(model: venue, local: true) do |form| %>
+  <% if venue.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(venue.errors.count, "error") %> prohibited this venue from being saved:</h2>
+
+      <ul>
+      <% venue.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name, id: :venue_name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :bio %>
+    <%= form.text_area :bio, id: :venue_bio %>
+  </div>
+
+  <div class="field">
+    <%= form.label :address %>
+    <%= form.text_field :address, id: :venue_address %>
+  </div>
+
+  <div class="field">
+    <%= form.label :phone %>
+    <%= form.text_field :phone, id: :venue_phone %>
+  </div>
+
+  <div class="field">
+    <%= form.label :image %>
+    <%= form.text_field :image, id: :venue_image %>
+  </div>
+
+  <div class="field">
+    <%= form.label :rating_id %>
+    <%= form.number_field :rating_id, id: :venue_rating_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :favorite_id %>
+    <%= form.number_field :favorite_id, id: :venue_favorite_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :bar %>
+    <%= form.check_box :bar, id: :venue_bar %>
+  </div>
+
+  <div class="field">
+    <%= form.label :restaurant %>
+    <%= form.check_box :restaurant, id: :venue_restaurant %>
+  </div>
+
+  <div class="field">
+    <%= form.label :activity %>
+    <%= form.check_box :activity, id: :venue_activity %>
+  </div>
+
+  <div class="field">
+    <%= form.label :sponsor %>
+    <%= form.check_box :sponsor, id: :venue_sponsor %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

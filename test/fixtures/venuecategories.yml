@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  venue_id: 1
+  category_id: 1
+  venues: one
+  categories: one
+
+two:
+  venue_id: 1
+  category_id: 1
+  venues: two
+  categories: two

@@ -2,7 +2,9 @@
 	<div class="container-fluid">
 		<div class="row">
 			<div class="col-md-12">
-			<%= link_to '/' do h1_tag "Date Night" end %>
+			<%= link_to '/' do %>
+				<h1> Date Night</h1>
+			<% end %>
        	<div id="links">
 				<% if user_signed_in? %>
   						<%= link_to "Sign Out", destroy_user_session_path, method: :delete, :id => 'signout' %>
@@ -11,6 +13,19 @@
 	 				<%= link_to 'Sign In', '#', :id => 'signin' %>
  				<% end %>
  			</div>
-		</div>		
+		</div>	
+		<nav class="row">
+			<%= link_to venues_path do %>
+				<h4>All Venues</h4>
+			<% end %>
+			<%= link_to posts_path do %>
+				<h4>Forum</h4>
+			<% end %>
+			<%= link_to '#' do %>
+				<h4>Become a member</h4>
+			<% end %>
+
+
+		</nav>	
 	</div>
 </header>

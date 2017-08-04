@@ -84,15 +84,19 @@ Added the CarrierWave uploaders to the models Posts and Locations
 
 Created the rest of my tables:
 	
-    rails g scaffold Locations name:string bio:text address:string phone:string image:string rating_id:integer favorite_id:integer bar:boolean restaurant:boolean activity:boolean  sponsor:boolean 
+    rails g scaffold  Venues name:string bio:text address:string phone:string image:string rating_id:integer favorite_id:integer bar:boolean restaurant:boolean activity:boolean  sponsor:boolean 
 
-    rails g scaffold Posts post_name:string location_name:string address:string phone:string text:text image:string rating_id:integer favorite_id:integer bar:boolean restaurant:boolean activity:boolean user:belongs_to location:belongs_to
+    rails g scaffold Posts post_name:string venues_name:string address:string phone:string text:text image:string rating_id:integer favorite_id:integer bar:boolean restaurant:boolean activity:boolean user:belongs_to venues:belongs_to
 
     rails g scaffold Comments text:text post_id:integer user_id:integer post:belongs_to user:belongs_to timestamp:datetime
 
-    rails g scaffold Ratings location_id:integer user_id:integer post_id:integer rating:integer user:belongs_to location:belongs_to post:belongs_to
+    rails g scaffold Ratings venue_id:integer user_id:integer post_id:integer rating:integer user:belongs_to location:belongs_to post:belongs_to
 
-    rails g scaffold Favorites location_id:integer user_id:integer post_id:integer user:belongs_to location:belongs_to post:belongs_to
+    rails g scaffold Favorites venue_id:integer user_id:integer post_id:integer user:belongs_to venues:belongs_to post:belongs_to
+
+    rails g scaffold Categories name:string parent_id:integer
+
+    rails g scaffold Venuecategories venue_id:integer category_id:integer venues:belongs_to categories:belongs_to
 
 Then added all the has_manys and required: false for the location_id and post_id in ratings and favorites because they each belong to both the posts and locations
 

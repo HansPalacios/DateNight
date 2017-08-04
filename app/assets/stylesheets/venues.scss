@@ -1,0 +1,83 @@
+// Place all the styles related to the Locations controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+.venueindex {
+	.venuenav {
+		width: 100%;
+		height: 50px;
+		text-align: center;
+		margin: 0;
+		background-color: rgba(117,0,0,.92);
+		h3 {
+			padding: 10px;
+			width: 100%;
+			height: 100%;
+			cursor: pointer;
+		}
+		.barnav {
+			background-color: rgba(169,0,0,1);
+			margin: 0;
+			padding: 0;
+			&:hover {
+				background-color: rgba(169,0,0,1);
+			}
+		}
+		.restnav {
+			border-left: 1px solid white;
+			border-right: 1px solid white;
+			margin: 0;
+			padding: 0;
+			&:hover {
+				background-color: rgba(169,0,0,1);
+			}
+		}
+		.actnav {
+			margin: 0;
+			padding: 0;
+			&:hover {
+				background-color: rgba(169,0,0,1);
+			}
+		}
+	}
+	#bars, #restaurants, #activities {
+		width: 100%;
+		height: 50px;
+		text-align: center;
+		padding: 10px;
+		margin: 0;
+		background-color: rgba(0,0,0,.14);
+		h4 {
+			box-shadow: 1px 1px black;
+			border-radius: 10px;
+			background-color: rgba(138,20,20,1);
+			cursor: pointer;
+			height: 30px;
+			padding-top: 5px;
+			&:hover {
+				background-color: rgba(169,0,0,1);
+				box-shadow: none;
+			}
+		}
+	}
+	#bars {
+		display: flex;
+	}
+	#restaurants, #activities {
+		display: none;
+	}
+	.newvenue {
+		width: 100%;
+		height: 50px;
+		text-align: center;
+		padding: 10px;
+		margin: 0;
+		border-bottom: 1px solid grey;
+		a {
+			width: 200px;
+			text-align: center;
+			margin: 0 auto;
+			border: 1px solid grey;
+			background-color: rgba(218,194,194,1);
+		}
+	}
+}

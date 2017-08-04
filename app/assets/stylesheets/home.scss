@@ -1,0 +1,47 @@
+// Place all the styles related to the home controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+.index {
+	margin-top: 100px;
+	width: 100%;
+	height: 450px;
+	.bars, .restaurants, .activities {
+		height: 100%;
+		text-align: center;
+		.row {
+			text-align: center;
+			height: 75px;
+			margin: 10px;
+			a {
+				margin: 10px;
+				padding-top: 20%;
+				width: 100%;
+				height: 100%;
+				text-align: center;
+				box-shadow: 1px 1px black;
+				border-radius: 10px;
+				background-color: rgba(230,230,230,1);
+			}
+		}
+		.double {
+			a {
+				padding-top: 10%;
+			}
+		}
+		.title{ 
+			height: 60px;
+			a {
+				color: black;
+				padding-top: 10%;
+				border: none;
+				box-shadow: none;
+				background-color: rgba(247,247,247,1);
+			}
+		}
+	}
+	.restaurants {
+		border-left: 1px dashed black;
+		border-right: 1px dashed black;
+	}
+
+}
