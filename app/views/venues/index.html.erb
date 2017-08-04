@@ -14,7 +14,6 @@
 <!-- bars and clubs -->
 
   <div class="row" id="bars">
-    
     <div class="col-md-3" id="music">
       <h4>Music</h4>
     </div>
@@ -48,7 +47,7 @@
 
 <!-- activities -->
 
-<div class="row" id="activities">
+  <div class="row" id="activities">
     <div class="col-md-3" id="athletic">
       <h4>Athletic</h4>
     </div>
@@ -66,6 +65,42 @@
   <div class="row newvenue">
     <%= link_to 'New Venue', new_venue_path %>
   </div>
+
+<!-- venue list per category -->
+
   <div class="row">
+    <% @categories.each do |category|%>
+        <div class="row showcategory" id="category_<%=category.id%>">
+        <div class="row"><h2><%=category.name%><h2></div>
+          <% category.venues.each do |venue| %>
+            
+            <div class="row eachvenue">
+                <style media="screen">
+                  .venue-<%= venue.id %> { background-image: url(<%= venue.image %>); }
+                </style>
+                <div class=" row venueimg">
+                  <%= link_to venue do
+                    tag.article "", :class => " venue venue-#{venue.id}"  end %>
+                </div>
+                <div class="row">
+                  <h3><%=venue.name %></h3>
+                </div>
+                <div class="row">
+                  <p><%=venue.address %></p>
+                </div>
+                <div class="row">
+                  <p><%=venue.phone %></p>
+                </div>
+            </div>
+          <% end %>
+        </div>
+        <script>
+          document.querySelectorAll(".showcategory").forEach(function(show){
+
+          });
+        </script>
+    <% end %>
   </div>
+
+
 </div>

@@ -3,6 +3,7 @@ class VenuesController < ApplicationController
 
   def index
     @venues = Venue.all
+    @categories = Category.where(id: (4..15))
   end
 
   # GET /venues/1

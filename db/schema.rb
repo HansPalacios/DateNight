@@ -94,15 +94,13 @@ ActiveRecord::Schema.define(version: 20170803190026) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  create_table "venuecategories", force: :cascade do |t|
+  create_table "venue_categories", force: :cascade do |t|
     t.integer "venue_id"
     t.integer "category_id"
-    t.integer "venues_id"
-    t.integer "categories_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["categories_id"], name: "index_venuecategories_on_categories_id"
-    t.index ["venues_id"], name: "index_venuecategories_on_venues_id"
+    t.index ["category_id"], name: "index_venue_categories_on_category_id"
+    t.index ["venue_id"], name: "index_venue_categories_on_venue_id"
   end
 
   create_table "venues", force: :cascade do |t|

@@ -5,7 +5,18 @@ document.addEventListener('DOMContentLoaded', function () {
 	let bars = document.querySelector( '#bars' )
 	let restaurants = document.querySelector( '#restaurants' )
 	let activities = document.querySelector( '#activities' )
-
+	let music = document.querySelector( '#music' )
+	let dancing = document.querySelector( '#dancing' )
+	let rooftop = document.querySelector( '#rooftop' )
+	let relaxed  = document.querySelector( '#relaxed' )
+	let suit = document.querySelector( '#suit' )
+	let classy = document.querySelector( '#classy' )
+	let retro = document.querySelector( '#retro' )
+	let quick = document.querySelector( '#quick' )
+	let athletic = document.querySelector( '#athletic' )
+	let relaxed = document.querySelector( '#relaxed' )
+	let day = document.querySelector( '#day' )
+	let free = document.querySelector( '#free' )
 	
 
 	if( barnav )
