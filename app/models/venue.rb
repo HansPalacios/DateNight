@@ -5,4 +5,9 @@ class Venue < ApplicationRecord
 	 has_many :ratings
 	 has_many :favorites
 	 has_many :posts
+
+	 def mean_rating
+    self.ratings.average(:rating).to_f
+  end
+  
 end

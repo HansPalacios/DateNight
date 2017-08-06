@@ -4,6 +4,8 @@ class VenuesController < ApplicationController
   def index
     @venues = Venue.all
     @categories = Category.where(id: (4..15))
+    @ratings = Rating.all
+    @favorites = Favorite.all
   end
 
   # GET /venues/1

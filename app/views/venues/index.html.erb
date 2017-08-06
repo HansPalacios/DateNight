@@ -1,12 +1,12 @@
 <div class="row venueindex">
  <div class="row venuenav">
-    <div class="col-md-4 barnav">
+    <div class="col-md-4 active barnav bigbutton">
       <h3>Bar/Clubs</h3>
     </div>
-    <div class="col-md-4 restnav">
+    <div class="col-md-4 restnav bigbutton">
       <h3>Restaurants</h3>
     </div>
-    <div class="col-md-4 actnav">
+    <div class="col-md-4 actnav bigbutton">
       <h3>Activities</h3>
     </div>
   </div>
@@ -14,51 +14,51 @@
 <!-- bars and clubs -->
 
   <div class="row" id="bars">
-    <div class="col-md-3" id="music">
-      <h4>Music</h4>
+    <div class="col-md-3">
+      <h4 class="catbutton active" id="music">Music</h4>
     </div>
-    <div class="col-md-3" id="dancing">
-      <h4>Dancing</h4>
+    <div class="col-md-3">
+      <h4 class="catbutton" id="dancing">Dancing</h4>
     </div>
-    <div class="col-md-3" id="rooftop">
-      <h4>Rooftop</h4>
+    <div class="col-md-3">
+      <h4 class="catbutton" id="rooftop">Rooftop</h4>
     </div>
-    <div class="col-md-3" id="relaxed">
-      <h4>Relaxed</h4>
+    <div class="col-md-3">
+      <h4 class="catbutton" id="relaxed">Relaxed</h4>
     </div>
   </div>
 
 <!-- restaurants -->
 
   <div class="row" id="restaurants">
-    <div class="col-md-3" id="suit">
-      <h4>Suit & Tie</h4>
+    <div class="col-md-3">
+      <h4 class="catbutton" id="suit">Suit & Tie</h4>
     </div>
-    <div class="col-md-3" id="classy">
-      <h4>Classy & Casual</h4>
+    <div class="col-md-3">
+      <h4 class="catbutton" id="classy">Classy & Casual</h4>
     </div>
-    <div class="col-md-3" id="retro">
-      <h4>Retro & Hipster</h4>
+    <div class="col-md-3">
+      <h4 class="catbutton" id="retro">Retro & Hipster</h4>
     </div>
-    <div class="col-md-3" id="quick">
-      <h4>Quick Bite</h4>
+    <div class="col-md-3">
+      <h4 class="catbutton" id="quick">Quick Bite</h4>
     </div>
   </div>
 
 <!-- activities -->
 
   <div class="row" id="activities">
-    <div class="col-md-3" id="athletic">
-      <h4>Athletic</h4>
+    <div class="col-md-3">
+      <h4 class="catbutton" id="athletic">Athletic</h4>
     </div>
-    <div class="col-md-3" id="relaxed">
-      <h4>Relaxed fun</h4>
+    <div class="col-md-3">
+      <h4 class="catbutton" id="relaxedfun">Relaxed fun</h4>
     </div>
-    <div class="col-md-3" id="day">
-      <h4>Day trip</h4>
+    <div class="col-md-3">
+      <h4 class="catbutton" id="day">Day trip</h4>
     </div>
-    <div class="col-md-3" id="free">
-      <h4>Free</h4>
+    <div class="col-md-3">
+      <h4 class="catbutton" id="free">Free</h4>
     </div>
   </div>
 
@@ -68,39 +68,28 @@
 
 <!-- venue list per category -->
 
-  <div class="row">
-    <% @categories.each do |category|%>
-        <div class="row showcategory" id="category_<%=category.id%>">
-        <div class="row"><h2><%=category.name%><h2></div>
-          <% category.venues.each do |venue| %>
-            
-            <div class="row eachvenue">
-                <style media="screen">
-                  .venue-<%= venue.id %> { background-image: url(<%= venue.image %>); }
-                </style>
-                <div class=" row venueimg">
-                  <%= link_to venue do
-                    tag.article "", :class => " venue venue-#{venue.id}"  end %>
-                </div>
+  <% @categories.each do |category|%>
+    <div class="row showcategory" id="cat<%=category.id%>">
+      <% category.venues.each do |venue| %>
+          <style media="screen">
+            .venue-<%= venue.id %> { background-image: url(<%= venue.image %>); }
+          </style>
+          <%= link_to venue do %>
+            <article class=" venue venue-<%=venue.id%>">
+              <div class="info">
                 <div class="row">
                   <h3><%=venue.name %></h3>
                 </div>
                 <div class="row">
-                  <p><%=venue.address %></p>
+                 <p><%=venue.address %></p>
                 </div>
                 <div class="row">
-                  <p><%=venue.phone %></p>
+                 <p><%=venue.phone %></p>
                 </div>
-            </div>
+              </div>
+            </article>
           <% end %>
-        </div>
-        <script>
-          document.querySelectorAll(".showcategory").forEach(function(show){
-
-          });
-        </script>
-    <% end %>
-  </div>
-
-
+      <% end %>
+    </div>
+  <% end %>
 </div>

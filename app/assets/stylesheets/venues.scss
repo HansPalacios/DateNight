@@ -4,50 +4,53 @@
 .venueindex {
 	.showcategory {
 		width: 100%;
-		border: 1px solid black;
+		left: 0;
+		right: 0;
 		background-color: rgba(200,200,200,.4);
 		margin: 10px;
 		padding: 10px;
+		text-align: center;
 	}
-	.eachvenue {
+	#cat5, #cat6, #cat7, #cat8, #cat9, #cat10, #cat11, #cat12, #cat13, #cat14, #cat15 {
+		display: none;
+	}
+	#cat4 {
+		display: flex;
+	}
+	.venue {
 		display: inline-block;
-		border: 1px solid darkblue;
+		height: 300px;
 		width: 300px;
-		height: 400px;
-		margin: 20px auto;
-		.row {
-			width: 100%;
-			text-align: center;
-			padding-left: 20px;
-			h3 {
-				width: 400px;
-				margin: 0 auto;
+		background-size: cover;
+		border-radius: 10px;
+		margin: 50px;
+		border-radius: 10px;
+		border: 1px solid grey;
+		.info {
+			margin: 25% 30px;
+			background-color: rgba(200,200,200,.8);
+			.row {
+				width: 100%;
 				text-align: center;
-				margin: 15px;
-			}
-			p {
-				width: 400px;
-				margin: 10px auto;
-				text-align: center;
-				font-size: 13px;
+				h3 {
+					width: 300px;
+					margin: 0 auto;
+					text-align: center;
+					margin: 15px;
+					text-shadow: 1px 1px grey;
+				}
+				p {
+					width: 300px;
+					margin: 10px auto;
+					text-align: center;
+					font-size: 13px;
+				}
 			}
 		}
-		.venueimg {
-			height: 250px;
-			width: 300px;
-			margin: 0 auto;
-			.venue {
-				display: inline-block;
-				width: 225px;
-				height: 225px;
-				background-size: cover;
-				margin: 10px;
-  			&:hover {
-  		  	background-color: #fff;
-  		  	opacity:.8;
-  			}
-			}
-		}
+  	&:hover {
+  			background-color: #fff;
+  			opacity:.8;
+  	}
 	}
 	.venuenav {
 		width: 100%;
@@ -61,29 +64,20 @@
 			height: 100%;
 			cursor: pointer;
 		}
-		.barnav {
-			background-color: rgba(169,0,0,1);
+		.bigbutton {
+			background-color: rgba(138,20,20,1);
 			margin: 0;
 			padding: 0;
 			&:hover {
+				background-color: rgba(169,0,0,1);
+			}
+			&.active {
 				background-color: rgba(169,0,0,1);
 			}
 		}
 		.restnav {
 			border-left: 1px solid white;
 			border-right: 1px solid white;
-			margin: 0;
-			padding: 0;
-			&:hover {
-				background-color: rgba(169,0,0,1);
-			}
-		}
-		.actnav {
-			margin: 0;
-			padding: 0;
-			&:hover {
-				background-color: rgba(169,0,0,1);
-			}
 		}
 	}
 	#bars, #restaurants, #activities {
@@ -94,13 +88,17 @@
 		margin: 0;
 		background-color: rgba(0,0,0,.14);
 		h4 {
-			box-shadow: 1px 1px black;
 			border-radius: 10px;
-			background-color: rgba(138,20,20,1);
 			cursor: pointer;
 			height: 30px;
 			padding-top: 5px;
+			background-color: rgba(138,20,20,1);
+			box-shadow: 1px 1px black;
 			&:hover {
+				background-color: rgba(169,0,0,1);
+				box-shadow: none;
+			}
+			&.active {
 				background-color: rgba(169,0,0,1);
 				box-shadow: none;
 			}
@@ -118,7 +116,6 @@
 		text-align: center;
 		padding: 10px;
 		margin: 0;
-		border-bottom: 1px solid grey;
 		a {
 			width: 200px;
 			text-align: center;

@@ -1,34 +1,34 @@
 class FavoritesController < ApplicationController
-  before_action :set_favorite, only: [:show, :edit, :update, :destroy]
+ before_action :set_favorite, only: [ :update, :destroy]
 
   # GET /favorites
   # GET /favorites.json
-  def index
-    @favorites = Favorite.all
-  end
+  # def index
+  #   @favorites = Favorite.all
+  # end
 
   # GET /favorites/1
   # GET /favorites/1.json
-  def show
-  end
+  # def show
+  # end
 
   # GET /favorites/new
-  def new
-    @favorite = Favorite.new
-  end
+  # def new
+  #   @favorite = Favorite.new
+  # end
 
   # GET /favorites/1/edit
-  def edit
-  end
+  # def edit
+  # end
 
   # POST /favorites
   # POST /favorites.json
   def create
-    @favorite = Favorite.new(favorite_params)
-
+    @favorite = Favorite.find_by(bar_id: params[:bar_id], user_id: current_user.id)
+    @favorite = Favorite.new(bar_id: params[:bar_id], user_id: current_user.id) unless @favorite
     respond_to do |format|
       if @favorite.save
-        format.html { redirect_to @favorite, notice: 'Favorite was successfully created.' }
+        format.html { redirect_to :root, notice: 'Favorite was successfully created.' }
         format.json { render :show, status: :created, location: @favorite }
       else
         format.html { render :new }
@@ -56,7 +56,7 @@ class FavoritesController < ApplicationController
   def destroy
     @favorite.destroy
     respond_to do |format|
-      format.html { redirect_to favorites_url, notice: 'Favorite was successfully destroyed.' }
+      format.html { redirect_to :root, notice: 'Favorite was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
@@ -64,11 +64,11 @@ class FavoritesController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_favorite
-      @favorite = Favorite.find(params[:id])
+      @favorite = current_user.favorites.find_by(bar_id: params[:bar_id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
-    def favorite_params
-      params.require(:favorite).permit(:location_id, :user_id, :post_id, :user_id, :location_id, :post_id)
-    end
+    # def favorite_params
+    #   params.require(:favorite)
+    # end
 end

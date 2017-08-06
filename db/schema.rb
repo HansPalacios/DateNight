@@ -15,8 +15,6 @@ ActiveRecord::Schema.define(version: 20170803190026) do
   create_table "categories", force: :cascade do |t|
     t.string "name"
     t.integer "parent_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
   end
 
   create_table "comments", force: :cascade do |t|
@@ -63,8 +61,6 @@ ActiveRecord::Schema.define(version: 20170803190026) do
     t.integer "user_id"
     t.integer "post_id"
     t.integer "rating"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
     t.index ["post_id"], name: "index_ratings_on_post_id"
     t.index ["user_id"], name: "index_ratings_on_user_id"
     t.index ["venue_id"], name: "index_ratings_on_venue_id"

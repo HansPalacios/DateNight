@@ -13,24 +13,24 @@ Theres a disco, bar, (seasonal) plunge pool & crêperie, all on the roof of the 
 	])
 
 Category.create([
-	{id: 1,name: 'Bars'},
-	{id: 2,name: 'Restaurants'},
-	{id: 3,name: 'Activities'},
+	{name: 'Bars'},
+	{name: 'Restaurants'},
+	{name: 'Activities'},
 
-	{id: 4,name: 'Chill Vibe', parent_id: 1},
-	{id: 5,name: 'Music', parent_id: 1},
-	{id: 6,name: 'Dancing', parent_id: 1},
-	{id: 7,name: 'Rooftop', parent_id: 1},
+	{name: 'Music', parent_id: 1},
+	{name: 'Dancing', parent_id: 1},
+	{name: 'Rooftop', parent_id: 1},
+	{name: 'Relaxed', parent_id: 1},
 
-	{id: 8,name: 'Suit and Tie', parent_id: 2},
-	{id: 9,name: 'Classy & Casual', parent_id: 2},
-	{id: 10,name: 'Retro & Hipster', parent_id: 2},
-	{id: 11,name: 'Quick Bite', parent_id: 2},
+	{name: 'Suit & Tie', parent_id: 2},
+	{name: 'Classy & Casual', parent_id: 2},
+	{name: 'Retro & Hipster', parent_id: 2},
+	{name: 'Quick Bite', parent_id: 2},
 
-	{id: 12,name: 'Athletic', parent_id: 3},
-	{id: 13,name: 'Relaxed fun', parent_id: 3},
-	{id: 14,name: 'Day trip', parent_id: 3},
-	{id: 15,name: 'Free', parent_id: 3}
+	{name: 'Athletic', parent_id: 3},
+	{name: 'Relaxed fun', parent_id: 3},
+	{name: 'Day trip', parent_id: 3},
+	{name: 'Free', parent_id: 3}
 
 	])
 
@@ -48,6 +48,52 @@ VenueCategory.create([
 {venue_id: 1, category_id: 11},
 {venue_id: 1, category_id: 13},
 {venue_id: 2, category_id: 15}
+	])
+
+User.create([
+	{fname: "Hans", lname: "Palacios", phone: "212-121-2121", email: "hanssebastian.p@gmail.com", password: "password", admin: true}
+	])
+
+rate = Rating.new(rating: 4)
+rate.user = User.find(1)
+rate.venue_id = Venue.find(1)
+rate.save
+
+rate = Rating.new(rating: 5)
+rate.user = User.find(1)
+rate.venue_id = Venue.find(2)
+rate.save
+
+rate = Rating.new(rating: 3)
+rate.user = User.find(1)
+rate.venue_id = Venue.find(3) 
+rate.save
+
+rate = Rating.new(rating: 4)
+rate.user = User.find(1)
+rate.venue_id = Venue.find(1) 
+rate.save
+
+rate = Rating.new(rating: 5)
+rate.user = User.find(1)
+rate.venue_id = Venue.find(1)
+rate.save
+
+rate = Rating.new(rating: 5)
+rate.user = User.find(1)
+rate.venue_id = Venue.find(1) 
+rate.save
+
+
+Favorite.create([
+	{user_id: 1, venue_id: 2},
+	{user_id: 1, venue_id: 4},
+	{user_id: 1, venue_id: 6},
+	{user_id: 1, venue_id: 8},
+	{user_id: 1, venue_id: 10},
+	{user_id: 1, venue_id: 12},
+	{user_id: 1, venue_id: 14},
+	{user_id: 1, venue_id: 16}
 	])
 
 
