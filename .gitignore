@@ -25,3 +25,6 @@
 .sendgrid.env
 
 config.js
+
+# Ignore application configuration
+/config/application.yml

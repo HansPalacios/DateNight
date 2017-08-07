@@ -1,49 +1,74 @@
-<p id="notice"><%= notice %></p>
+ <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=<%= ENV["google_key"] %>&libraries=places"></script>
+ 
+<div class="row showvenue">
+  <div class="col-md-12">
+    <div class="row">
+      <div class="col-md-6">
+         <%= image_tag ( "#{@venue.image}" ) %>
+      </div>
+      <div class="col-md-6">
+        <div class="row">
+          <h2><strong><em><%= @venue.name %></em></strong></h2>
+        </div>
+        <div class="row">
+          <p><%= @venue.address %></p>
+          <p><%= @venue.phone %></p>
+        </div>
+        <div class="row desc">
+          <p><%= @venue.bio %></p>
+        </div>
+        <div class="row">
+          <p class="ratetitle">DateNight:</p>
+          <span style="width:<%= 23 * @venue.mean_rating %>px" id="stars"></span>
+        </div>
+      </div>
+    </div>
+    <div class="row links">
+      <div class="col-md-12">
+        <%= link_to 'Edit', edit_venue_path(@venue) %> |
+        <%= link_to 'Back', venues_path %>
+      </div>
+    </div>
+    <div class="row" id="map">
+    </div>
+    <script>
 
-<p>
-  <strong>Name:</strong>
-  <%= @venue.name %>
-</p>
+        var map;
 
-<p>
-  <strong>Bio:</strong>
-  <%= @venue.bio %>
-</p>
+        function initialize() {
+          // Create a map centered in Pyrmont, Sydney (Australia).
+          map = new google.maps.Map(document.getElementById('map'), {
+            center: {lat:<%= @venue.latitude %>, lng:<%= @venue.longitude %>},
+            zoom: 15
+          });
 
-<p>
-  <strong>Address:</strong>
-  <%= @venue.address %>
-</p>
+          // Search for Google's office in Australia.
+          var request = {
+            location: map.getCenter(),
+            radius: '500',
+            query: '<%= @venue.name %>'
+          };
 
-<p>
-  <strong>Phone:</strong>
-  <%= @venue.phone %>
-</p>
+          var service = new google.maps.places.PlacesService(map);
+          service.textSearch(request, callback);
+        }
 
-<p>
-  <strong>Image:</strong>
-  <%= @venue.image %>
-</p>
+        // Checks that the PlacesServiceStatus is OK, and adds a marker
+        // using the place ID and location from the PlacesService.
+        function callback(results, status) {
+          if (status == google.maps.places.PlacesServiceStatus.OK) {
+            var marker = new google.maps.Marker({
+              map: map,
+              place: {
+                placeId: results[0].place_id,
+                location: results[0].geometry.location
+              }
+            });
+          }
+        }
 
-<p>
-  <strong>Rating:</strong>
-  <%= @venue.rating_id %>
-</p>
+        google.maps.event.addDomListener(window, 'load', initialize);
+    </script>
+  </div>
+</div>
 
-<p>
-  <strong>Favorite:</strong>
-  <%= @venue.favorite_id %>
-</p>
-
-<p>
-  <strong>Bar:</strong>
-  <%= @venue.venuecategory_id %>
-</p>
-
-<p>
-  <strong>Sponsor:</strong>
-  <%= @venue.sponsor %>
-</p>
-
-<%= link_to 'Edit', edit_venue_path(@venue) %> |
-<%= link_to 'Back', venues_path %>

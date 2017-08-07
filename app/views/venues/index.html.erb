@@ -87,6 +87,18 @@
                 <div class="row">
                  <p><%=venue.phone %></p>
                 </div>
+                <div class="row">
+                  <p class="col-md-5 ratetitle">DateNight:</p>
+                  <span style="width:<%= 23 * venue.mean_rating %>px" id="stars"></span>
+                </div>
+                <div class="row">
+                  <p class="col-md-5 ratetitle">Yelp:</p>
+                  <span style="width:<%= 23 * venue.mean_rating %>px" id="stars"></span>
+                </div>
+                <div class="row">
+                  <p class="col-md-5 ratetitle">Google:</p>
+                  <span style="width:<%= 23 * venue.mean_rating %>px" id="stars"></span>
+                </div>
               </div>
             </article>
           <% end %>

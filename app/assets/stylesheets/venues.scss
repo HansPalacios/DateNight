@@ -1,6 +1,34 @@
 // Place all the styles related to the Locations controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.showvenue {
+	#map {
+		height: 500px;
+		width: 800px;
+		margin: 0 auto;
+	}
+	img {
+		width: 400px;
+		margin: 50px;
+	}
+	h2 {
+		margin: 50px;
+	}
+	p, h2 {
+		margin: 0 auto;
+	}
+.row {
+		margin: 20px;
+		text-align: center;
+	}
+	.ratetitle {
+		padding-top: 5px;
+		margin-right: 10px;
+		margin-left: 0;
+		margin-top: 50px;
+	}
+}
 .venueindex {
 	.showcategory {
 		width: 100%;
@@ -19,8 +47,8 @@
 	}
 	.eachvenue {
 		display: inline-block;
-		height: 300px;
-		width: 300px;
+		height: 400px;
+		width: 400px;
 		background-size: cover;
 		margin: 50px;
 		border-radius:  10px;
@@ -45,6 +73,11 @@
 					text-align: center;
 					font-size: 13px;
 				}
+				.ratetitle {
+				margin: 0 0;
+				height: 29.47px;
+				padding-top: 7px;
+			}
 			}
 		}
   	&:hover {

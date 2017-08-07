@@ -8,6 +8,10 @@ end
 gem 'devise'
 #Carrierwave for image uploads
 gem 'carrierwave', '~> 1.0'
+#Figaro gem hides API Keys
+gem 'figaro'
+#Geocoder changes address to lat's and long's you can use with the google map API
+gem 'geocoder'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.2'
 # Use sqlite3 as the database for Active Record

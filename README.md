@@ -1,16 +1,33 @@
 # Date Night 
 
 
-Installed Devise for User sign in
-And CarrierWave for image uploads
+
 
 Using Rails version: 5.1.2
 
-Gemfile:
+Updated Gemfile:
 
+    # Devise for user and admin login
+    
     gem 'devise'
-
+    
+    #Carrierwave for image uploads
+    
     gem 'carrierwave', '~> 1.0'
+    
+    #Figaro gem hides API Keys
+    
+    gem 'figaro'
+    
+    #Geocoder changes address to lat's and long's you can use with the google map API
+    
+    gem 'geocoder'
+    
+    # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
+
+
+Installed Devise for User sign in
+And CarrierWave for image uploads    
 
 Installed devise and newest version of CarrierWave:
 	
@@ -107,4 +124,9 @@ I then added bootstrap to the layout application.html.erb page:
 Then added a github repository: 
 
 	  *https://github.com/HansPalacios/DateNight*
+
+Formatted the main pages, then started adding in the Google API
+
+Hid API Keys, then installed some google functionality from: 
+      https://developers.google.com/maps/documentation/javascript/places#placeid
 

@@ -1,10 +1,17 @@
 // Place all the styles related to the Ratings controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+#stars {
+	height: 29.47px;
+	width: 115px;
+	background-image: url('starlist3.png');
+	background-position: left;
+	background-size: 115px 29.47px;
+	overflow: hidden;
+}
 .rating {
 	height: 29px;
 	width: 118px;
-	display: none;
 	.star1, .star2, .star3, .star4, .star5 {
 		height: 29.47px;
 		width: 22px;

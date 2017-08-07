@@ -9,5 +9,4 @@ class Venue < ApplicationRecord
 	 def mean_rating
     self.ratings.average(:rating).to_f
   end
-  
 end

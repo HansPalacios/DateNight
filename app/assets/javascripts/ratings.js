@@ -2,9 +2,6 @@ document.addEventListener("DOMContentLoaded",function(){
 
 
   document.querySelectorAll(".rating").forEach(function(el) {
-  	el.parentNode.querySelector(".ratingbutton").addEventListener('click', function(){	
-			el.style.display = "inline-block"
-		});
     ratingHoverStars(el);
   });
 });

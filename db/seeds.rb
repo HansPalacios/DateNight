@@ -56,32 +56,32 @@ User.create([
 
 rate = Rating.new(rating: 4)
 rate.user = User.find(1)
-rate.venue_id = Venue.find(1)
+rate.venue = Venue.find(1)
 rate.save
 
 rate = Rating.new(rating: 5)
 rate.user = User.find(1)
-rate.venue_id = Venue.find(2)
+rate.venue = Venue.find(2)
 rate.save
 
 rate = Rating.new(rating: 3)
 rate.user = User.find(1)
-rate.venue_id = Venue.find(3) 
+rate.venue = Venue.find(3) 
 rate.save
 
 rate = Rating.new(rating: 4)
 rate.user = User.find(1)
-rate.venue_id = Venue.find(1) 
+rate.venue = Venue.find(1) 
 rate.save
 
 rate = Rating.new(rating: 5)
 rate.user = User.find(1)
-rate.venue_id = Venue.find(1)
+rate.venue = Venue.find(1)
 rate.save
 
 rate = Rating.new(rating: 5)
 rate.user = User.find(1)
-rate.venue_id = Venue.find(1) 
+rate.venue = Venue.find(1) 
 rate.save
 
 
