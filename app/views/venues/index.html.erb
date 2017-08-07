@@ -70,6 +70,7 @@
 
   <% @categories.each do |category|%>
     <div class="row showcategory" id="cat<%=category.id%>">
+    <h2>Category: <%=category.name %></h2>
       <% category.venues.each do |venue| %>
           <style media="screen">
             .venue-<%= venue.id %> { background-image: url(<%= venue.image %>); }
