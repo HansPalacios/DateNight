@@ -10,7 +10,6 @@ class CreateVenues < ActiveRecord::Migration[5.1]
       t.integer :favorite_id
       t.integer :venuecategory_id
       t.boolean :sponsor
-
       t.timestamps
     end
   end

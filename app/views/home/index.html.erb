@@ -1,95 +1,62 @@
 <div class="row">
-	<div class="col-md-1"></div>
-	<div class="col-md-6 index">
+	<div id="sponsors">
+		<h2>Sponsors(image carousel)</h2>
+	</div>
+</div>
+<div class="row">
+	<div class="col-md-8 index">
+		<div class="row">
+			<h3>First Choose the Type of Date</h3>
+		</div>
 		<div class="row">
 			<div class="col-md-4 bars">
-				<div class="row title bartitle">
+				<div class="row">
+					<h5>Fun night out listening to music, dancing, or at a lounge to mingle?</h5>
+				</div>
+				<div class="row">
 					<%= link_to venues_path do %>
 						<h3>Bars/Clubs</h3>
 					<% end %>
 				</div>
-				<div class="row">
-					<%= link_to venues_path do %>
-						<h4>Chill Vibes</h4>
-					<% end %>
-				</div>
-				<div class="row">
-					<%= link_to venues_path do %>
-						<h4>Music</h4>
-					<% end %>
-				</div>
-				<div class="row">
-					<%= link_to venues_path do %>
-						<h4>Dancing</h4>
-					<% end %>
-				</div>
-				<div class="row">
-					<%= link_to venues_path do %>
-						<h4>Rooftops</h4>
-					<% end %>
-				</div>
 			</div>
 			<div class="col-md-4 restaurants">
-				<div class="row title">
+				<div class="row">
+					<h5>Looking for a good vibe? Or do you want to dress up and treat them to a special night?</h5>
+				</div>
+				<div class="row">
 					<%= link_to venues_path do %>
 						<h3>Restaurants</h3>
 					<% end %>
 				</div>
-				<div class="row">
-					<%= link_to venues_path do %>
-						<h4>Suit & Tie</h4>
-					<% end %>
-				</div>
-				<div class="row double">
-					<%= link_to venues_path do %>
-						<h4>Classy & Casual</h4>
-					<% end %>
-				</div>
-				<div class="row double">
-					<%= link_to venues_path do %>
-						<h4>Retro & Hipster</h4>
-					<% end %>
-				</div>
-				<div class="row">
-					<%= link_to venues_path do %>
-						<h4>Quick Bite</h4>
-					<% end %>
-				</div>
 			</div>
 			<div class="col-md-4 activities">
-				<div class="row title activitiestitle">
+				<div class="row">
+					<h5>Tired of the average date? Let's take a jump and do something new!</h5>
+				</div>
+				<div class="row">
 					<%= link_to venues_path do %>
 						<h3>Activities</h3>
 					<% end %>
 				</div>
-				<div class="row">
-					<%= link_to venues_path do %>
-						<h4>Athletic</h4>
-					<% end %>
-				</div>
-				<div class="row">
-					<%= link_to venues_path do %>
-						<h4>Relaxed fun</h4>
-					<% end %>
-				</div>
-				<div class="row">
-					<%= link_to venues_path do %>
-						<h4>Day Trip</h4>
-					<% end %>
-				</div>
-				<div class="row">
-					<%= link_to venues_path do %>
-						<h4>Free</h4>
-					<% end %>
-				</div>
 			</div>
 		</div>
+		<div class="row info">
+			<p>Do you care for someone so much youre scared to pick out the perfect date?</p>
+			<p>Second-guessing and going through ideas faster than youre thinking of them?</p>
+			<p>Well stop.</p>
+			<p>We will take care of the location, now you just have to figure out how to ask them out and spend the rest of your free time deciding on what to wear</p>
+		</div>
 	</div>
-	<div class="col-md-1"></div>
-	<div class="col-md-3">
+	<div class="col-md-3" id="forum">
 		<div class="row">
+			<%= link_to posts_path do %>
+				<h2>Forum</h2>
+			<% end %>
 		</div>
 		<div class="row">
+			<% link_to new_post_path do %>
+				<button>New Post</button>
+			<% end %>
 		</div>
 	</div>
 	<div class="col-md-1"></div>

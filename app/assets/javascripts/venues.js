@@ -34,163 +34,7 @@ document.addEventListener('DOMContentLoaded', function () {
 	let cat13 = document.querySelector('#cat13')
 	let cat14 = document.querySelector('#cat14')
 	let cat15 = document.querySelector('#cat15')
-	
-if( music )
-	music.addEventListener('click', function(){
-		allothercats.forEach( function(cat) {
-			cat.style.display = "none";
-		});
-  		cat4.style.display = "flex";
-  	catbuttons.forEach( function(button) {
-			if (button.classList.contains("active")) {
-				button.classList.remove("active");
-			}
-		});	
-		music.classList.add("active");
-	});
-if( dancing )
-	dancing.addEventListener('click', function(){
-		allothercats.forEach( function(cat) {
-			cat.style.display = "none";
-		});
-  	cat5.style.display = "flex";
-  	catbuttons.forEach( function(button) {
-			if (button.classList.contains("active")) {
-				button.classList.remove("active");
-			}		
-		});	
-		dancing.classList.add("active");
-	});
-if( rooftop )
-	rooftop.addEventListener('click', function(){
-		allothercats.forEach( function(cat) {
-			cat.style.display = "none";
-		});
-  	cat6.style.display = "flex";
-  	catbuttons.forEach( function(button) {
-			if (button.classList.contains("active")) {
-				button.classList.remove("active");
-			}		
-		});
-		rooftop.classList.add("active");
-	});
-if( relaxed )
-	relaxed.addEventListener('click', function(){
-		allothercats.forEach( function(cat) {
-			cat.style.display = "none";
-		});
-  	cat7.style.display = "flex";
-  	catbuttons.forEach( function(button) {
-			if (button.classList.contains("active")) {
-				button.classList.remove("active");
-			}		
-		});
-		relaxed.classList.add("active");
-	});
-if( suit )
-	suit.addEventListener('click', function(){
-		allothercats.forEach( function(cat) {
-			cat.style.display = "none";
-		});
-  	cat8.style.display = "flex";
-  	catbuttons.forEach( function(button) {
-			if (button.classList.contains("active")) {
-				button.classList.remove("active");
-			}		
-		});
-		suit.classList.add("active");
-	});
-if( classy )
-	classy.addEventListener('click', function(div){
-		allothercats.forEach( function(cat) {
-			cat.style.display = "none";
-		});
-  	cat9.style.display = "flex";
-  	catbuttons.forEach( function(button) {
-			if (button.classList.contains("active")) {
-				button.classList.remove("active");
-			}		
-		});
-		classy.classList.add("active");
-	});
-if( retro )
-	retro.addEventListener('click', function(div){
-		allothercats.forEach( function(cat) {
-			cat.style.display = "none";
-		});
-  	cat10.style.display = "flex";
-  	catbuttons.forEach( function(button) {
-			if (button.classList.contains("active")) {
-				button.classList.remove("active");
-			}		
-		});
-		retro.classList.add("active");
-	});
-if( quick )
-	quick.addEventListener('click', function(div){
-		allothercats.forEach( function(cat) {
-			cat.style.display = "none";
-		});
-  	cat11.style.display = "flex";
-  	catbuttons.forEach( function(button) {
-			if (button.classList.contains("active")) {
-				button.classList.remove("active");
-			}		
-		});
-		quick.classList.add("active");
-	});
-if( athletic )
-	athletic.addEventListener('click', function(div){
-		allothercats.forEach( function(cat) {
-			cat.style.display = "none";
-		});
-  	cat12.style.display = "flex";
-  	catbuttons.forEach( function(button) {
-			if (button.classList.contains("active")) {
-				button.classList.remove("active");
-			}		
-		});
-		athletic.classList.add("active");
-	});
-if( relaxedfun )
-	relaxedfun.addEventListener('click', function(div){
-		allothercats.forEach( function(cat) {
-			cat.style.display = "none";
-		});
-  	cat13.style.display = "flex";
-  	catbuttons.forEach( function(button) {
-			if (button.classList.contains("active")) {
-				button.classList.remove("active");
-			}		
-		});
-		relaxedfun.classList.add("active");
-	});
-if( day )
-	day.addEventListener('click', function(div){
-		allothercats.forEach( function(cat) {
-			cat.style.display = "none";
-		});
-  	cat14.style.display = "flex";
-  	catbuttons.forEach( function(button) {
-			if (button.classList.contains("active")) {
-				button.classList.remove("active");
-			}		
-		});
-		day.classList.add("active");
-	});
-if( free )
-	free.addEventListener('click', function(div){
-		allothercats.forEach( function(cat) {
-			cat.style.display = "none";
-		});
-  	cat15.style.display = "flex";
-  	catbuttons.forEach( function(button) {
-			if (button.classList.contains("active")) {
-				button.classList.remove("active");
-			}		
-		});
-			free.classList.add("active");
-	});
+
 // main categories
 
 	if( barnav )
@@ -231,7 +75,174 @@ if( actnav )
 		});
 			actnav.classList.add("active");
 	});
-});
 
 // subcategories
+	
+if( music )
+	music.addEventListener('click', function(){
+		allothercats.forEach( function(cat) {
+			cat.style.display = "none";
+		});
+  		cat4.style.display = "flex";
+  	catbuttons.forEach( function(button) {
+			if (button.classList.contains("active")) {
+				button.classList.remove("active");
+			}
+		});	
+		music.classList.add("active");
+	});
 
+if( dancing )
+	dancing.addEventListener('click', function(){
+		allothercats.forEach( function(cat) {
+			cat.style.display = "none";
+		});
+  	cat5.style.display = "flex";
+  	catbuttons.forEach( function(button) {
+			if (button.classList.contains("active")) {
+				button.classList.remove("active");
+			}		
+		});	
+		dancing.classList.add("active");
+	});
+
+if( rooftop )
+	rooftop.addEventListener('click', function(){
+		allothercats.forEach( function(cat) {
+			cat.style.display = "none";
+		});
+  	cat6.style.display = "flex";
+  	catbuttons.forEach( function(button) {
+			if (button.classList.contains("active")) {
+				button.classList.remove("active");
+			}		
+		});
+		rooftop.classList.add("active");
+	});
+
+if( relaxed )
+	relaxed.addEventListener('click', function(){
+		allothercats.forEach( function(cat) {
+			cat.style.display = "none";
+		});
+  	cat7.style.display = "flex";
+  	catbuttons.forEach( function(button) {
+			if (button.classList.contains("active")) {
+				button.classList.remove("active");
+			}		
+		});
+		relaxed.classList.add("active");
+	});
+
+if( suit )
+	suit.addEventListener('click', function(){
+		allothercats.forEach( function(cat) {
+			cat.style.display = "none";
+		});
+  	cat8.style.display = "flex";
+  	catbuttons.forEach( function(button) {
+			if (button.classList.contains("active")) {
+				button.classList.remove("active");
+			}		
+		});
+		suit.classList.add("active");
+	});
+
+if( classy )
+	classy.addEventListener('click', function(div){
+		allothercats.forEach( function(cat) {
+			cat.style.display = "none";
+		});
+  	cat9.style.display = "flex";
+  	catbuttons.forEach( function(button) {
+			if (button.classList.contains("active")) {
+				button.classList.remove("active");
+			}		
+		});
+		classy.classList.add("active");
+	});
+
+if( retro )
+	retro.addEventListener('click', function(div){
+		allothercats.forEach( function(cat) {
+			cat.style.display = "none";
+		});
+  	cat10.style.display = "flex";
+  	catbuttons.forEach( function(button) {
+			if (button.classList.contains("active")) {
+				button.classList.remove("active");
+			}		
+		});
+		retro.classList.add("active");
+	});
+
+if( quick )
+	quick.addEventListener('click', function(div){
+		allothercats.forEach( function(cat) {
+			cat.style.display = "none";
+		});
+  	cat11.style.display = "flex";
+  	catbuttons.forEach( function(button) {
+			if (button.classList.contains("active")) {
+				button.classList.remove("active");
+			}		
+		});
+		quick.classList.add("active");
+	});
+
+if( athletic )
+	athletic.addEventListener('click', function(div){
+		allothercats.forEach( function(cat) {
+			cat.style.display = "none";
+		});
+  	cat12.style.display = "flex";
+  	catbuttons.forEach( function(button) {
+			if (button.classList.contains("active")) {
+				button.classList.remove("active");
+			}		
+		});
+		athletic.classList.add("active");
+	});
+
+if( relaxedfun )
+	relaxedfun.addEventListener('click', function(div){
+		allothercats.forEach( function(cat) {
+			cat.style.display = "none";
+		});
+  	cat13.style.display = "flex";
+  	catbuttons.forEach( function(button) {
+			if (button.classList.contains("active")) {
+				button.classList.remove("active");
+			}		
+		});
+		relaxedfun.classList.add("active");
+	});
+
+if( day )
+	day.addEventListener('click', function(div){
+		allothercats.forEach( function(cat) {
+			cat.style.display = "none";
+		});
+  	cat14.style.display = "flex";
+  	catbuttons.forEach( function(button) {
+			if (button.classList.contains("active")) {
+				button.classList.remove("active");
+			}		
+		});
+		day.classList.add("active");
+	});
+
+if( free )
+	free.addEventListener('click', function(div){
+		allothercats.forEach( function(cat) {
+			cat.style.display = "none";
+		});
+  	cat15.style.display = "flex";
+  	catbuttons.forEach( function(button) {
+			if (button.classList.contains("active")) {
+				button.classList.remove("active");
+			}		
+		});
+			free.classList.add("active");
+	});
+});

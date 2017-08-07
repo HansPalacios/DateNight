@@ -17,14 +17,13 @@
 	#cat4 {
 		display: flex;
 	}
-	.venue {
+	.eachvenue {
 		display: inline-block;
 		height: 300px;
 		width: 300px;
 		background-size: cover;
-		border-radius: 10px;
 		margin: 50px;
-		border-radius: 10px;
+		border-radius:  10px;
 		border: 1px solid grey;
 		.info {
 			margin: 25% 30px;
@@ -32,6 +31,7 @@
 			.row {
 				width: 100%;
 				text-align: center;
+				margin: 0;
 				h3 {
 					width: 300px;
 					margin: 0 auto;

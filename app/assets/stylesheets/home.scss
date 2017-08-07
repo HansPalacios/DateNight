@@ -1,56 +1,71 @@
 // Place all the styles related to the home controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+#sponsors {
+	width: 100%;
+	height: 150px;
+	margin: 50px 0;
+	background-color: rgba(100,100,100,.5);
+	text-align: center;
+	padding-top: 50px;
+}
 .index {
-	margin-top: 100px;
+	margin-top: 50px;
 	width: 100%;
 	height: 450px;
+	text-align: center;
+	h3 {
+		width: 100%;
+		text-align: center;
+		color: rgba(152,0,0,1);
+		margin: 20px;
+	}
+	.info {
+		padding: 10px 150px;
+		p {
+			color: rgba(0,0,0,.7);
+			width: 100%;
+			text-align: center;
+			padding: 10px;
+			}
+	}
 	.bars, .restaurants, .activities {
 		height: 100%;
 		text-align: center;
-		.row {
+		width: 200px;
+		height: 200px;
+		overflow: break-word;
+		padding: 10px;
+		h5 {
+			color: rgba(0,0,0,.7);
+			height: 80px;
+			width: 200px;
+			margin: 0 auto;
+		}
+		a, h3 {
+			margin: 0 auto;
+			width: 200px;
+			height: 30px;
 			text-align: center;
-			height: 75px;
-			margin: 10px;
-			a {
-				margin: 10px;
-				padding-top: 20%;
-				width: 100%;
-				height: 100%;
-				text-align: center;
-				border-radius: 10px;
-				cursor: pointer;
-				background-color: rgba(138,20,20,1);
-				box-shadow: 1px 1px black;
-				&:hover {
-					background-color: rgba(169,0,0,1);
-					box-shadow: none;
-				}
-			}
-		}
-		.double {
-			a {
-				padding-top: 10%;
-			}
-		}
-		.title{ 
-			height: 60px;
-			a {
-				color: black;
-				padding-top: 10%;
-				border: none;
-				box-shadow: none;
-				background-color: rgba(247,247,247,1);
-				&:hover {
-					background-color: rgba(247,247,247,1);
-					text-shadow: 1px 1px grey;
-				}
+			cursor: pointer;
+			&:hover {
+				text-shadow: .5px .5px grey;
 			}
 		}
 	}
-	.restaurants {
-		border-left: 1px dashed black;
-		border-right: 1px dashed black;
-	}
-
 }
+#forum {
+	width: 100%;
+	height: 500px;
+	background-color: rgba(100,100,100,.5);
+	text-align: center;
+	a {
+		width: 100px;
+		padding: 10px;
+		text-align: center;
+		margin: 0 auto;
+	}
+}
+
+
+
