@@ -31,17 +31,17 @@ And CarrierWave for image uploads
 
 Installed devise and newest version of CarrierWave:
 	
-		bundle install
+    bundle install
 
     rails g devise:install
 
 Set default home route:
 
-	  root to: "home#index"
+    root to: "home#index"
 
 In config/environments/development.rb input:
 
-	  config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
+	config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
 
 Added notices and alerts to layout
 
