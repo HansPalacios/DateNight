@@ -1,7 +1,63 @@
 // Place all the styles related to the Locations controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-
+.createvenue {
+	width: 600px;
+	height: 600px;
+	background-color: rgba(0,0,0,0.8);
+	border: 2px solid grey;
+	padding: 30px 50px;
+	position: fixed;
+	top: 10%;
+	left: 25%;
+	text-align: center;
+	z-index: 2;
+	color: white;
+	display: none;
+	.checklist {
+		label {
+		font-size: 13px;
+		}
+		.row {
+			margin-bottom: 10px;
+		}
+	}
+	.border {
+		border-left: 1px solid grey;
+		border-right: 1px solid grey;
+		border-size: 20px;
+	}
+	.row {
+		margin-bottom: 12px;
+		text-align: center;
+		h4, h3{
+			width: 100%;
+			text-align: center;
+			margin-top: 10px;
+			margin-bottom: 10px;
+		}
+	}	
+	label {
+		margin: 0 5px 0 auto;
+	}
+	input, textarea{
+		background-color: rgba(250,250,250,.5);
+		margin: 0 auto 0 5px;
+	}
+	.actions input{
+		margin: 0 auto;
+		width: 150px;
+		padding: 5px;
+		text-align: center;
+	}
+	#close3 {
+		right: 15px;
+		top: 10px;
+		font-family: 'Permanent Marker';
+		position: absolute;
+		cursor: pointer;
+	}
+}
 .showvenue {
 	#map {
 		height: 500px;

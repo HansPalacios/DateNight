@@ -24,8 +24,10 @@ Category.create([
 
 	{name: 'Suit & Tie', parent_id: 2},
 	{name: 'Classy & Casual', parent_id: 2},
-	{name: 'Retro & Hipster', parent_id: 2},
+	{name: 'Hipster & Biergartens', parent_id: 2},
 	{name: 'Quick Bite', parent_id: 2},
+	{name: 'Vegan/Vegetarian', parent_id: 2},
+
 
 	{name: 'Athletic', parent_id: 3},
 	{name: 'Relaxed fun', parent_id: 3},

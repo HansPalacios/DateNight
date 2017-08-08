@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', function () {
 	var newbutton = document.querySelector( '.newbutton' )
 	var createvenue = document.querySelector( '.createvenue' )
-	var close = document.getElementById( 'close' )
+	var close3 = document.getElementById( 'close3' )
 
 
 	if( newbutton )
@@ -23,8 +23,8 @@ document.addEventListener('DOMContentLoaded', function () {
 			placeAddress.value = myplaceAddress.textContent;
 	});
 
-	if( close )
-	close.addEventListener('click', function(event) {
+	if( close3 )
+	close3.addEventListener('click', function(event) {
 			console.log(event);
 			createvenue.style.display = 'none';
 	});

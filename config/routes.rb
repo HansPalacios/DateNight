@@ -11,7 +11,6 @@ Rails.application.routes.draw do
         sessions: 'users/sessions'
       }
   get '/map' => 'map#index'  
-  get '/search' => 'map#search'  
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   get 'venues/:venue_id/star/:rating' => 'ratings#update', as: :venue_rating
   
