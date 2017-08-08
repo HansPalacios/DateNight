@@ -51,7 +51,7 @@
   <span id="place-phone"></span><br>
   
   <% if user_signed_in? && current_user.admin? %>Place ID: <span id="place-id"></span><% end %><br>
-  <button id="createvenuebutton">New Venue</button>
+  <button class="newbutton">New Venue</button>
 </div>
 <%= render '/map/new' %>
 <script>

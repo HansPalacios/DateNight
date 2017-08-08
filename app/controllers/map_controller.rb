@@ -4,7 +4,10 @@ class MapController < ApplicationController
   end
   def search
   	@venues = Venue.all
-  	@venue = Venue.new(venue_params)
+  	@venue = Venue.new
+  end
+  def create
+    @venue = Venue.new(venue_params)
 
     respond_to do |format|
       if @venue.save
@@ -16,16 +19,13 @@ class MapController < ApplicationController
       end
     end
   end
-  def create
-    
-  end
    def set_venue
       @venue = Venue.find(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def venue_params
-      params.require(:venue).permit(:name, :bio, :address, :phone, :image, :rating_id, :favorite_id, :bar, :restaurant, :activity, :sponsor)
+      params.require(:venue).permit(:name, :bio, :address, :phone, :image, :rating_id, :bar, :restaurant, :activity, :google_rating )
     end
 
 end

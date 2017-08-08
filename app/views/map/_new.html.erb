@@ -1,4 +1,4 @@
-<div id="createvenue" class="row">
+<div class="createvenue" class="row">
 	<div id="close">x</div>
 	<%= form_with(model: @venue, local: true) do |form| %>
 	  <% if @venue.errors.any? %>
@@ -6,7 +6,7 @@
 	      <h2><%= pluralize(venue.errors.count, "error") %> prohibited this venue from being saved:</h2>
 
 	      <ul>
-	      <% @venue.error.full_messages.each do |message| %>
+	      <% @venue.errors.full_messages.each do |message| %>
 	        <li><%= message %></li>
 	      <% end %>
 	      </ul>
@@ -15,7 +15,8 @@
 
 	  <div class="field row">
 	    <%= form.label :name %>
-	    <%= form.text_field :name, id: 'place-name'%>
+	    <%= form.text_field :name, id: 'placename'%>
+	    <span id="place-name"></span>
 	  </div>
 
 	  <div class="field row">
@@ -25,12 +26,14 @@
 
 	  <div class="field row">
 	    <%= form.label :address %>
-	    <%= form.text_field :address, id: "place-address" %>
+	    <%= form.text_field :address, id: "placeaddress" %>
+	    <span id="place-address"></span>
 	  </div>
 
 	  <div class="field row">
 	    <%= form.label :phone %>
-	    <%= form.text_field :phone, id: "place-phone" %>
+	    <%= form.text_field :phone, id: "placephone" %>
+	    <span id="place-phone"></span>
 	  </div>
 
 	  <div class="field row">
@@ -60,7 +63,8 @@
 
 	  <div class="field row">
 	    <%= form.label :google_rating %>
-	    <%= form.check_box :google_rating, id: "place-rating" %>
+	    <%= form.number_field :google_rating, id: "placerating" %>
+	    <span id="place-rating"></span>
 	  </div>
 
 	  <div class="actions">
