@@ -14,52 +14,62 @@
 <!-- bars and clubs -->
 
   <div class="row" id="bars">
-    <div class="col-md-3">
+  <div class="col-md-2"></div>
+    <div class="col-md-2">
       <h4 class="catbutton active" id="music">Music</h4>
     </div>
-    <div class="col-md-3">
+    <div class="col-md-2">
       <h4 class="catbutton" id="dancing">Dancing</h4>
     </div>
-    <div class="col-md-3">
+    <div class="col-md-2">
       <h4 class="catbutton" id="rooftop">Rooftop</h4>
     </div>
-    <div class="col-md-3">
+    <div class="col-md-2">
       <h4 class="catbutton" id="relaxed">Relaxed</h4>
     </div>
+    <div class="col-md-2"></div>
   </div>
 
 <!-- restaurants -->
 
   <div class="row" id="restaurants">
-    <div class="col-md-3">
+    <div class="col-md-1"></div>
+    <div class="col-md-2">
       <h4 class="catbutton" id="suit">Suit & Tie</h4>
     </div>
-    <div class="col-md-3">
-      <h4 class="catbutton" id="classy">Classy & Casual</h4>
+    <div class="col-md-2">
+      <h4 class="catbutton" id="classy">Classy & Semi-Casual</h4>
     </div>
-    <div class="col-md-3">
-      <h4 class="catbutton" id="retro">Retro & Hipster</h4>
+    <div class="col-md-2">
+      <h4 class="catbutton" id="retro">Hipster & Biergartens</h4>
     </div>
-    <div class="col-md-3">
+    <div class="col-md-2">
       <h4 class="catbutton" id="quick">Quick Bite</h4>
     </div>
+    <div class="col-md-2">
+      <h4 class="catbutton" id="vegan">Vegan/Vegetarian</h4>
+    </div>
+    <div class="col-md-1"></div>
+
   </div>
 
 <!-- activities -->
 
   <div class="row" id="activities">
-    <div class="col-md-3">
+    <div class="col-md-2"></div>
+    <div class="col-md-2">
       <h4 class="catbutton" id="athletic">Athletic</h4>
     </div>
-    <div class="col-md-3">
+    <div class="col-md-2">
       <h4 class="catbutton" id="relaxedfun">Relaxed fun</h4>
     </div>
-    <div class="col-md-3">
+    <div class="col-md-2">
       <h4 class="catbutton" id="day">Day trip</h4>
     </div>
-    <div class="col-md-3">
+    <div class="col-md-2">
       <h4 class="catbutton" id="free">Free</h4>
     </div>
+    <div class="col-md-2"></div>
   </div>
 
   <div class="row newvenue">
@@ -93,11 +103,11 @@
                 </div>
                 <div class="row">
                   <p class="col-md-5 ratetitle">Yelp:</p>
-                  <span style="width:<%= 23 * venue.mean_rating %>px" id="stars"></span>
+                  <span style="width:<%= 23 * venue.google_rating%>px" id="stars"></span>
                 </div>
                 <div class="row">
                   <p class="col-md-5 ratetitle">Google:</p>
-                  <span style="width:<%= 23 * venue.mean_rating %>px" id="stars"></span>
+                  <span style="width:<%= 23 * venue.yelp_rating %>px" id="stars"></span>
                 </div>
               </div>
             </article>

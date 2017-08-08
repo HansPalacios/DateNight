@@ -109,6 +109,8 @@ ActiveRecord::Schema.define(version: 20170807175052) do
     t.integer "favorite_id"
     t.integer "venuecategory_id"
     t.boolean "sponsor"
+    t.float "google_rating"
+    t.float "yelp_rating"
     t.float "latitude"
     t.float "longitude"
     t.datetime "created_at", null: false

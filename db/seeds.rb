@@ -7,9 +7,9 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 Venue.create([
 	{name: 'Le Bain', bio: '
-Theres a disco, bar, (seasonal) plunge pool & crêperie, all on the roof of the Standard Hotel.', address: 'The Standard, High Line, 848 Washington St, New York, NY 10014', phone: '(212) 645-7600', image: File.new("#{Rails.root}/images/lebain.jpg")},
-	{name: 'Marquee', bio: 'Colorful, multi-tiered dance club featuring 30-foot ceilings, LED screens & plenty of night owls.', address: '289 10th Avenue, New York, NY 10001', phone:'(646) 473-0202', image: File.new("#{Rails.root}/images/marquee.jpg")},
-	{name: 'Manhattan Kayak + SUP', bio: 'Evening and night tours of the manhattan skyline, or a day trip to the statue of liberty', address: '555 12th Ave, New York, NY 10019', phone:'(212) 924-1788', image: File.new("#{Rails.root}/images/manhattankayak.jpg")}
+Theres a disco, bar, (seasonal) plunge pool & crêperie, all on the roof of the Standard Hotel.', address: 'The Standard, High Line, 848 Washington St, New York, NY 10014', phone: '(212) 645-7600', image: File.new("#{Rails.root}/images/lebain.jpg"), google_rating: 3.9, yelp_rating: 3},
+	{name: 'Marquee', bio: 'Colorful, multi-tiered dance club featuring 30-foot ceilings, LED screens & plenty of night owls.', address: '289 10th Avenue, New York, NY 10001', phone:'(646) 473-0202', image: File.new("#{Rails.root}/images/marquee.jpg"), google_rating: 3.1, yelp_rating: 2},
+	{name: 'Manhattan Kayak + SUP', bio: 'Evening and night tours of the manhattan skyline, or a day trip to the statue of liberty', address: '555 12th Ave, New York, NY 10019', phone:'(212) 924-1788', image: File.new("#{Rails.root}/images/manhattankayak.jpg"), google_rating: 4.4, yelp_rating: 4.5}
 	])
 
 Category.create([
