@@ -2,15 +2,12 @@
   <div class="col-md-1"></div>
   <div class="col-md-10" id="forumindex">
     <div class="row">
-      <h2>Your Favorite Venues</h2>
+      <h2>DateNight Forum</h2>
     </div>
     <div class="row">
-      <em><h5>Or those venues you may want us to remove</h5></em>
+      <em><h5>Let us know how it went!</h5></em>
     </div>
     <% if user_signed_in? %>
-      <div class="row">
-        <%= link_to 'New Post', '#', :id => 'newpostbutton' %>
-      </div>
       <div class="row">
         <%= form_for :post, url: posts_path do |form| %>
           <% if @post && @post.errors.any? %>
@@ -23,24 +20,19 @@
               </ul>
             </div>
           <% end %>
-
-          <div class="field">
-            <%= form.label :post_name %>
-            <%= form.text_field :post_name, id: :post_post_name %>
-          </div>
-
-          <div class="field">
-            <%= form.label :venue %>
-            <%= form.select :venue_id, options_for_select( Venue.order('name ASC').pluck( :name, :id) ) %>
-          </div>
           
-
-          <div class="field">
-            <%= form.label :text %>
-            <%= form.text_area :text, id: :post_text %>
+          <div class=" row field">
+            <%= form.label :venue, :class => "col-md-4" %>
+            <%= form.select :venue_id, options_for_select( Venue.order('name ASC').pluck( :name, :id) ), :class => "col-md-8" %>
+          </div>
+          <div class=" row field">
+            <%= form.text_field :post_name, :placeholder => 'Title', :class => " postinput col-md-6" %>
           </div>
 
-          <div class="actions">
+          <div class=" row field">
+            <%= form.text_area :text, :placeholder => 'Your post content', :class => " postinput col-md-6" %>
+          </div>
+          <div class="col-md-2 actions">
             <%= form.submit %>
           </div>
         <% end %>
@@ -50,20 +42,33 @@
       <div class="col-md-12">
         <% @posts.each do |post| %>
           <div class="posts">
-            <div class="row color"></div>
             <div class="row">
               <div class="col-md-4">
                 <%= image_tag ( "#{post.venue.image}" ) %>
               </div>
               <div class="col-md-8">
                 <div class="row">
-                  <strong><%= post.post_name %></strong>
+                  <strong><%= link_to post do post.post_name  end %></strong>
                 </div>
                 <div class="row">
-                 <%= post.venue.name %>
+                 <%= link_to post.venue do post.venue.name  end %>
                 </div>
-                <div class="row">
+                <div class="row text">
                   <%= post.text %>
+                </div>
+                <% if user_signed_in? && post.user_id = current_user.id %>
+                  <div class="row">            
+                    <div class=" link">
+                      <%= link_to 'Edit', edit_post_path(post) %> |
+                      <%= link_to 'Delete', post, method: :delete, data: { confirm: 'Are you sure?' } %>
+                    </div>
+                  </div>
+                <% end %>
+                <div class="row">
+                  <div class="col-md-6"></div>
+                  <div class="col-md-6">
+                    <p><%= distance_of_time_in_words(Time.now, post.created_at, options = {})%></p><p>ago</p>
+                  </div>
                 </div>
               </div>
             </div>

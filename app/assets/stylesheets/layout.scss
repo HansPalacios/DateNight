@@ -5,7 +5,7 @@
 h2  {
 	font-family: 'Oleo Script', cursive;
 }
-h3, h4, h5, h6, p, a, li, th, td, button, .row {
+h3, h4, h5, h6, p, a, li, th, td, button, .row, input, textarea {
 	font-family: 'Merienda One', cursive;
 }
 a {
@@ -76,7 +76,7 @@ footer {
 	height: 130px;
 	padding: 20px;
 	background-color: white;
-	margin-top: 100px;
+	margin-top: 50px;
 	padding-bottom: 10px;
 	h5, #signout, #signup, #signin {
 		font-size: 12px;

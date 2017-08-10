@@ -102,45 +102,60 @@
 	#cat4 {
 		display: flex;
 	}
-	.eachvenue {
-		display: inline-block;
-		height: 400px;
-		width: 400px;
-		background-size: cover;
+.eachvenue {
+		height: 266px;
+		width: 550px;
+		padding: 8px;
 		margin: 50px;
-		border-radius:  10px;
-		border: 1px solid grey;
+		display: inline-block;
+		background-image: url('wood2.jpg');
+		background-size: cover;
+		background-position: 20% 0%;
+		.padding {
+			padding: 0;
+		}
 		.info {
-			margin: 25% 30px;
-			background-color: rgba(200,200,200,.8);
-			.row {
-				width: 100%;
+			background-color: rgba(255,255,255,.6);
+		}
+		.image {
+			// margin: 0 auto;
+			height: 250px;
+			width: 250px;
+			background-size: cover;
+			&:hover {
+ 				background-color: #fff;
+ 				opacity:.8;
+ 			}
+		}
+		.row {
+			width: 100%;
+			text-align: center;
+			margin: 0;
+			h3 {
+				width: 300px;
+				margin: 0 auto;
 				text-align: center;
-				margin: 0;
-				h3 {
-					width: 300px;
-					margin: 0 auto;
-					text-align: center;
-					margin: 15px;
-					text-shadow: 1px 1px grey;
-				}
-				p {
-					width: 300px;
-					margin: 10px auto;
-					text-align: center;
-					font-size: 13px;
-				}
-				.ratetitle {
+				margin: 15px;
+				text-shadow: 1px 1px grey;
+			}
+			p {
+				width: 300px;
+				margin: 10px auto;
+				text-align: center;
+				font-size: 13px;
+				
+			}
+		}
+		.venuerating{
+			text-align: center;
+			.ratetitle {
+				width: 100px;
 				margin: 0 0;
 				height: 29.47px;
 				padding-top: 7px;
-			}
+				display: inline-block;
 			}
 		}
-  	&:hover {
-  			background-color: #fff;
-  			opacity:.8;
-  	}
 	}
 	.venuenav {
 		width: 100%;
@@ -154,14 +169,14 @@
 			cursor: pointer;
 		}
 		.bigbutton {
-			background-color: rgba(255,210,77,.5);
+			background-color: rgba(228,164,70,.8);
 			margin: 0;
 			padding: 0;
 			&:hover {
-			background-color: rgba(255,219,113,1);
+			background-color: rgba(228,164,70,.6);
 			}
 			&.active {
-			background-color: rgba(255,219,113,1);
+			background-color: rgba(228,164,70,.6);
 			}
 		}
 		.restnav {
@@ -181,15 +196,15 @@
 			cursor: pointer;
 			height: 30px;
 			padding: 5px;
-			background-color: rgba(255,210,77,.5);
+			background-color: rgba(228,164,70,.8);
 			box-shadow: 1px 1px black;
 			overflow: hidden;
 			&:hover {
-			background-color: rgba(255,219,113,1);
-				box-shadow: none;
+			background-color: rgba(228,164,70,.6);
+				// box-shadow: none;
 			}
 			&.active {
-			background-color: rgba(255,219,113,1);
+			background-color: rgba(228,164,70,.6);
 				box-shadow: none;
 			}
 		}
@@ -211,7 +226,7 @@
 			text-align: center;
 			margin: 0 auto;
 			border: 1px solid grey;
-			background-color: rgba(255,235,176,1);
+			background-color: rgba(228,164,70,.8);
 		}
 	}
 }

@@ -8,11 +8,35 @@
 		<div class="row" id="sponsors">
 			<h2>Sponsors(image carousel)</h2>
 		</div>
-		<div class="row" id="forum"></div>
-		<div class="row">
-			<%= link_to posts_path do %>
-				<h2>Forum</h2>
-			<% end %>
+		<div class="row" id="homeforum">
+			<div class="row title">
+				<%= link_to posts_path do %>
+					<h2>Forum</h2>
+				<% end %>
+			</div>
+			<div class="row">
+				<% @posts.each do |post| %>
+          <div class="row posts">
+            <div class="col-md-4">
+              <%= image_tag ( "#{post.venue.image}" ) %>
+            </div>
+            <div class="col-md-8">
+              <div class="row">
+                <strong><%= link_to post do post.post_name  end %></strong>
+              </div>
+              <div class="row">
+               <%= link_to post.venue do post.venue.name  end %>
+              </div>
+              <div class="row">
+                <div class="col-md-4"></div>
+                <div class="col-md-8">
+                  <p><%= distance_of_time_in_words(Time.now, post.created_at, options = {})%></p><p>ago</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        <% end %>
+			</div>
 		</div>
 	</div>
 	<div class="col-md-8 index">

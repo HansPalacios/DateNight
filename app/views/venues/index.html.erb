@@ -80,38 +80,46 @@
 
   <% @categories.each do |category|%>
     <div class="row showcategory" id="cat<%=category.id%>">
-    <h2>Category: <%=category.name %></h2>
+    <!-- <h2>Category: <%=category.name %></h2> -->
       <% category.venues.each do |venue| %>
-          <style media="screen">
-            .venue-<%= venue.id %> { background-image: url(<%= venue.image %>); }
-          </style>
-          <%= link_to venue do %>
-            <article class=" eachvenue venue-<%=venue.id%>">
-              <div class="info">
-                <div class="row">
-                  <h3><%=venue.name %></h3>
-                </div>
-                <div class="row">
-                 <p><%=venue.address %></p>
-                </div>
-                <div class="row">
-                 <p><%=venue.phone %></p>
-                </div>
-                <div class="row">
-                  <p class="col-md-12 ratetitle">DateNight:</p>
-                  <span style="width:<%= 23 * venue.mean_rating %>px" id="stars"></span>
-                </div>
-                <div class="row">
-                  <p class="col-md-12 ratetitle">Yelp:</p>
-                  <span style="width:<%= 23 * venue.google_rating%>px" id="stars"></span>
-                </div>
-                <div class="row">
-                  <p class="col-md-12 ratetitle">Google:</p>
-                  <span style="width:<%= 23 * venue.yelp_rating %>px" id="stars"></span>
-                </div>
+
+        <style>
+          .venue-<%= venue.id %> { background-image: url(<%= venue.image %>); }
+        </style>
+
+        <div class="eachvenue">
+        <div class="row">
+            <div class="col-md-6 padding">
+              <%= link_to venue do %>
+                <article class=" image venue-<%=venue.id%>"></article>
+              <% end %>
+            </div>
+
+            <div class="col-md-6 padding info">
+              <div class="row">
+                <h3><%=venue.name %></h3>
               </div>
-            </article>
-          <% end %>
+              <div class="row">
+               <p><%=venue.address %></p>
+              </div>
+              <div class="row">
+               <p><%=venue.phone %></p>
+              </div>
+              <div class="row venuerating">
+                <p class="ratetitle">DateNight:</p>
+                <span style="width:<%= 23 * venue.mean_rating %>px" id="stars"></span>
+              </div>
+              <div class="row venuerating">
+                <p class="ratetitle">Yelp:</p>
+                <span style="width:<%= 23 * venue.google_rating%>px" id="stars"></span>
+              </div>
+              <div class="row venuerating">
+                <p class="ratetitle">Google:</p>
+                <span style="width:<%= 23 * venue.yelp_rating %>px" id="stars"></span>
+              </div>
+            </div>
+          </div>
+        </div>
       <% end %>
     </div>
   <% end %>
