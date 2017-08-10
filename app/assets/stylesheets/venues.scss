@@ -3,12 +3,12 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 .createvenue {
 	width: 600px;
-	height: 600px;
-	background-color: rgba(0,0,0,0.8);
+	height: 650px;
+	background-color: rgba(0,0,0,0.9);
 	border: 2px solid grey;
-	padding: 30px 50px;
+	padding: 15px 30px;
 	position: fixed;
-	top: 10%;
+	top: 7%;
 	left: 25%;
 	text-align: center;
 	z-index: 2;
@@ -41,11 +41,13 @@
 		margin: 0 5px 0 auto;
 	}
 	input, textarea{
-		background-color: rgba(250,250,250,.5);
+		background-color: rgba(250,250,250,.6);
 		margin: 0 auto 0 5px;
+		padding: 2px;
+		font-family: 'Merienda One', cursive;
 	}
 	.actions input{
-		margin: 0 auto;
+		margin: 8px auto;
 		width: 150px;
 		padding: 5px;
 		text-align: center;
@@ -53,7 +55,7 @@
 	#close3 {
 		right: 15px;
 		top: 10px;
-		font-family: 'Permanent Marker';
+		font-family: 'Merienda One', cursive;
 		position: absolute;
 		cursor: pointer;
 	}
@@ -90,7 +92,6 @@
 		width: 100%;
 		left: 0;
 		right: 0;
-		background-color: rgba(200,200,200,.4);
 		margin: 10px;
 		padding: 10px;
 		text-align: center;
@@ -146,7 +147,6 @@
 		height: 50px;
 		text-align: center;
 		margin: 0;
-		background-color: rgba(117,0,0,.92);
 		h3 {
 			padding: 10px;
 			width: 100%;
@@ -154,14 +154,14 @@
 			cursor: pointer;
 		}
 		.bigbutton {
-			background-color: rgba(138,20,20,1);
+			background-color: rgba(255,210,77,.5);
 			margin: 0;
 			padding: 0;
 			&:hover {
-				background-color: rgba(169,0,0,1);
+			background-color: rgba(255,219,113,1);
 			}
 			&.active {
-				background-color: rgba(169,0,0,1);
+			background-color: rgba(255,219,113,1);
 			}
 		}
 		.restnav {
@@ -175,21 +175,21 @@
 		text-align: center;
 		padding: 10px;
 		margin: 0;
-		background-color: rgba(0,0,0,.14);
+		// background-color: rgba(255,235,176,1);
 		h4 {
 			border-radius: 10px;
 			cursor: pointer;
 			height: 30px;
-			padding-top: 5px;
-			background-color: rgba(138,20,20,1);
+			padding: 5px;
+			background-color: rgba(255,210,77,.5);
 			box-shadow: 1px 1px black;
 			overflow: hidden;
 			&:hover {
-				background-color: rgba(169,0,0,1);
+			background-color: rgba(255,219,113,1);
 				box-shadow: none;
 			}
 			&.active {
-				background-color: rgba(169,0,0,1);
+			background-color: rgba(255,219,113,1);
 				box-shadow: none;
 			}
 		}
@@ -211,7 +211,7 @@
 			text-align: center;
 			margin: 0 auto;
 			border: 1px solid grey;
-			background-color: rgba(218,194,194,1);
+			background-color: rgba(255,235,176,1);
 		}
 	}
 }

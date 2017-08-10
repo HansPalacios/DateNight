@@ -13,5 +13,5 @@ Rails.application.routes.draw do
   get '/map' => 'map#index'  
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   get 'venues/:venue_id/star/:rating' => 'ratings#update', as: :venue_rating
-  
+  get 'showvenue' => 'venues#show'
 end

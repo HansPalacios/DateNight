@@ -1,25 +1,75 @@
-
-<meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+<!-- css -->
 <style>
-
   #map {
     height: 600px;
-    width: 800px;
+    width: 100%;
     margin: 50px auto;
   }
-  
+  .mapimage {
+    width: 90%;
+    margin: 0 auto;
+  }
 </style>
 
-<div id="map"></div>
+
+<!-- html -->
+<div class="row">
+  <div class="col-md-4 venuebox">
+    <div class="row">
+      <h2>Selected Venue</h2>
+    </div>
+  </div>
+  <div class="col-md-7">
+    <div id="map"></div>
+  </div>
+</div>
 
 
+<!-- javascript -->
 <script>
-  
 function initMap() {
-  
+  var venuebox = document.querySelector('.venuebox');
+  var venueinfo = [
+    <% @venues.each do |venue| %>
+        ['<div class="row">\r\
+      <div class="col-md-6">\r\
+        <%= image_tag ( "#{venue.image}" ), :class => "mapimage" %>\r\
+      </div>\r\
+      <div class="col-md-6">\r\
+        <div class="row">\r\
+          <strong><%= venue.name %></strong>\r\
+        </div>\r\
+        <div class="row">\r\
+          <%= venue.address %>\r\
+        </div>\r\
+        <div class="row">\r\
+          <%=venue.phone %>\r\
+        </div>\r\
+      </div>\r\
+    </div>\r\
+    <div class="row">\r\
+      <p class="ratetitle">DateNight:</p>\r\
+      <span style="width:<%= 23 * venue.mean_rating %>px" id="stars"></span>\r\
+    </div>\r\
+    <div class="row">\r\
+      <p class="ratetitle">Yelp:</p>\r\
+      <span style="width:<%= 23 * venue.google_rating%>px" id="stars"></span>\r\
+    </div>\r\
+    <div class="row">\r\
+      <p class="ratetitle">Google:</p>\r\
+      <span style="width:<%= 23 * venue.yelp_rating %>px" id="stars"></span>\r\
+    </div>\r\
+    <div class="row">\r\
+      <div class="col-md-12 button">\r\
+        <%= link_to new_post_path do %><button>Rave About This Venue!</button><% end %>\r\
+      </div>\r\
+    </div>'],
+    <% end %>
+  ];
+
   var locations = [
     <% @venues.each do |venue| %>
-      ['<strong><%= venue.name %></strong><br>\r\
+      ['<a id="venue-<%= venue.id %>"><strong><%= venue.name %></strong><a><br><br>\r\
           <%= venue.address %><br>\r\
           <%=venue.phone %>', <%= venue.latitude %>, <%= venue.longitude %>],
     <% end %>
@@ -31,6 +81,9 @@ function initMap() {
     mapTypeId: google.maps.MapTypeId.ROADMAP
   });
 
+  var transitLayer = new google.maps.TransitLayer();
+       transitLayer.setMap(map);
+
   var infowindow = new google.maps.InfoWindow({});
 
   var marker, i;
@@ -41,12 +94,22 @@ function initMap() {
       map: map
     });
 
-    google.maps.event.addListener(marker, 'click', (function (marker, i) {
+    google.maps.event.addListener(marker, 'mouseover', (function (marker, i) {
       return function () {
         infowindow.setContent(locations[i][0]);
         infowindow.open(map, marker);
       }
     })(marker, i));
+    google.maps.event.addListener(marker, 'mouseout', (function (marker, i) {
+      return function () {
+        infowindow.close(map, marker);
+      }
+    })(marker, i));
+    google.maps.event.addListener(marker, 'click', (function (marker, i) {
+      return function () {
+        venuebox.innerHTML = (venueinfo[i][0]);
+        }
+      })(marker, i));
   }
 }
 </script>

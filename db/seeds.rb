@@ -98,4 +98,6 @@ Favorite.create([
 	{user_id: 1, venue_id: 16}
 	])
 
-
+Post.create([
+	{post_name: 'Amazing Night!!!', text: "Girlfriends been bugging me to going out and have a fun night clubbing and dancing, and she actually screamed in excitement when the Uber stopped in front of Le Bain",user_id: 1, venue_id: 1}
+	])

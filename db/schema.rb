@@ -41,11 +41,7 @@ ActiveRecord::Schema.define(version: 20170807175052) do
 
   create_table "posts", force: :cascade do |t|
     t.string "post_name"
-    t.string "venue_name"
-    t.string "address"
-    t.string "phone"
     t.text "text"
-    t.string "image"
     t.integer "rating_id"
     t.integer "favorite_id"
     t.integer "venue_id"
@@ -60,7 +56,7 @@ ActiveRecord::Schema.define(version: 20170807175052) do
     t.integer "venue_id"
     t.integer "user_id"
     t.integer "post_id"
-    t.integer "rating"
+    t.float "rating"
     t.index ["post_id"], name: "index_ratings_on_post_id"
     t.index ["user_id"], name: "index_ratings_on_user_id"
     t.index ["venue_id"], name: "index_ratings_on_venue_id"

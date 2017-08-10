@@ -5,16 +5,19 @@ class PostsController < ApplicationController
   # GET /posts.json
   def index
     @posts = Post.all
+    @venues = Venue.all
   end
 
   # GET /posts/1
   # GET /posts/1.json
   def show
+    @venues = Venue.all
   end
 
   # GET /posts/new
   def new
     @post = Post.new
+    @venues = Venue.all
   end
 
   # GET /posts/1/edit
@@ -24,14 +27,18 @@ class PostsController < ApplicationController
   # POST /posts
   # POST /posts.json
   def create
+    #@posts = Post.all
     @post = Post.new(post_params)
+    @post.user_id = current_user.id
+    #@venues = Venue.all
+    #@post = Post.new(venue_id: params[:venue_id], user_id: current_user.id)
 
     respond_to do |format|
       if @post.save
         format.html { redirect_to @post, notice: 'Post was successfully created.' }
-        format.json { render :show, status: :created, location: @post }
+        format.json { render :index, status: :created, venue: @post }
       else
-        format.html { render :new }
+        format.html { render :index}
         format.json { render json: @post.errors, status: :unprocessable_entity }
       end
     end
@@ -43,7 +50,7 @@ class PostsController < ApplicationController
     respond_to do |format|
       if @post.update(post_params)
         format.html { redirect_to @post, notice: 'Post was successfully updated.' }
-        format.json { render :show, status: :ok, location: @post }
+        format.json { render :show, status: :ok, venue: @post }
       else
         format.html { render :edit }
         format.json { render json: @post.errors, status: :unprocessable_entity }
@@ -69,6 +76,6 @@ class PostsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def post_params
-      params.require(:post).permit(:post_name, :location_name, :address, :phone, :text, :image, :rating_id, :favorite_id, :bar, :restaurant, :activity, :user_id, :location_id)
+      params.require(:post).permit(:post_name, :text, :user_id, :venue_id)
     end
 end

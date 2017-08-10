@@ -17,7 +17,7 @@
 	  </div>
 	  <div class="field row">
 	    <%= form.label :name %>
-	    <%= form.text_field :name, id: 'placename'%>
+	    <%= form.text_field :name, id: "placename"%>
 	  </div>
 
 	  <div class="field row">
@@ -27,7 +27,7 @@
 
 	  <div class="field row">
 	    <%= form.label :address %>
-	    <%= form.text_field :address, id: "place-address" %>
+	    <%= form.text_field :address, id: "placeaddress" %>
 	  </div>
 
 	  <div class="field row">
@@ -36,23 +36,28 @@
 	  </div>
 
 	  <div class="field row">
-	    <%= form.label :rating_id %>
-	    <%= form.number_field :rating_id, id: :venue_rating_id %>
+	    <%= form.label "Our Rating" %>
+	    <%= form.number_field :rating_id, :step => "0.01", id: :venue_rating_id %>
 	  </div>
 
 	  <div class="field row">
 	    <%= form.label :google_rating %>
-	    <%= form.number_field :google_rating, id: "placerating" %>
+	    <%= form.number_field :google_rating, :step => "0.01", id: "placerating" %>
 	  </div>
 
 	   <div class="field row">
 	    <%= form.label :yelp_rating %>
-	    <%= form.number_field :yelp_rating %>
+	    <%= form.number_field :yelp_rating, :step => "0.01" %>
 	  </div>
 
 	  <div class="row">
 	  	<%= form.label "Image: " %>
-	    <%= form.file_field :image, :id => "image" %>
+	    <%= form.file_field :image, id: "image" %>
+	  </div>
+
+	  <div class="row">
+	  	<%= form.label "Hours " %>
+	    <%= form.text_field :hrs, id: "placehrs" %>
 	  </div>
 
 	  <div class="field row">
@@ -62,19 +67,19 @@
 	  		</div>
 	  		<div class="row">
 	  			<%= form.label :music %>
-	  			<%= form.check_box :music, id: :venue_music %>
+	  			<%= form.check_box :category, {:multiple => true}, "music", nil %>
 	  		</div>
 	  		<div class="row">
 	  			<%= form.label :dancing %>
-	  			<%= form.check_box :dancing, id: :venue_dancing %>
+	  			<%= form.check_box :category, {:multiple => true}, "dancing", nil %>
 	  		</div>
 	  		<div class="row">
 	  		<%= form.label :rooftop %>
-	  			<%= form.check_box :rooftop, id: :venue_rooftop %>
+	  			<%= form.check_box :category, {:multiple => true}, "rooftop", nil %>
 	  		</div>
 	  		<div class="row">
 	  			<%= form.label :relaxed %>
-	  			<%= form.check_box :relaxed, id: :venue_relaxed %>
+	  			<%= form.check_box :category, {:multiple => true}, "relaxed", nil %>
 	  		</div>
 	  	</div>
 	  	<div class="col-md-4 border checklist">
@@ -83,23 +88,23 @@
 	  		</div>
 	  		<div class="row">
 	  			<%= form.label "Suit & Tie" %>
-	  			<%= form.check_box :Suit_and_Tie, id: 8  %>
+	  			<%= form.check_box :category, {:multiple => true}, "Suit & Tie", nil %>
 	  		</div>
 	  		<div class="row">
 	  			<%= form.label "Classy & Casual" %>
-	  			<%= form.check_box :Classy_and_Casual, id: 9 %>
+	  			<%= form.check_box :category, {:multiple => true}, "Classy & Casual", nil %>
 	  		</div>
 	  		<div class="row">
 	  			<%= form.label "Hipster & Biergartens" %>
-	  			<%= form.check_box :Hipster_and_biergartens, id: 10 %>
+	  			<%= form.check_box :category, {:multiple => true}, "Hipster & Biergartens", nil %>
 	  		</div>
 	  		<div class="row">
 	  			<%= form.label :Quick_Bite %>
-	  			<%= form.check_box :Quick_Bite, id: 11 %>
+	  			<%= form.check_box :category, {:multiple => true}, "Quick Bite", nil %>
 	  		</div>
 	  		<div class="row">
 	  			<%= form.label :Vegan %>
-	  			<%= form.check_box :Vegan, id: 12 %>
+	  			<%= form.check_box :category, {:multiple => true}, "Vegan/Vegetarian", nil %>
 	  		</div>
 	  	</div>
 	  	<div class="col-md-4 checklist">
@@ -108,19 +113,19 @@
 	  		</div>
 	  		<div class="row">
 	  			<%= form.label :athletic %>
-	  			<%= form.check_box :athletic, id: 13 %>
+	  			<%= form.check_box :category, {:multiple => true}, "Athletic", nil %>
 	  		</div>
 	  		<div class="row">
 	  			<%= form.label :Relaxed_Fun %>
-	  			<%= form.check_box :Relaxed_Fun, id: 14 %>
+	  			<%= form.check_box :category, {:multiple => true}, "Relaxed Fun", nil %>
 	  		</div>
 	  		<div class="row">
 	  			<%= form.label :Day_Trip %>
-	  			<%= form.check_box :Day_Trip, id: 15 %>
+	  			<%= form.check_box :category, {:multiple => true}, "Day Trip", nil %>
 	  		</div>
 	  		<div class="row">
 	  			<%= form.label :Free %>
-	  			<%= form.check_box :Free, id: 16 %>
+	  			<%= form.check_box :category, {:multiple => true}, "Free", nil %>
 	  		</div>
 	  	</div>
 	  </div>

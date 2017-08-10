@@ -1,9 +1,20 @@
 <div class="row">
-	<div id="sponsors">
-		<h2>Sponsors(image carousel)</h2>
-	</div>
+	<% link_to new_post_path do %>
+		<button>New Post</button>
+	<% end %>
 </div>
 <div class="row">
+	<div class="col-md-3 leftbar" >
+		<div class="row" id="sponsors">
+			<h2>Sponsors(image carousel)</h2>
+		</div>
+		<div class="row" id="forum"></div>
+		<div class="row">
+			<%= link_to posts_path do %>
+				<h2>Forum</h2>
+			<% end %>
+		</div>
+	</div>
 	<div class="col-md-8 index">
 		<div class="row">
 			<h3>First Choose the Type of Date</h3>
@@ -44,20 +55,8 @@
 			<p>Scared to pick out the perfect date?</p>
 			<p>Second-guessing and going through ideas faster than youre thinking of them?</p>
 			<p>Well stop.</p>
-			<p>We'll take care of the location, now you just have to spend a few hours deciding on what to wear</p>
+			<p>We'll take care of the location, now you just have to ask them out, and then spend a few hours deciding on what to wear</p>
 		</div>
 	</div>
-	<div class="col-md-3" id="forum">
-		<div class="row">
-			<%= link_to posts_path do %>
-				<h2>Forum</h2>
-			<% end %>
-		</div>
-		<div class="row">
-			<% link_to new_post_path do %>
-				<button>New Post</button>
-			<% end %>
-		</div>
-	</div>
-	<div class="col-md-1"></div>
+	
 </div>

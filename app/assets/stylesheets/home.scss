@@ -4,10 +4,16 @@
 #sponsors {
 	width: 100%;
 	height: 150px;
-	margin: 50px 0;
-	background-color: rgba(100,100,100,.5);
+	margin-bottom: 20px;
+	background-image: url('header2.jpg');
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: 50% 50%;
 	text-align: center;
 	padding-top: 50px;
+}
+.leftbar {
+	margin: 20px;
 }
 .index {
 	margin-top: 50px;

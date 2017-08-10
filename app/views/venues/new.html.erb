@@ -13,7 +13,7 @@
     border: 1px solid transparent;
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
     box-sizing: border-box;
-    font-family: Roboto;
+		font-family: 'Merienda One', cursive;
     font-size: 15px;
     font-weight: 300;
     height: 29px;
@@ -27,15 +27,26 @@
 
   .controls:focus {
     border-color: #4d90fe;
+    font-family: 'Merienda One', cursive;
+
   }
   .title {
     font-weight: bold;
+    font-family: 'Merienda One', cursive;
+
+  }
+  #place-hrs, #place-rating {
+  	display: none;
   }
   #infowindow-content {
     display: none;
   }
   #map #infowindow-content {
     display: inline;
+    font-family: 'Merienda One', cursive;
+  }
+  span {
+  	margin-bottom: 15px;
   }
 
 </style>
@@ -43,15 +54,12 @@
     placeholder="Enter a location">
 <div id="map"></div>
 <div id="infowindow-content">
-  <span id="place-icon"  class="title"></span>
-  <span id="place-name"  class="title"></span><br><span id="place-closed"></span><br>
-  Rating: <span id="place-rating"></span><br>
-  <span id="place-open"></span><br>
-  <span id="place-address"></span><br>
-  <span id="place-phone"></span><br>
-  
-  <% if user_signed_in? && current_user.admin? %>Place ID: <span id="place-id"></span><% end %><br>
-  <button class="newbutton">New Venue</button>
+  <h4 id="place-name"  class="title"></h4>
+  <h5 id="place-rating"></h5>
+  <h5 id="place-hrs"></h5>
+  <h5 id="place-address"></h5>
+  <h5 id="place-phone"></h5>
+  <button class="newbutton">New Venue</button><br>
 </div>
 <%= render '/venues/createform' %>
 <script>
@@ -104,21 +112,12 @@
       infowindowContent.children['place-name'].textContent = place.name;
       infowindowContent.children['place-rating'].textContent =
           place.rating;
-      <% if user_signed_in? && current_user.admin? %>
-        infowindowContent.children['place-id'].textContent = place.place_id;
-      <% end %>
       infowindowContent.children['place-address'].textContent =
           place.formatted_address;
       infowindowContent.children['place-phone'].textContent =
           place.formatted_phone_number;
-      infowindowContent.children['place-open'].textContent =
-          place.opening_hours.open_now;
-      infowindowContent.children['place-icon'].textContent =
-          place.opening_icon;
-      infowindowContent.children['place-closed'].textContent =
-          place.permanently_closed;
-      infowindowContent.children['place-photo'].textContent =
-          place.photos[0];
+      infowindowContent.children['place-hrs'].textContent =
+          place.opening_hours.weekday_text;
 
       infowindow.open(map, marker);
     });
