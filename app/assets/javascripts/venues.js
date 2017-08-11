@@ -1,4 +1,9 @@
 document.addEventListener('DOMContentLoaded', function () {
+
+	var barcat = document.querySelector( '#barcat' )
+	var restcat = document.querySelector( '#restcat' )
+	var actcat = document.querySelector( '#actcat' )
+
 	var barnav = document.querySelector( '.barnav' )
 	var restnav = document.querySelector( '.restnav' )
 	var actnav = document.querySelector( '.actnav' )
@@ -28,6 +33,58 @@ document.addEventListener('DOMContentLoaded', function () {
 	var venuesmap = document.querySelector( '.map' )
 	var openmapview = document.querySelector( '#openmapview' )
 	var openlistview = document.querySelector( '#openlistview' )
+
+//home page open main categories
+
+if( barcat )
+	barcat.addEventListener('click', function(event){
+		console.log(event);
+		if (venueslist.style.display != "none") {
+			updateVenues(4);
+		} else {
+			updateMap(4);
+		};
+  	catbuttons.forEach( function(button) {
+			if (button.classList.contains("active")) {
+				button.classList.remove("active");
+			}
+		});	
+		music.classList.add("active");
+	});
+
+if( restcat )
+	restcat.addEventListener('click', function(event){
+		console.log(event);
+		if (venueslist.style.display != "none") {
+			updateVenues(8);
+		} else {
+			updateMap(8);
+		};  	
+		catbuttons.forEach( function(button) {
+			if (button.classList.contains("active")) {
+				button.classList.remove("active");
+			}		
+		});
+		suit.classList.add("active");
+	});
+
+if( actcat)
+actcat.addEventListener('click', function(event){
+	console.log(event);
+		if (venueslist.style.display != "none") {
+			updateVenues(13);
+		} else {
+			updateMap(13);
+		};  	
+		catbuttons.forEach( function(button) {
+			if (button.classList.contains("active")) {
+				button.classList.remove("active");
+			}		
+		});
+		athletic.classList.add("active");
+	});
+
+
 
 //toggle map and list view
 if(openmapview)
@@ -89,10 +146,12 @@ if( actnav )
 	});
 
 // subcategories
-	
+
+//bars
+
 if( music )
 	music.addEventListener('click', function(){
-		if (venueslist.style.display == "block") {
+		if (venueslist.style.display != "none") {
 			updateVenues(4);
 		} else {
 			updateMap(4);
@@ -107,7 +166,7 @@ if( music )
 
 if( dancing )
 	dancing.addEventListener('click', function(){
-		if (venueslist.style.display == "block") {
+		if (venueslist.style.display != "none") {
 			updateVenues(5);
 		} else {
 			updateMap(5);
@@ -122,7 +181,7 @@ if( dancing )
 
 if( rooftop )
 	rooftop.addEventListener('click', function(){
-		if (venueslist.style.display == "block") {
+		if (venueslist.style.display != "none") {
 			updateVenues(6);
 		} else {
 			updateMap(6);
@@ -137,7 +196,7 @@ if( rooftop )
 
 if( relaxed )
 	relaxed.addEventListener('click', function(){
-		if (venueslist.style.display == "block") {
+		if (venueslist.style.display != "none") {
 			updateVenues(7);
 		} else {
 			updateMap(7);
@@ -150,9 +209,11 @@ if( relaxed )
 		relaxed.classList.add("active");
 	});
 
+//restaurants
+
 if( suit )
 	suit.addEventListener('click', function(){
-		if (venueslist.style.display == "block") {
+		if (venueslist.style.display != "none") {
 			updateVenues(8);
 		} else {
 			updateMap(8);
@@ -167,7 +228,7 @@ if( suit )
 
 if( classy )
 	classy.addEventListener('click', function(div){
-		if (venueslist.style.display == "block") {
+		if (venueslist.style.display != "none") {
 			updateVenues(9);
 		} else {
 			updateMap(9);
@@ -182,7 +243,7 @@ if( classy )
 
 if( retro )
 	retro.addEventListener('click', function(div){
-		if (venueslist.style.display == "block") {
+		if (venueslist.style.display != "none") {
 			updateVenues(10);
 		} else {
 			updateMap(10);
@@ -197,7 +258,7 @@ if( retro )
 
 if( quick )
 	quick.addEventListener('click', function(div){
-		if (venueslist.style.display == "block") {
+		if (venueslist.style.display != "none") {
 			updateVenues(11);
 		} else {
 			updateMap(11);
@@ -212,7 +273,7 @@ if( quick )
 
 if( vegan )
 	vegan.addEventListener('click', function(div){
-		if (venueslist.style.display == "block") {
+		if (venueslist.style.display != "none") {
 			updateVenues(12);
 		} else {
 			updateMap(12);
@@ -225,9 +286,11 @@ if( vegan )
 		vegan.classList.add("active");
 	});
 
+//activities
+
 if( athletic )
 	athletic.addEventListener('click', function(div){
-		if (venueslist.style.display == "block") {
+		if (venueslist.style.display != "none") {
 			updateVenues(13);
 		} else {
 			updateMap(13);
@@ -242,7 +305,7 @@ if( athletic )
 
 if( relaxedfun )
 	relaxedfun.addEventListener('click', function(div){
-		if (venueslist.style.display == "block") {
+		if (venueslist.style.display != "none") {
 			updateVenues(14);
 		} else {
 			updateMap(14);
@@ -257,7 +320,7 @@ if( relaxedfun )
 
 if( day )
 	day.addEventListener('click', function(div){
-		if (venueslist.style.display == "block") {
+		if (venueslist.style.display != "none") {
 			updateVenues(15);
 		} else {
 			updateMap(15);
@@ -272,7 +335,7 @@ if( day )
 
 if( free )
 	free.addEventListener('click', function(div){
-		if (venueslist.style.display == "block") {
+		if (venueslist.style.display != "none") {
 			updateVenues(16);
 		} else {
 			updateMap(16);
@@ -487,7 +550,17 @@ function updateMapAll () {
 				`)
 
 				  var venuebox = document.querySelector('.venuebox');
-				  var venueinfo = response.map(function(venue){
+				  	
+
+				  	var venueinfo = response.map(function(venue){
+				  		console.log(venue,venue.google_rating, venue.yelp_rating)
+				  	var yelp_rating = venue.google_rating * 23;
+				  	var google_rating = venue.yelp_rating * 23;
+				  	// var venrat = venue.ratings;
+						var sum = venue.ratings.reduce(function(sum, rating) { return sum + rating.rating; },0);
+						var avg = sum/venue.ratings.length
+							console.log( "sum, avg", sum, avg)
+												var mean_rating = avg * 23;
 				      return `<div class="info">\r\
 				          <div class="row">\r\
 				            <div class="col-md-6">\r\
@@ -507,15 +580,15 @@ function updateMapAll () {
 				          </div>\r\
 				          <div class="row">\r\
 				            <p class="ratetitle">DateNight:</p>\r\
-				            <span style="width:${23 * venue.mean_rating}px" id="stars"></span>\r\
+				            <span style="width:${mean_rating}px" id="stars"></span>\r\
 				          </div>\r\
 				          <div class="row">\r\
 				            <p class="ratetitle">Yelp:</p>\r\
-				            <span style="width:${23 * venue.google_rating}px" id="stars"></span>\r\
+				            <span style="width:${google_rating}px" id="stars"></span>\r\
 				          </div>\r\
 				          <div class="row">\r\
 				            <p class="ratetitle">Google:</p>\r\
-				            <span style="width:${23 * venue.yelp_rating}px" id="stars"></span>\r\
+				            <span style="width:${yelp_rating}px" id="stars"></span>\r\
 				          </div>\r\
 				          <div class="row">\r\
 				            <div class="col-md-12 button">\r\
@@ -546,9 +619,7 @@ function updateMapAll () {
 			  for (i = 0; i < locations.length; i++) {
 				    marker = new google.maps.Marker({
 				      position: new google.maps.LatLng(locations[i][1], locations[i][2]),
-				      map: map,
-				      visible: true,
-				      title: "Halp"
+				      map: map
 				    });
 				    marker.setMap(map);
 				    console.log(i, marker, locations)

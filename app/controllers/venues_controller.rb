@@ -2,7 +2,7 @@ class VenuesController < ApplicationController
   before_action :set_venue, only: [:show, :edit, :update, :destroy]
 
   def index
-    @venues = Venue.all
+    @venues = VenueCategory.where(category_id: 4).map{|vc| vc.venue}
     @ratings = Rating.all
     @favorites = Favorite.all
   end
