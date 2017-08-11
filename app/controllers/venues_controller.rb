@@ -3,9 +3,22 @@ class VenuesController < ApplicationController
 
   def index
     @venues = Venue.all
-    @categories = Category.where(id: (4..15))
     @ratings = Rating.all
     @favorites = Favorite.all
+  end
+
+  def category_feed
+    @venues = VenueCategory.where(category_id: params[:category_id]).map{|vc| vc.venue}
+    respond_to do |format|
+      format.json { render :index, status: :ok, venues: @venues }
+    end
+  end
+
+  def map_all
+    @venues = Venue.all
+    respond_to do |format|
+      format.json { render :index, status: :ok, venues: @venues }
+    end
   end
 
   # GET /venues/1

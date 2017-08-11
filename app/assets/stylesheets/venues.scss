@@ -1,6 +1,9 @@
 // Place all the styles related to the Locations controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+#venues {
+	display: block;
+}
 .map {
 	width: 100%;
 	display: none;
@@ -50,22 +53,25 @@
 		padding: 0;
 	}
 	.link {
-		border: 1px solid silver;
-		width: 100%;
-		padding: 5px;
-		text-align: center;
-		margin: 0 auto;
-		h2 {
 			width: 200px;
 			text-align: center;
-			margin: 0 auto;
-		}
-	}
+			margin: 10px auto;
+			padding: 5px;
+			background-color: rgba(250,230,200,.5);
+			}
 	#openmapview {
 		display: block;
+		cursor: pointer;
+		&:hover {
+			background-color: rgba(250,230,200,1);
+		}
 	}
 	#openlistview {
 		display: none;
+		cursor: pointer;
+		&:hover {
+			background-color: rgba(250,230,200,1);
+		}
 	}
 }
 .createvenue {
@@ -155,21 +161,7 @@
 	}
 }
 .venueindex {
-	.showcategory {
-		width: 100%;
-		left: 0;
-		right: 0;
-		margin: 10px;
-		padding: 10px;
-		text-align: center;
-	}
-	#cat5, #cat6, #cat7, #cat8, #cat9, #cat10, #cat11, #cat12, #cat13, #cat14, #cat15 {
-		display: none;
-	}
-	#cat4 {
-		display: flex;
-	}
-.eachvenue {
+	.eachvenue {
 		height: 266px;
 		width: 550px;
 		padding: 8px;
@@ -257,8 +249,8 @@
 		text-align: center;
 		padding: 10px;
 		margin: 0;
-			background-color: rgba(228,164,70,.2);
-		h4 {
+		background-color: rgba(228,164,70,.2);
+		h4{
 			border-radius: 10px;
 			cursor: pointer;
 			height: 30px;

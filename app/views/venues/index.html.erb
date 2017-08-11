@@ -16,16 +16,16 @@
   <div class="row" id="bars">
   <div class="col-md-2"></div>
     <div class="col-md-2">
-      <h4 class="catbutton active" id="music">Music</h4>
+        <h4 class="catbutton active" id= "music">Music</h4>
     </div>
     <div class="col-md-2">
-      <h4 class="catbutton" id="dancing">Dancing</h4>
+        <h4 class="catbutton" id="dancing">Dancing</h4>
     </div>
     <div class="col-md-2">
-      <h4 class="catbutton" id="rooftop">Rooftop</h4>
+        <h4 class="catbutton" id="rooftop">Rooftop</h4>
     </div>
     <div class="col-md-2">
-      <h4 class="catbutton" id="relaxed">Relaxed</h4>
+        <h4 class="catbutton" id="relaxed">Relaxed</h4>
     </div>
     <div class="col-md-2"></div>
   </div>
@@ -35,19 +35,19 @@
   <div class="row" id="restaurants">
     <div class="col-md-1"></div>
     <div class="col-md-2">
-      <h4 class="catbutton" id="suit">Suit & Tie</h4>
+        <h4 class="catbutton" id="suit">Suit & Tie</h4>
     </div>
     <div class="col-md-2">
-      <h4 class="catbutton" id="classy">Classy & Semi-Casual</h4>
+        <h4 class="catbutton" id="classy">Classy & Semi-Casual</h4>
     </div>
     <div class="col-md-2">
-      <h4 class="catbutton" id="retro">Hipster & Biergartens</h4>
+        <h4 class="catbutton" id="retro">Hipster & Biergartens</h4>
     </div>
     <div class="col-md-2">
-      <h4 class="catbutton" id="quick">Quick Bite</h4>
+        <h4 class="catbutton" id="quick">Quick Bite</h4>
     </div>
     <div class="col-md-2">
-      <h4 class="catbutton" id="vegan">Vegan/Vegetarian</h4>
+        <h4 class="catbutton" id="vegan">Vegan/Vegetarian</h4>
     </div>
     <div class="col-md-1"></div>
 
@@ -58,16 +58,16 @@
   <div class="row" id="activities">
     <div class="col-md-2"></div>
     <div class="col-md-2">
-      <h4 class="catbutton" id="athletic">Athletic</h4>
+        <h4 class="catbutton" id="athletic">Athletic</h4>
     </div>
     <div class="col-md-2">
-      <h4 class="catbutton" id="relaxedfun">Relaxed fun</h4>
+        <h4 class="catbutton" id="relaxedfun">Relaxed fun</h4>
     </div>
     <div class="col-md-2">
-      <h4 class="catbutton" id="day">Day trip</h4>
+        <h4 class="catbutton" id="day">Day trip</h4>
     </div>
     <div class="col-md-2">
-      <h4 class="catbutton" id="free">Free</h4>
+        <h4 class="catbutton" id="free">Free</h4>
     </div>
     <div class="col-md-2"></div>
   </div>
@@ -85,14 +85,10 @@
       </div>
     </div>
   <div class="map">
-    <%= render '/venues/map' %>
   </div>
 
-  <div id="venuevalue">
-    <% @venues = Venue.where(category_id: 4 )%>
-  </div>
 <!-- venue list per category -->
-
+  <div id="venues">
       <% @venues.each do |venue| %>
 
         <style>
@@ -133,5 +129,8 @@
           </div>
         </div>
       <% end %>
+      </div><!--#venues-->
     </div>
 </div>
+
+<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=<%= ENV["google_key"] %>"></script>
