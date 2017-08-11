@@ -52,7 +52,8 @@
           var service = new google.maps.places.PlacesService(map);
           service.textSearch(request, callback);
         }
-
+          var transitLayer = new google.maps.TransitLayer();
+             transitLayer.setMap(map);
         // Checks that the PlacesServiceStatus is OK, and adds a marker
         // using the place ID and location from the PlacesService.
         function callback(results, status) {

@@ -72,16 +72,28 @@
     <div class="col-md-2"></div>
   </div>
 
-  <div class="row newvenue">
-    <%= link_to 'New Venue', new_venue_path %>
+    <div class="col-md-12-fluid changeview">
+      <div class="row">
+        <div class="col-md-3"></div>
+        <div class="col-md-6 ">
+           <div class="row">
+             <h2 class="link" id="openmapview">Go to map view</h2>
+             <h2 class="link" id="openlistview">Go to list view</h2>
+           </div>
+        </div>
+          <div class="col-md-3"></div>
+      </div>
+    </div>
+  <div class="map">
+    <%= render '/venues/map' %>
   </div>
 
+  <div id="venuevalue">
+    <% @venues = Venue.where(category_id: 4 )%>
+  </div>
 <!-- venue list per category -->
 
-  <% @categories.each do |category|%>
-    <div class="row showcategory" id="cat<%=category.id%>">
-    <!-- <h2>Category: <%=category.name %></h2> -->
-      <% category.venues.each do |venue| %>
+      <% @venues.each do |venue| %>
 
         <style>
           .venue-<%= venue.id %> { background-image: url(<%= venue.image %>); }
@@ -122,5 +134,4 @@
         </div>
       <% end %>
     </div>
-  <% end %>
 </div>

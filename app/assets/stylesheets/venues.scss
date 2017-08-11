@@ -1,6 +1,73 @@
 // Place all the styles related to the Locations controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.map {
+	width: 100%;
+	display: none;
+	.venuebox {
+		margin: 50px;
+		margin-right: 20px;
+		padding: 20px;
+		background-image: url('wood2.jpg');
+		background-size: cover;
+		background-position: 20% 0%;
+		font-size: 15px;
+		height: 600px;
+		.info {
+			padding: 20px;
+			background-color: rgba(255,255,255,.4);
+			.ratetitle {
+				font-size: 15px;
+				display: inline;
+				width: 100px;
+				margin-left: 10%;
+			}
+			.row {
+				margin-top: 20px;
+				button {
+					padding: 10px;
+					background-color: rgba(255,219,113,.5);
+					border-width: 2px;
+		   		border-style: outset;
+		   		border-color: rgba(255,219,113,.5);
+		   		border-image: initial;
+					margin: 0 auto;
+					width: 250px;
+					cursor: pointer;
+				}
+			}
+			.button {
+				text-align: center;
+			}
+		}
+	}
+}
+.changeview {
+	width: 100%;
+	padding: 0;
+	margin: 0;
+	.padding {
+		padding: 0;
+	}
+	.link {
+		border: 1px solid silver;
+		width: 100%;
+		padding: 5px;
+		text-align: center;
+		margin: 0 auto;
+		h2 {
+			width: 200px;
+			text-align: center;
+			margin: 0 auto;
+		}
+	}
+	#openmapview {
+		display: block;
+	}
+	#openlistview {
+		display: none;
+	}
+}
 .createvenue {
 	width: 600px;
 	height: 650px;
@@ -190,7 +257,7 @@
 		text-align: center;
 		padding: 10px;
 		margin: 0;
-		// background-color: rgba(255,235,176,1);
+			background-color: rgba(228,164,70,.2);
 		h4 {
 			border-radius: 10px;
 			cursor: pointer;

@@ -5,30 +5,37 @@
 	margin: 50px;
 	margin-right: 20px;
 	padding: 20px;
-	background-color: rgba(239,215,144,.5);
+	background-image: url('wood2.jpg');
+	background-size: cover;
+	background-position: 20% 0%;
 	font-size: 15px;
 	height: 600px;
-	.ratetitle {
+	.info {
+		padding: 20px;
+		background-color: rgba(255,255,255,.4);
+		.ratetitle {
 			font-size: 15px;
 			display: inline;
 			width: 100px;
 			margin-left: 10%;
 		}
-	.row {
-		margin-top: 20px;
-		button {
-			padding: 10px;
-			background-color: rgba(255,219,113,.5);
-			border-width: 2px;
-   		border-style: outset;
-   		border-color: rgba(255,219,113,.5);
-   		border-image: initial;
-			margin: 0 auto;
-			width: 250px;
-			cursor: pointer;
+		.row {
+			margin-top: 20px;
+			button {
+				padding: 10px;
+				background-color: rgba(255,219,113,.5);
+				border-width: 2px;
+	   		border-style: outset;
+	   		border-color: rgba(255,219,113,.5);
+	   		border-image: initial;
+				margin: 0 auto;
+				width: 250px;
+				cursor: pointer;
+			}
+		}
+		.button {
+			text-align: center;
 		}
 	}
-	.button {
-		text-align: center;
-	}
+	
 }
