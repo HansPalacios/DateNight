@@ -2,11 +2,11 @@
  
 <div class="row showvenue">
   <div class="col-md-12">
-    <div class="row">
+    <div class="row showinfo">
       <div class="col-md-6">
          <%= image_tag ( "#{@venue.image}" ) %>
       </div>
-      <div class="col-md-6">
+      <div class="col-md-5">
         <div class="row">
           <h2><strong><em><%= @venue.name %></em></strong></h2>
         </div>
@@ -17,11 +17,20 @@
         <div class="row desc">
           <p><%= @venue.bio %></p>
         </div>
-        <div class="row">
+        <div class="row venuerating">
           <p class="ratetitle">DateNight:</p>
           <span style="width:<%= 23 * @venue.mean_rating %>px" id="stars"></span>
         </div>
+        <div class="row venuerating">
+          <p class="ratetitle">Yelp:</p>
+          <span style="width:<%= 23 * @venue.google_rating%>px" id="stars"></span>
+        </div>
+        <div class="row venuerating">
+          <p class="ratetitle">Google:</p>
+          <span style="width:<%= 23 * @venue.yelp_rating %>px" id="stars"></span>
+        </div>
       </div>
+      <div class="col-md-1"></div>
     </div>
     <div class="row links">
       <div class="col-md-12">
@@ -29,7 +38,46 @@
         <%= link_to 'Back', venues_path %>
       </div>
     </div>
-    <div class="row" id="map">
+    <div class="row">
+      <div class="col-md-7">
+        <div class="row" id="map"></div>
+      </div>
+      <div class="col-md-5">
+        <div class="row showforum homeforum">
+          <div class="row title">
+            <%= link_to posts_path do %>
+              <h2>This Venues Posts</h2>
+            <% end %>
+          </div>
+          <div class="row">
+            <% @venue.posts.each do |post| %>
+              <div class="row posts">
+                <div class="col-md-4">
+                  <%= image_tag ( "#{post.venue.image}" ) %>
+                </div>
+                <div class="col-md-8">
+                  <div class="row">
+                    <strong><%= link_to post do post.post_name  end %></strong>
+                  </div>
+                  <div class="row">
+                   <%= link_to post.venue do post.venue.name  end %>
+                  </div>
+                  <div class="row">
+                    <p><%= post.text %></p>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-4"></div>
+                    <div class="col-md-8">
+                      <p><%= distance_of_time_in_words(Time.now, post.created_at, options = {})%></p><p>ago</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            <% end %>
+          </div>
+        </div>
+      </div>
+      
     </div>
     <script>
 

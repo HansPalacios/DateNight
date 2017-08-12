@@ -5,6 +5,7 @@ class VenuesController < ApplicationController
     @venues = VenueCategory.where(category_id: 4).map{|vc| vc.venue}
     @ratings = Rating.all
     @favorites = Favorite.all
+    
   end
 
   def category_feed

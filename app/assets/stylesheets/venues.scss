@@ -1,6 +1,7 @@
 // Place all the styles related to the Locations controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
 #venues {
 	display: block;
 	width: 100%;
@@ -76,6 +77,16 @@
 		}
 	}
 }
+.venuerating{
+	text-align: center;
+	.ratetitle {
+		width: 100px;
+		margin: 0 0;
+		height: 29.47px;
+		padding-top: 7px;
+		display: inline-block;
+	}
+}
 .createvenue {
 	width: 600px;
 	height: 650px;
@@ -136,11 +147,42 @@
 	}
 }
 .showvenue {
-	#map {
-		height: 500px;
-		width: 800px;
-		margin: 0 auto;
+	.showinfo {
+		background-color: rgba(241,186,96,.4);
+		overflow-y: scroll;
 	}
+	.showforum {
+		min-height: 95%;
+		height: 400px;
+		background-color: rgba(241,186,96,.2);
+		.posts {
+			height: 120px;
+			width: 80%;
+		}
+		.row {
+			margin: 1px auto;
+			width: 95%;
+		}
+		p {
+			min-height: 25px;
+			height: 36px;
+			overflow-y: scroll;
+		}
+		img {
+			max-width: 95%;
+			max-height: 95%;
+			width: auto;
+  		height: auto;
+			size: relative;
+		}
+	}
+		#map {
+			margin: 20px auto;
+			height: 95%;
+			min-height: 400px;
+			width: 90%;
+			// margin: 0 auto;
+		}
 	img {
 		width: 400px;
 		margin: 50px;
@@ -155,12 +197,16 @@
 		margin: 20px;
 		text-align: center;
 	}
-	.ratetitle {
-		padding-top: 5px;
-		margin-right: 10px;
-		margin-left: 0;
-		margin-top: 50px;
-	}
+	.venuerating{
+			text-align: center;
+			.ratetitle {
+				width: 100px;
+				margin: 0 0;
+				height: 29.47px;
+				padding-top: 7px;
+				display: inline-block;
+			}
+		}
 }
 .venueindex {
 	.eachvenue {
@@ -203,8 +249,7 @@
 				width: 300px;
 				margin: 10px auto;
 				text-align: center;
-				font-size: 13px;
-				
+				font-size: 13px;	
 			}
 		}
 		.venuerating{
