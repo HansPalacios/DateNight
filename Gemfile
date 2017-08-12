@@ -4,6 +4,9 @@ git_source(:github) do |repo_name|
   repo_name = "#{repo_name}/#{repo_name}" unless repo_name.include?("/")
   "https://github.com/#{repo_name}.git"
 end
+#image carousel
+gem "jquery-slick-rails"
+#jquery
 gem 'jquery-rails'
 # Devise for user and admin login
 gem 'devise'

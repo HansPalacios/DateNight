@@ -13,6 +13,9 @@
 //= require jquery3
 //= require rails-ujs
 //= require_tree .
+//= require jquery.slick
+
+
 document.addEventListener('DOMContentLoaded', function () {
 	var signin = document.getElementById( 'signin' )
 	var sibox = document.getElementById( 'sibox' )
@@ -20,6 +23,16 @@ document.addEventListener('DOMContentLoaded', function () {
 	var subox = document.getElementById( 'subox' )
 	var close = document.getElementById( 'close' )
 	var close2 = document.getElementById( 'close2' )
+
+	$('.autoplay').slick({
+	  slidesToShow: 1,
+	  slidesToScroll: 1,
+	  autoplay: true,
+	  autoplaySpeed: 3000,
+	  adaptiveHeight: true,
+	  arrows: false,
+	});
+			
 
 	if( signin )
 	signin.addEventListener('click', function(){

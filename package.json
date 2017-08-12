@@ -1,5 +1,7 @@
 {
   "name": "DateNight",
   "private": true,
-  "dependencies": {}
+  "dependencies": {
+    "slick-carousel": "^1.7.1"
+  }
 }

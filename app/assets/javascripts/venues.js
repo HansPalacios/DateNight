@@ -365,7 +365,7 @@ function updateMap ( categoryId ) {
 					<div class="row">
 					  <div class="col-md-4 venuebox">
 					    <div class="row info">
-					      <h2>Selected Venue</h2>
+					      <h2>Select a Venue</h2>
 					    </div>
 					  </div>
 					  <div class="col-md-7">
@@ -486,7 +486,7 @@ function updateMapAll () {
 					<div class="row">
 					  <div class="col-md-4 venuebox">
 					    <div class="row info">
-					      <h2>Selected Venue</h2>
+					      <h2>Select a Venue</h2>
 					    </div>
 					  </div>
 					  <div class="col-md-7">

@@ -13,11 +13,8 @@ a {
 	text-decoration-line: none;
 	text-decoration-color: none;
 }
-body {
-	background-color: rgba(247,247,247,1);
-	// background-image: url('tree.jpg');
-	// background-repeat: no-repeat;
-	// background-size: cover;
+#body {
+	background-color: rgba(255,212,158,.13);
 }
 header {
 	width: 100%;
@@ -31,7 +28,7 @@ header {
 		width: 250px;
 		display: inline-block;
 		font-family: 'Oleo Script', cursive;
-		text-shadow: 1px 1px white;
+		text-shadow: 1px 1px rgba(255,255,255,.9);
 		font-size: 35px;
 		margin-left: 10%;
 		margin-top: 1%;
@@ -78,7 +75,6 @@ footer {
 	height: 130px;
 	padding: 20px;
 	background-color: white;
-	margin-top: 50px;
 	padding-bottom: 10px;
 	h5, #signout, #signup, #signin {
 		font-size: 12px;

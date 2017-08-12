@@ -8,6 +8,8 @@
     
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.6/css/bootstrap-grid.css">
     <link href="https://fonts.googleapis.com/css?family=Mate+SC|Oleo+Script|Lalezar|Merienda+One" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/gh/kenwheeler/slick@1.7.1/slick/slick.css"/>
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/gh/kenwheeler/slick@1.7.1/slick/slick-theme.css"/>
   </head>
 
   <body>
@@ -20,11 +22,11 @@
 
   <%= render '/layouts/signup' %>
 
-  <div class="container-fluid ">
+  <div class="container-fluid" id="body">
    	<%= yield %>
   </div>
 
   <%= render '/layouts/footer' %>
- 
+
   </body>
 </html>

@@ -1,25 +1,82 @@
 // Place all the styles related to the home controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-#sponsors {
-	width: 100%;
+.autoplay{
+  text-align: center;
+	background-color: rgba(247,247,247,1);
+  .slick-prev:before, .slick-next:before {
+  	color: rgba(0,0,0,.3);
+  }
+}
+.container {
+	margin: 15px -15px;
+	padding: 0;
+  width: 100%;
 	height: 150px;
-	margin-bottom: 20px;
-	background-image: url('header2.jpg');
-	background-size: cover;
-	background-repeat: no-repeat;
-	background-position: 50% 50%;
 	text-align: center;
-	padding-top: 50px;
+	h3 {
+		margin: 30px;
+		text-shadow: 1px 1px rgba(250,250,250,.7);
+	}
+	#carousel1 {
+		height: 140px;
+		width: 140px;
+		background-image: url('header2.jpg');
+		background-size: cover;
+		background-repeat: no-repeat;
+		background-position: 50% 50%;
+	}
+	#carousel2 {
+		height: 140px;
+		width: 140px;
+		background-image: url('wine.jpg');
+		background-size: cover;
+		background-repeat: no-repeat;
+		background-position: 50% 50%;
+	}
+	#carousel3 {
+		height: 140px;
+		width: 140px;
+		background-image: url('ocean1.jpg');
+		background-size: cover;
+		background-repeat: no-repeat;
+		background-position: 50% 50%;
+	}
+	#carousel4 {
+		height: 140px;
+		width: 140px;
+		background-image: url('wine.jpg');
+		background-size: cover;
+		background-repeat: no-repeat;
+		background-position: 50% 50%;
+	}
+	#carousel5 {
+		height: 140px;
+		width: 140px;
+		background-image: url('wine2.jpg');
+		background-size: cover;
+		background-repeat: no-repeat;
+		background-position: 50% 50%;
+	}
+	#carousel6 {
+		height: 140px;
+		width: 140px;
+		background-image: url('header3.jpg');
+		background-size: cover;
+		background-repeat: no-repeat;
+		background-position: 50% 50%;
+	}
 }
 .leftbar {
-	margin: 20px;
+width: 100%;
+margin-right: 0;
 }
 .index {
 	margin-top: 50px;
 	width: 100%;
 	height: 450px;
 	text-align: center;
+	padding-right: 20px;
 	h3 {
 		width: 100%;
 		text-align: center;
@@ -61,7 +118,10 @@
 	}
 }
 .homeforum {
-	width: 100%;
+	width: 91.5%;
+	margin: 0 auto;
+	margin-left: 15px;
+	margin-right: 0;
 	height: 500px;
 	background-color: rgba(177,138,52,.13);
 	text-align: center;
