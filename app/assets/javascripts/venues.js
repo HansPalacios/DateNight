@@ -1,9 +1,5 @@
 document.addEventListener('DOMContentLoaded', function () {
 
-	var barcat = document.querySelector( '#barcat' )
-	var restcat = document.querySelector( '#restcat' )
-	var actcat = document.querySelector( '#actcat' )
-
 	var barnav = document.querySelector( '.barnav' )
 	var restnav = document.querySelector( '.restnav' )
 	var actnav = document.querySelector( '.actnav' )
@@ -33,56 +29,6 @@ document.addEventListener('DOMContentLoaded', function () {
 	var venuesmap = document.querySelector( '.map' )
 	var openmapview = document.querySelector( '#openmapview' )
 	var openlistview = document.querySelector( '#openlistview' )
-
-//home page open main categories
-
-if( barcat )
-	barcat.addEventListener('click', function(event){
-		console.log(event);
-		if (venueslist.style.display != "none") {
-			updateVenues(4);
-		} else {
-			updateMap(4);
-		};
-  	catbuttons.forEach( function(button) {
-			if (button.classList.contains("active")) {
-				button.classList.remove("active");
-			}
-		});	
-		music.classList.add("active");
-	});
-
-if( restcat )
-	restcat.addEventListener('click', function(event){
-		console.log(event);
-		if (venueslist.style.display != "none") {
-			updateVenues(8);
-		} else {
-			updateMap(8);
-		};  	
-		catbuttons.forEach( function(button) {
-			if (button.classList.contains("active")) {
-				button.classList.remove("active");
-			}		
-		});
-		suit.classList.add("active");
-	});
-
-if( actcat)
-actcat.addEventListener('click', function(event){
-	console.log(event);
-		if (venueslist.style.display != "none") {
-			updateVenues(13);
-		} else {
-			updateMap(13);
-		};  	
-		catbuttons.forEach( function(button) {
-			if (button.classList.contains("active")) {
-				button.classList.remove("active");
-			}		
-		});
-		athletic.classList.add("active");
-	});
 
 
 

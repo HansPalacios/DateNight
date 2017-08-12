@@ -1,3 +1,5 @@
+
+
 <div class="row venueindex">
  <div class="row venuenav">
     <div class="col-md-4 active barnav bigbutton">
@@ -132,5 +134,26 @@
       </div><!--#venues-->
     </div>
 </div>
-
+<% case params[:page]
+  when "restcat" then %>
+    <script type="text/javascript">
+        window.onload = function () {
+          updateVenues(8);
+          document.querySelector( '.restnav' ).click();
+          document.querySelector( '#suit' ).click();
+        };
+    </script>
+  <% when "actcat" then %>
+    <script type="text/javascript">
+      window.onload = function () {
+        updateVenues(13);
+        document.querySelector( '.actnav' ).click();
+        document.querySelector( '#athletic' ).click();
+      };
+    </script>
+  <% else %>
+    <script type="text/javascript">
+      updateVenues(4);
+    </script>
+  <% end %>
 <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=<%= ENV["google_key"] %>"></script>
