@@ -302,6 +302,11 @@ function updateVenues( categoryId ) {
       console.log( response );
       $("#venues").html(''); //empty out the html of #venues
       response.forEach(function(venue){
+      	var yelp_rating = venue.google_rating * 23;
+				  var google_rating = venue.yelp_rating * 23;
+					var sum = venue.ratings.reduce(function(sum, rating) { return sum + rating.rating; },0);
+					var avg = sum/venue.ratings.length
+					var mean_rating = avg * 23;
         $("#venues").append(`
           <style>
             .venue-${venue.id} { background-image: url(${venue.image.url})}
@@ -323,15 +328,15 @@ function updateVenues( categoryId ) {
                 </div>
                 <div class="row venuerating">
                   <p class="ratetitle">DateNight:</p>
-                  <span style="width: ${23 * venue.mean_rating}px" id="stars"></span>
+				          <span style="width:${mean_rating}px" id="stars"></span>\r\
                 </div>
                 <div class="row venuerating">
                   <p class="ratetitle">Yelp:</p>
-                  <span style="width: ${23 * venue.google_rating}px" id="stars"></span>
+				          <span style="width:${google_rating}px" id="stars"></span>\r\
                 </div>
                 <div class="row venuerating">
                   <p class="ratetitle">Google:</p>
-                  <span style="width: ${23 * venue.yelp_rating}px" id="stars"></span>
+				          <span style="width:${yelp_rating}px" id="stars"></span>\r\
                 </div>
               </div>
             </div>
@@ -376,6 +381,11 @@ function updateMap ( categoryId ) {
 
 				  var venuebox = document.querySelector('.venuebox');
 				  var venueinfo = response.map(function(venue){
+				  	var yelp_rating = venue.google_rating * 23;
+				  	var google_rating = venue.yelp_rating * 23;
+						var sum = venue.ratings.reduce(function(sum, rating) { return sum + rating.rating; },0);
+						var avg = sum/venue.ratings.length
+						var mean_rating = avg * 23;
 				      return `<div class="info">\r\
 				          <div class="row">\r\
 				            <div class="col-md-6">\r\
@@ -395,15 +405,15 @@ function updateMap ( categoryId ) {
 				          </div>\r\
 				          <div class="row">\r\
 				            <p class="ratetitle">DateNight:</p>\r\
-				            <span style="width:${23 * venue.mean_rating}px" id="stars"></span>\r\
+				            <span style="width:${mean_rating}px" id="stars"></span>\r\
 				          </div>\r\
 				          <div class="row">\r\
 				            <p class="ratetitle">Yelp:</p>\r\
-				            <span style="width:${23 * venue.google_rating}px" id="stars"></span>\r\
+				            <span style="width:${google_rating}px" id="stars"></span>\r\
 				          </div>\r\
 				          <div class="row">\r\
 				            <p class="ratetitle">Google:</p>\r\
-				            <span style="width:${23 * venue.yelp_rating}px" id="stars"></span>\r\
+				            <span style="width:${yelp_rating}px" id="stars"></span>\r\
 				          </div>\r\
 				          <div class="row">\r\
 				            <div class="col-md-12 button">\r\
@@ -499,14 +509,11 @@ function updateMapAll () {
 				  	
 
 				  	var venueinfo = response.map(function(venue){
-				  		console.log(venue,venue.google_rating, venue.yelp_rating)
 				  	var yelp_rating = venue.google_rating * 23;
 				  	var google_rating = venue.yelp_rating * 23;
-				  	// var venrat = venue.ratings;
 						var sum = venue.ratings.reduce(function(sum, rating) { return sum + rating.rating; },0);
 						var avg = sum/venue.ratings.length
-							console.log( "sum, avg", sum, avg)
-												var mean_rating = avg * 23;
+						var mean_rating = avg * 23;
 				      return `<div class="info">\r\
 				          <div class="row">\r\
 				            <div class="col-md-6">\r\

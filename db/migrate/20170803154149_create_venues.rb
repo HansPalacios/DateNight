@@ -14,6 +14,7 @@ class CreateVenues < ActiveRecord::Migration[5.1]
       t.float :yelp_rating
       t.float :latitude
       t.float :longitude
+      t.string :website
       t.timestamps
     end
   end

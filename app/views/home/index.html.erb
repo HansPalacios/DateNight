@@ -3,10 +3,10 @@
 		<button>New Post</button>
 	<% end %>
 </div>
-<div class="row">
+<div class="row" id="homepage">
 	<div class="col-md-4 leftbar" >
-		<div class='container'>
-		  <div class='autoplay'>
+		<div class="container">
+		  <div class="autoplay">
 		    <div id="carousel1">
 		    	<h3>Sponsor</h3>
 		    </div>
@@ -27,34 +27,36 @@
 		    </div>
 		  </div>
 		</div>
-		<div class="row-fluid homeforum">
-			<div class="row title">
-				<%= link_to posts_path do %>
-					<h2>Forum</h2>
-				<% end %>
-			</div>
-			<div class="row">
-				<% @posts.each do |post| %>
-          <div class="row posts">
-            <div class="col-md-4">
-              <%= image_tag ( "#{post.venue.image}" ) %>
-            </div>
-            <div class="col-md-8">
-              <div class="row">
-                <strong><%= link_to post do post.post_name  end %></strong>
-              </div>
-              <div class="row">
-               <%= link_to post.venue do post.venue.name  end %>
-              </div>
-              <div class="row">
-                <div class="col-md-4"></div>
-                <div class="col-md-8">
-                  <p><%= distance_of_time_in_words(Time.now, post.created_at, options = {})%></p><p>ago</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        <% end %>
+		<div class="container">
+			<div class="homeforum">
+				<div class="row title">
+					<%= link_to posts_path do %>
+						<h2>Forum</h2>
+					<% end %>
+				</div>
+				<div class="row">
+					<% @posts.each do |post| %>
+	          <div class="row posts">
+	            <div class="col-md-4">
+	              <%= image_tag ( "#{post.venue.image}" ) %>
+	            </div>
+	            <div class="col-md-8">
+	              <div class="row">
+	                <strong><%= link_to post do post.post_name  end %></strong>
+	              </div>
+	              <div class="row">
+	               <%= link_to post.venue do post.venue.name  end %>
+	              </div>
+	              <div class="row">
+	                <div class="col-md-4"></div>
+	                <div class="col-md-8">
+	                  <p><%= distance_of_time_in_words(Time.now, post.created_at, options = {})%></p><p>ago</p>
+	                </div>
+	              </div>
+	            </div>
+	          </div>
+	        <% end %>
+				</div>
 			</div>
 		</div>
 	</div>
@@ -95,10 +97,15 @@
 			</div>
 		</div>
 		<div class="row info">
-			<p>Scared to pick out the perfect date?</p>
-			<p>Second-guessing and going through ideas faster than youre thinking of them?</p>
-			<p>Well stop.</p>
-			<p>We'll take care of the location, now you just have to ask them out, and then spend a few hours deciding on what to wear</p>
+			<div class="col-md-4">
+				<%= image_tag ( "winelogo.png" ) %>
+			</div>
+			<div class="col-md-8">
+				<p>Scared to pick out the perfect date?</p>
+				<p>Second-guessing and going through ideas faster than youre thinking of them?</p>
+				<p>Well stop.</p>
+				<p>We'll take care of the location, now you just have to ask them out, and then spend a few hours deciding on what to wear</p>
+			</div>
 		</div>
 	</div>
 </div>

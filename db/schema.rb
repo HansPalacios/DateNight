@@ -109,6 +109,7 @@ ActiveRecord::Schema.define(version: 20170807175052) do
     t.float "yelp_rating"
     t.float "latitude"
     t.float "longitude"
+    t.string "website"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
