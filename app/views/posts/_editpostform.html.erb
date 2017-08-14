@@ -18,7 +18,7 @@
     
     <div class=" row field margins">
       <%= form.label "venue:" %>
-      <%= form.select :venue_id, options_for_select( Venue.order('name ASC').pluck( :name, :id)), :id => "editpostvenue" %>
+      <%= form.select :venue_id, options_for_select( Venue.order('name ASC').pluck( :name, :id)), {}, {:id => "editpostvenue"}%>
     </div>
 
     <div class=" row field margins">
@@ -29,6 +29,11 @@
     <div class=" row field margins">
       <%= form.label "Body:" %>
       <%= form.text_area :text, :placeholder => 'Your post content', :class => " postinput", :id => "editposttext" %>
+    </div>
+
+    <div class="row field margins">
+      <%= form.label "Image: " %>
+      <%= form.file_field :image, id: "image" %>
     </div>
 
     <div class="col-md-2 actions">

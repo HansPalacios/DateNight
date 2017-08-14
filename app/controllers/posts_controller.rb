@@ -6,6 +6,7 @@ class PostsController < ApplicationController
   def index
     @posts = Post.all
     @venues = Venue.all
+
   end
  
   # GET /posts/1
@@ -47,11 +48,13 @@ class PostsController < ApplicationController
   # PATCH/PUT /posts/1
   # PATCH/PUT /posts/1.json
   def update
+    @post = Post.find(params[:id])
     respond_to do |format|
       if @post.update(post_params)
         format.html { redirect_to @post, notice: 'Post was successfully updated.' }
         format.json { render :show, status: :ok, venue: @post }
       else
+        format.html { render :edit }
         format.json { render json: @post.errors, status: :unprocessable_entity }
       end
     end
@@ -75,6 +78,6 @@ class PostsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def post_params
-      params.permit(@post, :post_name, :text, :user_id, :venue_id)
+      params.require(:post).permit(:post_name, :text, :user_id, :venue_id, :image)
     end
 end

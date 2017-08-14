@@ -42,6 +42,7 @@ ActiveRecord::Schema.define(version: 20170807175052) do
   create_table "posts", force: :cascade do |t|
     t.string "post_name"
     t.text "text"
+    t.string "image"
     t.integer "rating_id"
     t.integer "favorite_id"
     t.integer "venue_id"

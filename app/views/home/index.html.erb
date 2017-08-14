@@ -39,7 +39,8 @@
 	          <div class="row posts">
 	            <div class="col-md-4">
 	              <%= link_to post do %>
-	              	<%= image_tag ( "#{post.venue.image}" ) %>
+	              	<% if !post.image.blank? then postsrc = post.image else postsrc = post.venue.image end %>
+	              	<%= image_tag ( postsrc ) %>
 	              <% end %>
 	            </div>
 	            <div class="col-md-8">

@@ -22,15 +22,21 @@
           
           <div class=" row field">
             <%= form.label :venue, :class => "col-md-4" %>
-            <%= form.select :venue_id, options_for_select( Venue.order('name ASC').pluck( :name, :id) ), :class => "col-md-8" %>
+            <%= form.select :venue_id, options_for_select( Venue.order('name ASC').pluck( :name, :id) ), :class => "col-md-8", :id => "editpostvenue" %>
           </div>
           <div class=" row field">
-            <%= form.text_field :post_name, :placeholder => 'Title', :class => " postinput col-md-6" %>
+            <%= form.text_field :post_name, :placeholder => 'Title', :class => " postinput col-md-6", :id => "editpostname"  %>
           </div>
 
           <div class=" row field">
-            <%= form.text_area :text, :placeholder => 'Your post content', :class => " postinput col-md-6" %>
+            <%= form.text_area :text, :placeholder => 'Your post content', :class => " postinput col-md-6", :id => "editposttext"  %>
           </div>
+
+          <div class="row field">
+            <%= form.label "Image: " %>
+            <%= form.file_field :image, :class => " postinput col-md-6", id: "editpostimage"  %>
+          </div>
+
           <div class="col-md-2 actions">
             <%= form.submit %>
           </div>
@@ -43,7 +49,10 @@
           <div class="posts">
             <div class="row">
               <div class="col-md-4">
-                <%= image_tag ( "#{post.venue.image}" ) %>
+                <%= link_to post do %>
+                  <% if !post.image.blank? then postsrc = post.image else postsrc = post.venue.image end %>
+                  <%= image_tag ( postsrc ) %>
+                <% end %>
               </div>
               <div class="col-md-8">
                 <div class="row">
@@ -55,14 +64,6 @@
                 <div class="row text">
                   <%= post.text %>
                 </div>
-                <% if user_signed_in? && post.user = current_user %>
-                  <div class="row">            
-                    <div class=" link">
-                      <%= link_to 'Edit', '#', :class => 'editpostbutton' %> |
-                      <%= link_to 'Delete', post, method: :delete, data: { confirm: 'Are you sure?' } %>
-                    </div>
-                  </div>
-                <% end %>
                 <div class="row">
                   <div class="col-md-6"></div>
                   <div class="col-md-6">
@@ -71,32 +72,7 @@
                 </div>
               </div>
             </div>
-             <%= render '/posts/editpostform' %>
-          </div>
-            <script>
-              var editpostbutton = document.querySelector( '.editpostbutton' )
-              var editvenue = document.querySelector( '.editpost' )
-              var close4 = document.getElementById( 'close4' )
-
-              if( editpostbutton )
-                editpostbutton.addEventListener('click', function(event){
-                    console.log(event);
-                    var editPostVenue = document.querySelector('#editpostvenue')
-                    var editPostName = document.querySelector('#editpostname');
-                    var editPostText = document.querySelector('#editposttext');
-            
-                    editpost.style.display = 'inline-block';
-                    editPostVenue.value = "<%= post.venue %>";
-                    editPostName.value = "<%= post.post_name %>";
-                    editPostText.value = "<%= post.text %>";
-                });
-
-              if( close5 )
-              close5.addEventListener('click', function(event) {
-                  console.log(event);
-                  editpost.style.display = 'none';
-              });
-          </script>
+          </div>   
         <% end %>
       </div>
     </div>

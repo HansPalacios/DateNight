@@ -3,6 +3,7 @@ class CreatePosts < ActiveRecord::Migration[5.1]
     create_table :posts do |t|
       t.string :post_name
       t.text :text
+      t.string :image
       t.integer :rating_id, required: false
       t.integer :favorite_id, required: false
       t.integer :venue_id

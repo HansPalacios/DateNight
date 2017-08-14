@@ -14,7 +14,7 @@ Rails.application.routes.draw do
         sessions: 'users/sessions'
       }
   get '/map' => 'map#index'  
-
+  post '/posts/:id'=> 'posts#update', as: :post_id
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   get 'venues/:venue_id/star/:rating' => 'ratings#update', as: :venue_rating
   get 'showvenue' => 'venues#show'
