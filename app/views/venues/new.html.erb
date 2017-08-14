@@ -1,11 +1,15 @@
 
 <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
 <style>
-
+  #mapbox {
+    height: 100%;
+    margin: 0;
+    padding: 50px;
+  }
   #map {
     height: 600px;
     width: 800px;
-    margin: 50px auto;
+    margin: 0 auto;
   }
   .controls {
     background-color: #fff;
@@ -52,7 +56,9 @@
 </style>
 <input id="pac-input" class="controls" type="text"
     placeholder="Enter a location">
-<div id="map"></div>
+<div id="mapbox">
+  <div id="map"></div>
+</div>
 <div id="infowindow-content">
   <h4 id="place-name"  class="title"></h4>
   <h5 id="place-rating"></h5>

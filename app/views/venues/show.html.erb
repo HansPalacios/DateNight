@@ -34,7 +34,7 @@
     </div>
     <div class="row links">
       <div class="col-md-12">
-        <%= link_to 'Edit', edit_venue_path(@venue) %> |
+        <%= link_to 'Edit', '#', :class => 'editvenuebutton' %> |
         <%= link_to 'Back', venues_path %>
       </div>
     </div>
@@ -77,10 +77,36 @@
           </div>
         </div>
       </div>
-      
+      <%= render '/venues/editform' %>
     </div>
     <script>
+        var editvenuebutton = document.querySelector( '.editvenuebutton' )
+        var editvenue = document.querySelector( '.editvenue' )
+        var close4 = document.getElementById( 'close4' )
 
+        if( editvenuebutton )
+          editvenuebutton.addEventListener('click', function(event){
+              console.log(event);
+              var editName = document.querySelector('#editname');
+              var editPhone = document.querySelector('#editphone');
+              var editRating = document.querySelector('#editrating');
+              var editAddress = document.querySelector('#editaddress');
+              var editImage = document.querySelector('.editimage')
+
+              editvenue.style.display = 'inline-block';
+              editName.value = "<%= @venue.name %>";
+              editPhone.value = "<%= @venue.phone %>";
+              editRating.value = <%= @venue.mean_rating %>;
+              editAddress.value = "<%= @venue.address %>";
+          });
+
+        if( close4 )
+        close4.addEventListener('click', function(event) {
+            console.log(event);
+            editvenue.style.display = 'none';
+        });
+
+      
         var map;
 
         function initialize() {

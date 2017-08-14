@@ -38,19 +38,21 @@
 					<% @posts.each do |post| %>
 	          <div class="row posts">
 	            <div class="col-md-4">
-	              <%= image_tag ( "#{post.venue.image}" ) %>
+	              <%= link_to post do %>
+	              	<%= image_tag ( "#{post.venue.image}" ) %>
+	              <% end %>
 	            </div>
 	            <div class="col-md-8">
 	              <div class="row">
-	                <strong><%= link_to post do post.post_name  end %></strong>
+	                <strong> <%= post.post_name %> </strong>
 	              </div>
 	              <div class="row">
-	               <%= link_to post.venue do post.venue.name  end %>
+	               <%= link_to post.venue, :class => "postname" do post.venue.name  end %>
 	              </div>
 	              <div class="row">
 	                <div class="col-md-4"></div>
 	                <div class="col-md-8">
-	                  <p><%= distance_of_time_in_words(Time.now, post.created_at, options = {})%></p><p>ago</p>
+	                  <p><%= distance_of_time_in_words(Time.now, post.created_at , options = {}) + " ago"%></p>
 	                </div>
 	              </div>
 	            </div>

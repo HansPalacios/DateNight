@@ -1,0 +1,137 @@
+<div class="editvenue" class="row">
+	<div id="close4">x</div>
+	<%= form_with(model: @venue, local: true) do |form| %>
+	  <% if @venue.errors.any? %>
+	    <div id="error_explanation">
+	      <h2><%= pluralize(venue.errors.count, "error") %> prohibited this venue from being saved:</h2>
+
+	      <ul>
+	      <% @venue.errors.full_messages.each do |message| %>
+	        <li><%= message %></li>
+	      <% end %>
+	      </ul>
+	    </div>
+	  <% end %>
+	  <div class="row">
+	  	<h3>Edit Venue</h3>
+	  </div>
+	  <div class="field row">
+	    <%= form.label :name %>
+	    <%= form.text_field :name, id: "editname"%>
+	  </div>
+
+	  <div class="field row">
+	    <%= form.label :bio %>
+	    <%= form.text_area :bio, id: :venue_bio %>
+	  </div>
+
+	  <div class="field row">
+	    <%= form.label :address %>
+	    <%= form.text_field :address, id: "editaddress" %>
+	  </div>
+
+	  <div class="field row">
+	    <%= form.label :phone %>
+	    <%= form.text_field :phone, id: "editphone" %>
+	  </div>
+
+	  <div class="field row">
+	    <%= form.label "Our Rating" %>
+	    <%= form.number_field :rating_id, :step => "0.01", id:  "editrating"%>
+	  </div>
+
+	  <div class="field row">
+	    <%= form.label :google_rating %>
+	    <%= form.number_field :google_rating, :step => "0.01" %>
+	  </div>
+
+	   <div class="field row">
+	    <%= form.label :yelp_rating %>
+	    <%= form.number_field :yelp_rating, :step => "0.01" %>
+	  </div>
+
+	  <div class="row">
+	  	<%= form.label "Image: " %>
+	    <%= form.file_field :image, id: "image", :class => "editimage" %>
+	  </div>
+
+	  <div class="row">
+	  	<%= form.label "Hours " %>
+	    <%= form.text_field :hrs, id: "edithrs"%>
+	  </div>
+
+	  <div class="field row">
+	  	<div class="col-md-4 checklist">
+	  		<div class="row">
+	  			<h4>Bars</h4>
+	  		</div>
+	  		<div class="row">
+	  			<%= form.label :music %>
+	  			<%= form.check_box :category, {:multiple => true}, "music", nil %>
+	  		</div>
+	  		<div class="row">
+	  			<%= form.label :dancing %>
+	  			<%= form.check_box :category, {:multiple => true}, "dancing", nil %>
+	  		</div>
+	  		<div class="row">
+	  		<%= form.label :rooftop %>
+	  			<%= form.check_box :category, {:multiple => true}, "rooftop", nil %>
+	  		</div>
+	  		<div class="row">
+	  			<%= form.label :relaxed %>
+	  			<%= form.check_box :category, {:multiple => true}, "relaxed", nil %>
+	  		</div>
+	  	</div>
+	  	<div class="col-md-4 border checklist">
+	  		<div class="row">
+	  			<h4>Restaurants</h4>
+	  		</div>
+	  		<div class="row">
+	  			<%= form.label "Suit & Tie" %>
+	  			<%= form.check_box :category, {:multiple => true}, "Suit & Tie", nil %>
+	  		</div>
+	  		<div class="row">
+	  			<%= form.label "Classy & Casual" %>
+	  			<%= form.check_box :category, {:multiple => true}, "Classy & Casual", nil %>
+	  		</div>
+	  		<div class="row">
+	  			<%= form.label "Hipster & Biergartens" %>
+	  			<%= form.check_box :category, {:multiple => true}, "Hipster & Biergartens", nil %>
+	  		</div>
+	  		<div class="row">
+	  			<%= form.label :Quick_Bite %>
+	  			<%= form.check_box :category, {:multiple => true}, "Quick Bite", nil %>
+	  		</div>
+	  		<div class="row">
+	  			<%= form.label :Vegan %>
+	  			<%= form.check_box :category, {:multiple => true}, "Vegan/Vegetarian", nil %>
+	  		</div>
+	  	</div>
+	  	<div class="col-md-4 checklist">
+	  		<div class="row">
+	  			<h4>Activites</h4>
+	  		</div>
+	  		<div class="row">
+	  			<%= form.label :athletic %>
+	  			<%= form.check_box :category, {:multiple => true}, "Athletic", nil %>
+	  		</div>
+	  		<div class="row">
+	  			<%= form.label :Relaxed_Fun %>
+	  			<%= form.check_box :category, {:multiple => true}, "Relaxed Fun", nil %>
+	  		</div>
+	  		<div class="row">
+	  			<%= form.label :Day_Trip %>
+	  			<%= form.check_box :category, {:multiple => true}, "Day Trip", nil %>
+	  		</div>
+	  		<div class="row">
+	  			<%= form.label :Free %>
+	  			<%= form.check_box :category, {:multiple => true}, "Free", nil %>
+	  		</div>
+	  	</div>
+	  </div>
+
+	  <div class="actions row">
+	    <%= form.submit %>
+	  </div>
+	<% end %>
+</div>

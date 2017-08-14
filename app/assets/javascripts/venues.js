@@ -389,7 +389,7 @@ function updateMap ( categoryId ) {
 				      return `<div class="info">\r\
 				          <div class="row">\r\
 				            <div class="col-md-6">\r\
-				              <img src="${venue.image.url}", class="mapimage"</img>\r\
+				              <img src="${venue.image.url}", class="mapimage">\r\
 				            </div>\r\
 				            <div class="col-md-6">\r\
 				              <div class="row">\r\
@@ -517,7 +517,7 @@ function updateMapAll () {
 				      return `<div class="info">\r\
 				          <div class="row">\r\
 				            <div class="col-md-6">\r\
-				              <img src="${venue.image.url}", class="mapimage"</img>\r\
+				              <img src="${venue.image.url}", class="mapimage">\r\
 				            </div>\r\
 				            <div class="col-md-6">\r\
 				              <div class="row">\r\

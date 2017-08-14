@@ -58,7 +58,7 @@
                 <% if user_signed_in? && post.user_id = current_user.id %>
                   <div class="row">            
                     <div class=" link">
-                      <%= link_to 'Edit', edit_post_path(post) %> |
+                      <%= link_to 'Edit', '#', :class => 'editpostbutton' %> |
                       <%= link_to 'Delete', post, method: :delete, data: { confirm: 'Are you sure?' } %>
                     </div>
                   </div>
@@ -71,7 +71,32 @@
                 </div>
               </div>
             </div>
+             <!-- <#%= render '/posts/editpostform' %> -->
           </div>
+            <script>
+              var editpostbutton = document.querySelector( '.editpostbutton' )
+              var editvenue = document.querySelector( '.editpost' )
+              var close4 = document.getElementById( 'close4' )
+
+              if( editpostbutton )
+                editpostbutton.addEventListener('click', function(event){
+                    console.log(event);
+                    var editPostVenue = document.querySelector('#editpostvenue')
+                    var editPostName = document.querySelector('#editpostname');
+                    var editPostText = document.querySelector('#editposttext');
+            
+                    editpost.style.display = 'inline-block';
+                    editPostVenue.value = "<%= post.venue %>";
+                    editPostName.value = "<%= post.post_name %>";
+                    editPostText.value = "<%= post.text %>";
+                });
+
+              if( close5 )
+              close5.addEventListener('click', function(event) {
+                  console.log(event);
+                  editpost.style.display = 'none';
+              });
+          </script>
         <% end %>
       </div>
     </div>

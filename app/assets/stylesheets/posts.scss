@@ -1,6 +1,52 @@
 // Place all the styles related to the Posts controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.showpost {
+	height: 90%;
+	width: 90%;
+	text-align: center;	
+	margin: 0 auto;
+	padding-top: 20px;
+	padding-bottom: 20px;
+	.info {
+		margin: 50px auto;
+		background-color: rgba(245,239,232,1);
+		padding: 50px;
+		.row {
+				margin: 10px auto;
+				text-align: center;
+			}
+		p {
+			margin: 0 auto;
+			font-size: 12px;
+			width: 80%;
+		}
+		strong {
+			margin: 0 auto;
+		}
+		a {
+			margin: 0 auto;
+			font-size: 11px;
+			color: rgba(118,31,29,1);
+		}
+		img {
+			max-width: 400px;
+			max-height: 400px;
+			size: relative;
+			display: inline-block;
+		}
+		.link {
+			margin: 0 auto;
+			width: 200px;
+			text-align: center;
+			a {
+				margin: 10px;
+				width: 100px;
+				text-align: center;
+			}
+		}
+	}	
+}
 #forumindex {
 	padding-bottom: 50px;
 	h2, em {

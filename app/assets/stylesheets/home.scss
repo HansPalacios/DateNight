@@ -135,6 +135,10 @@ display: block;
 	text-align: center;
 	font-size: 10px;
 	overflow-y: scroll;
+	.postname {
+		font-size: 9px;
+		color: rgba(118,31,29,1);
+	}
 	.title {
 		width: 100%;
 		text-align: center;
@@ -154,8 +158,11 @@ display: block;
 		height: 70px;
 		width: 85%;
 		border-top: 8px solid rgba(228,164,70,.4);
+		a {
+			margin: 0 auto;
+		}
 		img {
-			max-width: 100%;
+			max-width: 95%;
 			max-height: 50px;
 			margin: 1px auto;
 		}

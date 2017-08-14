@@ -1,0 +1,38 @@
+<div class="editpost" class="row">
+  <div id="close5">x</div>
+  <%= form_with(model: @post, local: true) do |form| %>
+    <% @post.user.id = current_user.id && post = @post%>
+    <% if @post.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(post.errors.count, "error") %> prohibited this post from being saved:</h2>
+
+        <ul>
+        <% @post.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+        </ul>
+      </div>
+    <% end %>
+    <div class="row">
+      <h3>Edit Post</h3>
+    </div>
+    
+    <div class=" row field">
+      <%= form.label :venue, :class => "col-md-4" %>
+      <%= form.select :venue_id, options_for_select( Venue.order('name ASC').pluck( :name, :id) ), :class => "col-md-8", :id => "editpostvenue" %>
+    </div>
+
+    <div class=" row field">
+      <%= form.text_field :post_name, :placeholder => 'Title', :class => " postinput col-md-6", :id => "editpostname" %>
+    </div>
+
+    <div class=" row field">
+      <%= form.text_area :text, :placeholder => 'Your post content', :class => " postinput col-md-6", :id => "editposttext" %>
+    </div>
+
+    <div class="col-md-2 actions">
+      <%= form.submit %>
+    </div>
+
+  <% end %>
+</div>

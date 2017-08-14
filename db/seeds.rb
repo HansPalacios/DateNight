@@ -5,6 +5,7 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
 Venue.create([
 	{id: 1, name: 'Le Bain', bio: 'Theres a disco, bar, (seasonal) plunge pool & crêperie, all on the roof of the Standard Hotel.', address: 'The Standard, High Line, 848 Washington St, New York, NY 10014', phone: '(212) 645-7600', image: File.new("#{Rails.root}/images/lebain.jpg"), google_rating: 3.9, yelp_rating: 3, website: "standardhotels.com"},
 	{id: 2, name: 'Marquee', bio: 'Colorful, multi-tiered dance club featuring 30-foot ceilings, LED screens & plenty of night owls.', address: '289 10th Avenue, New York, NY 10001', phone:'(646) 473-0202', image: File.new("#{Rails.root}/images/marquee.jpg"), google_rating: 3.1, yelp_rating: 2, website: "marqueeny.com"},
@@ -50,9 +51,9 @@ Venue.create([
 	{id: 42, name: "Sound Of Brazil", bio: "Latin food & drink accompany live & DJ'ed sets of world music & hip-hop at this longtime club.", address: "204 Varick St, New York, NY 10014", phone:"(212) 243-4940", image: File.new("#{Rails.root}/images/sobs.jpg"), google_rating: 3.9, yelp_rating: 3.5, website: "sobs.com"},
 	{id: 43, name: "Bar LunÀtico", bio: "Hip hangout for cocktails, Italian small plates & live music nightly, from gypsy jazz to neo-folk.", address: "486 Halsey St, Brooklyn, NY 11233", phone:"(718) 513-0339", image: File.new("#{Rails.root}/images/lunatica.jpg"), google_rating: 4.7, yelp_rating: 4.5, website: "barlunatico.com"},
 	{id: 44, name: "The Delancey", bio: "Nightlife spot includes a plush lounge, canopied roof deck & basement performance space.", address: "168 Delancey St, New York, NY 10002", phone:"(212) 254-9920", image: File.new("#{Rails.root}/images/thedelancey.jpg"), google_rating: 3.6, yelp_rating: 3, website: "thedelancey.com"},
-	{id: 45, name: "Pianos", bio: "Hipsters pack this 2-level bar/music venue to hear live indie acts or dance to DJ sets upstairs.", address: "158 Ludlow St, New York, NY 10002", phone:"(212) 505-3733", image: File.new("#{Rails.root}/images/pianos.jpg"), google_rating: 3.9, yelp_rating: 3, website: "pianosnyc.com"}
+	{id: 45, name: "Pianos", bio: "Hipsters pack this 2-level bar/music venue to hear live indie acts or dance to DJ sets upstairs.", address: "158 Ludlow St, New York, NY 10002", phone:"(212) 505-3733", image: File.new("#{Rails.root}/images/pianos.jpg"), google_rating: 3.9, yelp_rating: 3, website: "pianosnyc.com"},
+	{id: 46, name: "Fire Island", bio: "Small beach town with classy restaurants and bars, making for a perfect day trip, or if you're willing to spend a bit extra, a hotel or vacation rentals are plenty.", address: "1 Bungalow Ln, Ocean Beach, NY 11770", phone:"(631) 687-4750", image: File.new("#{Rails.root}/images/fireisland.jpg"), google_rating: 4, yelp_rating: 4, website: " Business website nps.gov/fiis/index.htm"}
 	# ,
-	# {id: 46, name: "", bio: "", address: "", phone:"", image: File.new("#{Rails.root}/images/"), google_rating: , yelp_rating: , website: ""},
 	# {id: 47, name: "", bio: "", address: "", phone:"", image: File.new("#{Rails.root}/images/"), google_rating: , yelp_rating: , website: ""},
 	# {id: 48, name: "", bio: "", address: "", phone:"", image: File.new("#{Rails.root}/images/"), google_rating: , yelp_rating: , website: ""},
 	# {id: 49, name: "", bio: "", address: "", phone:"", image: File.new("#{Rails.root}/images/"), google_rating: , yelp_rating: , website: ""},
@@ -200,9 +201,9 @@ VenueCategory.create([
 {venue_id: 44, category_id: 4},
 {venue_id: 44, category_id: 6},
 {venue_id: 45, category_id: 4},
-{venue_id: 45, category_id: 5}
+{venue_id: 45, category_id: 5},
+{venue_id: 46, category_id: 15}
 # ,
-# {venue_id: 46, category_id: },
 # {venue_id: 47, category_id: },
 # {venue_id: 48, category_id: },
 # {venue_id: 49, category_id: },
@@ -238,7 +239,12 @@ Favorite.create([
 	])
 
 Post.create([
-	{post_name: 'Amazing Night!!!', text: "Girlfriends been bugging me to going out and have a fun night clubbing and dancing, and she actually screamed in excitement when the Uber stopped in front of Le Bain",user_id: 1, venue_id: 1}
+	{post_name: "Amazing Night!!!", text: "Girlfriends been bugging me to going out and have a fun night clubbing and dancing, and she actually screamed in excitement when the Uber stopped in front of Le Bain",user_id: 1, venue_id: 1},
+	{post_name: 'Best music in town', text: "Really nice night out at Rockwood Music Hall. They had amazing artists and the vybe was perfect for a 3rd date. We hung out and then went to the bar and hung out for another two hours. We're planning on coming back next week!",user_id: 1, venue_id: 36},
+	{post_name: "Didn't know vegan food could be this good!!", text: "First date with this vegetarian chick, and was worried i'd pick a bad place, and I was prepared to deal with whatever vegan place we went to. But after the first few bites I more than enjoyed it! And she was amazed that I brought her to one of her favorite places.",user_id: 1, venue_id: 29},
+	{post_name: "OMG", text: "Best idea ever!! I said I wanted to surprise her and to clear her schedule for the day. We went out to Long Island and went skydiving!! Had no idea there was something this crazy so close to the city! Best date ive ever had. Hands down.",user_id: 1, venue_id: 32},
+	{post_name: "Cheeseboat. Cheeseboat. Cheeseboat.", text: "Brought guy i've been seeing here and treated him to the Khachapuri. I think he fell in love with it more than me! Haha we've decided to come here every week",user_id: 1, venue_id: 17}
+
 	])
 
 rate = Rating.new(rating: 4)
@@ -466,10 +472,10 @@ rate.user = User.find(1)
 rate.venue = Venue.find(45) 
 rate.save
 
-# rate = Rating.new(rating: )
-# rate.user = User.find(1)
-# rate.venue = Venue.find(46) 
-# rate.save
+rate = Rating.new(rating: 4.5)
+rate.user = User.find(1)
+rate.venue = Venue.find(46) 
+rate.save
 
 # rate = Rating.new(rating: )
 # rate.user = User.find(1)
@@ -740,3 +746,5 @@ rate.save
 # rate.user = User.find(1)
 # rate.venue = Venue.find(100) 
 # rate.save
+
+
