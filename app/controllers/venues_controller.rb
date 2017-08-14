@@ -5,7 +5,6 @@ class VenuesController < ApplicationController
     @venues = VenueCategory.where(category_id: 4).map{|vc| vc.venue}
     @ratings = Rating.all
     @favorites = Favorite.all
-    
   end
 
   def category_feed
@@ -60,7 +59,6 @@ class VenuesController < ApplicationController
         format.html { redirect_to @venue, notice: 'Venue was successfully updated.' }
         format.json { render :show, status: :ok, venue: @venue }
       else
-        format.html { render :edit }
         format.json { render json: @venue.errors, status: :unprocessable_entity }
       end
     end
@@ -84,6 +82,6 @@ class VenuesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def venue_params
-      params.require(:venue).permit(:name, :bio, :address, :phone, :image, :rating_id, :favorite_id, :bar, :restaurant, :activity, :sponsor)
+      params.require(:venue).permit(:name, :bio, :address, :phone, :image, :rating_id, :favorite_id, )
     end
 end

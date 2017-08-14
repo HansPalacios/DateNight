@@ -1,7 +1,6 @@
 <div class="editpost" class="row">
   <div id="close5">x</div>
-  <%= form_with(model: @post, local: true) do |form| %>
-    <% @post.user.id = current_user.id && post = @post%>
+  <%= form_with(method: @post, local: true) do |form| %>
     <% if @post.errors.any? %>
       <div id="error_explanation">
         <h2><%= pluralize(post.errors.count, "error") %> prohibited this post from being saved:</h2>
@@ -17,17 +16,19 @@
       <h3>Edit Post</h3>
     </div>
     
-    <div class=" row field">
-      <%= form.label :venue, :class => "col-md-4" %>
-      <%= form.select :venue_id, options_for_select( Venue.order('name ASC').pluck( :name, :id) ), :class => "col-md-8", :id => "editpostvenue" %>
+    <div class=" row field margins">
+      <%= form.label "venue:" %>
+      <%= form.select :venue_id, options_for_select( Venue.order('name ASC').pluck( :name, :id)), :id => "editpostvenue" %>
     </div>
 
-    <div class=" row field">
-      <%= form.text_field :post_name, :placeholder => 'Title', :class => " postinput col-md-6", :id => "editpostname" %>
+    <div class=" row field margins">
+      <%= form.label "Title:" %>
+      <%= form.text_field :post_name, :placeholder => 'Title', :class => " postinput", :id => "editpostname" %>
     </div>
 
-    <div class=" row field">
-      <%= form.text_area :text, :placeholder => 'Your post content', :class => " postinput col-md-6", :id => "editposttext" %>
+    <div class=" row field margins">
+      <%= form.label "Body:" %>
+      <%= form.text_area :text, :placeholder => 'Your post content', :class => " postinput", :id => "editposttext" %>
     </div>
 
     <div class="col-md-2 actions">

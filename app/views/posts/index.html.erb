@@ -55,7 +55,7 @@
                 <div class="row text">
                   <%= post.text %>
                 </div>
-                <% if user_signed_in? && post.user_id = current_user.id %>
+                <% if user_signed_in? && post.user = current_user %>
                   <div class="row">            
                     <div class=" link">
                       <%= link_to 'Edit', '#', :class => 'editpostbutton' %> |
@@ -71,7 +71,7 @@
                 </div>
               </div>
             </div>
-             <!-- <#%= render '/posts/editpostform' %> -->
+             <%= render '/posts/editpostform' %>
           </div>
             <script>
               var editpostbutton = document.querySelector( '.editpostbutton' )

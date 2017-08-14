@@ -135,6 +135,11 @@ display: block;
 	text-align: center;
 	font-size: 10px;
 	overflow-y: scroll;
+	.checkoutmoreposts {
+		margin: 10px auto;
+		width: 90px;
+		text-align: center;
+	}
 	.postname {
 		font-size: 9px;
 		color: rgba(118,31,29,1);
@@ -154,7 +159,7 @@ display: block;
 		background-color: rgba(228,164,70,.3);
 		text-align: center;
 		padding: 5px;
-		margin: 10px auto;
+		margin: 4px auto;
 		height: 70px;
 		width: 85%;
 		border-top: 8px solid rgba(228,164,70,.4);
