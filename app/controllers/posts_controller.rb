@@ -6,7 +6,6 @@ class PostsController < ApplicationController
   def index
     @posts = Post.all
     @venues = Venue.all
-
   end
  
   # GET /posts/1
