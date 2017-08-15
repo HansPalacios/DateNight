@@ -74,11 +74,11 @@
 		a {
 			margin: 0 auto;
 			font-size: 11px;
-			color: rgba(118,31,29,1);
+			color: rgba(152,0,0,1);
 		}
 		img {
 			max-width: 400px;
-			height: 400px;
+			max-height: 400px;
 			size: relative;
 			display: inline-block;
 			overflow: hidden;
@@ -156,18 +156,6 @@
 			a {
 				color: rgba(152,0,0,1);
 			}
-			/* .link {
-				margin-left: 31%;
-				margin-top: 10px;
-				width: 150px;
-				text-align: center;
-				a {
-					margin: 0 auto;
-					margin-left: 10px;
-					margin-right: 10px;
-					width: 100px;
-				}
-			} */
 		}
 	}
 	#newpostbutton {
