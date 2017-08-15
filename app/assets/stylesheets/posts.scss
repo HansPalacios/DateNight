@@ -126,9 +126,7 @@
 		}
 	}
 	.postlist {
-		// height: 500px;
 		font-size: 10px;
-		// overflow-y: scroll;
 		.posts {
 			background-color: rgba(229,199,153,1);
 			text-align: center;
@@ -151,7 +149,14 @@
 				margin-top: 20px;
 				display: inline-block;
 			}
-			.link {
+			strong a{
+				color: black;
+				font-size: 15px;
+			}
+			a {
+				color: rgba(152,0,0,1);
+			}
+			/* .link {
 				margin-left: 31%;
 				margin-top: 10px;
 				width: 150px;
@@ -162,7 +167,7 @@
 					margin-right: 10px;
 					width: 100px;
 				}
-			}
+			} */
 		}
 	}
 	#newpostbutton {

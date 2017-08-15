@@ -59,10 +59,10 @@
                   <strong><%= link_to post do post.post_name  end %></strong>
                 </div>
                 <div class="row">
-                 <%= link_to post.venue do post.venue.name  end %>
+                 <%= link_to  post.venue do "- " + post.venue.name  end %>
                 </div>
                 <div class="row text">
-                  <%= post.text %>
+                  <p><%= post.text %></p>
                 </div>
                 <div class="row">
                   <div class="col-md-6"></div>
