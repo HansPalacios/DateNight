@@ -29,6 +29,14 @@
 		.info {
 			padding: 20px;
 			background-color: rgba(255,255,255,.4);
+			text-align: center;
+			strong {
+				margin: 0 auto;
+			}
+			.center {
+				margin: 0 auto;
+				font-size: 12px;
+			}
 			.ratetitle {
 				font-size: 15px;
 				display: inline;
@@ -36,7 +44,7 @@
 				margin-left: 10%;
 			}
 			h2 {
-				font-size: 30px;
+				font-size: 50px;
 				margin: 0 auto;
 			}
 			.row {

@@ -1,28 +1,23 @@
-<div class="row">
-	<% link_to new_post_path do %>
-		<button>New Post</button>
-	<% end %>
-</div>
 <div class="row" id="homepage">
 	<div class="col-md-4 leftbar" >
 		<div class="container">
 		  <div class="autoplay">
-		    <div id="carousel1">
+		    <div class="carousels" id="carousel1">
 		    	<h3>Sponsor</h3>
 		    </div>
-		    <div id="carousel2">
+		    <div class="carousels" id="carousel2">
 		    	<h3>Sponsor</h3>
 		    </div>
-		    <div id="carousel3">
+		    <div class="carousels" id="carousel3">
 		    	<h3>Sponsor</h3>
 		    </div>
-		    <div id="carousel4">
+		    <div class="carousels" id="carousel4">
 		    	<h3>Sponsor</h3>
 		    </div>
-		    <div id="carousel5">
+		    <div class="carousels" id="carousel5">
 		    	<h3>Sponsor</h3>
 		    </div>
-		    <div id="carousel6">
+		    <div class="carousels" id="carousel6">
 		    	<h3>Sponsor</h3>
 		    </div>
 		  </div>
@@ -48,13 +43,10 @@
 	                <strong> <%= post.post_name %> </strong>
 	              </div>
 	              <div class="row">
-	               <%= link_to post.venue, :class => "postname" do post.venue.name  end %>
+	               		<%= link_to post.venue, :class => "postname" do "- " + post.venue.name  end %>
 	              </div>
 	              <div class="row">
-	                <div class="col-md-4"></div>
-	                <div class="col-md-8">
 	                  <p><%= distance_of_time_in_words(Time.now, post.created_at , options = {}) + " ago"%></p>
-	                </div>
 	              </div>
 	            </div>
 	          </div>

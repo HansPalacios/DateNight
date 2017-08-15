@@ -321,10 +321,10 @@ function updateVenues( categoryId ) {
                   <h3>${venue.name}</h3>
                 </div>
                 <div class="row">
-                  <p>${venue.address}</p>
+                  <p class="center">${venue.address}</p>
                 </div>
                 <div class="row">
-                  <p>${venue.phone}</p>
+                  <p class="center">${venue.phone}</p>
                 </div>
                 <div class="row venuerating">
                   <p class="ratetitle">DateNight:</p>
@@ -370,7 +370,14 @@ function updateMap ( categoryId ) {
 					<div class="row">
 					  <div class="col-md-4 venuebox">
 					    <div class="row info">
-					      <h2>Select a Venue</h2>
+					    	<div class="col-md-4">
+									<img src="assets/winelogo.png", class="mapimage">
+								</div>
+								<div class="col-md-8">
+									<div class="row">
+						      	<h2>Select a<br>Venue</h2>
+						      </div>
+								</div>
 					    </div>
 					  </div>
 					  <div class="col-md-7">
@@ -389,17 +396,17 @@ function updateMap ( categoryId ) {
 				      return `<div class="info">\r\
 				          <div class="row">\r\
 				            <div class="col-md-6">\r\
-				              <img src="${venue.image.url}", class="mapimage">\r\
+				              <a href="venues/${venue.id}"><img src="${venue.image.url}", class="mapimage"></a>\r\
 				            </div>\r\
 				            <div class="col-md-6">\r\
 				              <div class="row">\r\
 				                <strong>${venue.name}</strong>\r\
 				              </div>\r\
 				              <div class="row">\r\
-				                ${venue.address}\r\
+				                <p class="center">${venue.address}</p>\r\
 				              </div>\r\
 				              <div class="row">\r\
-				                ${venue.phone}\r\
+				                <p class="center">${venue.phone}</p>\r\
 				              </div>\r\
 				            </div>\r\
 				          </div>\r\
@@ -415,11 +422,11 @@ function updateMap ( categoryId ) {
 				            <p class="ratetitle">Google:</p>\r\
 				            <span style="width:${yelp_rating}px" id="stars"></span>\r\
 				          </div>\r\
-				          <div class="row">\r\
-				            <div class="col-md-12 button">\r\
-				              <a href="/posts/new"><button>Rave About This Venue!</button></a>\r\
-				            </div>\r\
-				          </div\r\
+				          <!-- <div class="row">\r\ -->
+				          <!--   <div class="col-md-12 button">\r\ -->
+				          <!--     <a href="/posts/new"><button>Rave About This Venue!</button></a>\r\ -->
+				          <!--   </div>\r\ -->
+				          <!-- </div\r\ -->
 				       	</div>`;
 				    });
 
@@ -496,7 +503,14 @@ function updateMapAll () {
 					<div class="row">
 					  <div class="col-md-4 venuebox">
 					    <div class="row info">
-					      <h2>Select a Venue</h2>
+					    	<div class="col-md-4">
+									<img src="assets/winelogo.png", class="mapimage">
+								</div>
+								<div class="col-md-8">
+									<div class="row">
+						      	<h2>Select a<br>Venue</h2>
+						      </div>
+								</div>
 					    </div>
 					  </div>
 					  <div class="col-md-7">
@@ -508,7 +522,7 @@ function updateMapAll () {
 				  var venuebox = document.querySelector('.venuebox');
 				  	
 
-				  	var venueinfo = response.map(function(venue){
+				  var venueinfo = response.map(function(venue){
 				  	var yelp_rating = venue.google_rating * 23;
 				  	var google_rating = venue.yelp_rating * 23;
 						var sum = venue.ratings.reduce(function(sum, rating) { return sum + rating.rating; },0);
@@ -517,17 +531,17 @@ function updateMapAll () {
 				      return `<div class="info">\r\
 				          <div class="row">\r\
 				            <div class="col-md-6">\r\
-				              <img src="${venue.image.url}", class="mapimage">\r\
+				              <a href="venues/${venue.id}"><img src="${venue.image.url}", class="mapimage"></a>\r\
 				            </div>\r\
 				            <div class="col-md-6">\r\
 				              <div class="row">\r\
 				                <strong>${venue.name}</strong>\r\
 				              </div>\r\
 				              <div class="row">\r\
-				                ${venue.address}\r\
+				                <p class="center">${venue.address}</p>\r\
 				              </div>\r\
 				              <div class="row">\r\
-				                ${venue.phone}\r\
+				                <p class="center">${venue.phone}</p>\r\
 				              </div>\r\
 				            </div>\r\
 				          </div>\r\
@@ -543,11 +557,11 @@ function updateMapAll () {
 				            <p class="ratetitle">Google:</p>\r\
 				            <span style="width:${yelp_rating}px" id="stars"></span>\r\
 				          </div>\r\
-				          <div class="row">\r\
-				            <div class="col-md-12 button">\r\
-				              <a href="/posts/new"><button>Rave About This Venue!</button></a>\r\
-				            </div>\r\
-				          </div\r\
+				          <!-- <div class="row">\r\ -->
+				          <!--   <div class="col-md-12 button">\r\ -->
+				          <!--     <a href="/posts/new"><button>Rave About This Venue!</button></a>\r\ -->
+				          <!--   </div>\r\ -->
+				          <!-- </div\r\ -->
 				       	</div>`;
 				    });
 
