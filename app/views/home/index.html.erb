@@ -3,22 +3,40 @@
 		<div class="container">
 		  <div class="autoplay">
 		    <div class="carousels" id="carousel1">
-		    	<h3>Sponsor</h3>
+		    	<h3 class="sponsor">Sponsor</h3>
+		    	<%= link_to "venues/10" do %>
+			    	<h3 class="sponsorlink"><%= @venues.find(10).name %></h3>
+		    	<% end %>
 		    </div>
 		    <div class="carousels" id="carousel2">
-		    	<h3>Sponsor</h3>
+		    	<h3 class="sponsor">Sponsor</h3>
+		    	<%= link_to "/venues/45" do %>
+			    	<h3 class="sponsorlink"><%= @venues.find(45).name %></h3>
+		    	<% end %>
 		    </div>
 		    <div class="carousels" id="carousel3">
-		    	<h3>Sponsor</h3>
+		    	<h3 class="sponsor">Sponsor</h3>
+		    	<%= link_to "/venues/6" do %>
+			    	<h3 class="sponsorlink"><%= @venues.find(6).name %></h3>
+		    	<% end %>
 		    </div>
 		    <div class="carousels" id="carousel4">
-		    	<h3>Sponsor</h3>
+		    	<h3 class="sponsor">Sponsor</h3>
+		    	<%= link_to "/venues/26" do %>
+			    	<h3 class="sponsorlink"><%= @venues.find(26).name %></h3>
+		    	<% end %>
 		    </div>
 		    <div class="carousels" id="carousel5">
-		    	<h3>Sponsor</h3>
+		    	<h3 class="sponsor">Sponsor</h3>
+		    	<%= link_to "/venues/13" do %>
+			    	<h3 class="sponsorlink"><%= @venues.find(13).name %></h3>
+		    	<% end %>
 		    </div>
 		    <div class="carousels" id="carousel6">
-		    	<h3>Sponsor</h3>
+		    	<h3 class="sponsor">Sponsor</h3>
+		    	<%= link_to "/venues/17" do %>
+			    	<h3 class="sponsorlink"><%= @venues.find(17).name %></h3>
+		    	<% end %>
 		    </div>
 		  </div>
 		</div>

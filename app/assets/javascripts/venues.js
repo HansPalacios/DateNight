@@ -433,7 +433,7 @@ function updateMap ( categoryId ) {
 			  var locations = response.map(function(venue){
 				      return [`<a id="venue-${venue.id}"><strong>${venue.name}</strong></a><br><br>\r\
 				          ${venue.address}<br>\r\
-				          ${venue.phone}`, venue.latitude, venue.longitude];
+				          <em>${venue.phone}</em>`, venue.latitude, venue.longitude];
 				        });
 		
 			  map = new google.maps.Map(document.getElementById('map'), {
@@ -568,7 +568,7 @@ function updateMapAll () {
 			  var locations = response.map(function(venue){
 				      return [`<a id="venue-${venue.id}"><strong>${venue.name}</strong></a><br><br>\r\
 				          ${venue.address}<br>\r\
-				          ${venue.phone}`, venue.latitude, venue.longitude];
+				          <em>${venue.phone}</em>`, venue.latitude, venue.longitude];
 				        });
 		
 			  map = new google.maps.Map(document.getElementById('map'), {
