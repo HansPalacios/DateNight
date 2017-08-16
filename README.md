@@ -1,7 +1,10 @@
 # Date Night 
 
+Have you ever asked someone out on a date and then realized you didn't know a good place to take them?
 
+Date Night makes it easy to organize amazing dating venues by type or location, including an easy to navigate map view.
 
+*This was inspired by a few dates running into the same dilemma, and after speaking with other millenials, realizing such a website would be widely used and very helpful to anybody looking for quality recommendations and information on each of them.*
 
 Using Rails version: 5.1.2
 
@@ -11,15 +14,15 @@ Updated Gemfile:
     
     gem 'devise'
     
-    #Carrierwave for image uploads
+    # Carrierwave for image uploads
     
     gem 'carrierwave', '~> 1.0'
     
-    #Figaro gem hides API Keys
+    # Figaro gem hides API Keys
     
     gem 'figaro'
     
-    #Geocoder changes address to lat's and long's you can use with the google map API
+    # Geocoder changes address to lat's and long's you can use with the google map API
     
     gem 'geocoder'
     
@@ -101,7 +104,7 @@ Added the CarrierWave uploaders to the models Posts and Locations
 
 Created the rest of my tables:
 	
-    rails g scaffold  Venues name:string bio:text address:string phone:string image:string rating_id:integer favorite_id:integer bar:boolean restaurant:boolean activity:boolean  sponsor:boolean 
+    rails g scaffold Venues name:string bio:text address:string phone:string image:string rating_id:integer favorite_id:integer bar:boolean restaurant:boolean activity:boolean  sponsor:boolean 
 
     rails g scaffold Posts post_name:string venues_name:string address:string phone:string text:text image:string rating_id:integer favorite_id:integer bar:boolean restaurant:boolean activity:boolean user:belongs_to venues:belongs_to
 

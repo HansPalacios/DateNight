@@ -23,11 +23,11 @@
         </div>
         <div class="row venuerating">
           <p class="ratetitle">Yelp:</p>
-          <span style="width:<%= 23 * @venue.google_rating%>px" id="stars"></span>
+          <span style="width:<%= 23 * (@venue.google_rating || 0)%>px" id="stars"></span>
         </div>
         <div class="row venuerating">
           <p class="ratetitle">Google:</p>
-          <span style="width:<%= 23 * @venue.yelp_rating %>px" id="stars"></span>
+          <span style="width:<%= 23 * (@venue.yelp_rating || 0)%>px" id="stars"></span>
         </div>
       </div>
       <div class="col-md-1"></div>
