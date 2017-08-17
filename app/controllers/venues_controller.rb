@@ -38,10 +38,16 @@ class VenuesController < ApplicationController
   # POST /venues
   # POST /venues.json
   def create
-    @venue = Venue.new(venue_params)
+    @rating = Rating.new(rating_params)
+    @venue = Venue.new(venue_params)   
+    Venue.transaction do
+      @venue.save
+      @rating.user_id = current_user.id
+      @rating.save
+    end
 
     respond_to do |format|
-      if @venue.save
+      if @venue.save && @rating.save
         format.html { redirect_to @venue, notice: 'Venue was successfully created.' }
         format.json { render :show, status: :created, venue: @venue }
       else
@@ -82,6 +88,9 @@ class VenuesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def venue_params
-      params.require(:venue).permit(:name, :bio, :address, :phone, :image, :rating, :favorite_id, :google_rating, :yelp_rating)
+      params.require(:venue).permit(:name, :bio, :address, :phone, :image, :favorite_id, :google_rating, :yelp_rating, :venue_id)
+    end
+    def rating_params
+      params.require(:venue).permit(:venue_id, :rating)
     end
 end

@@ -32,26 +32,6 @@ Updated Gemfile:
 Installed Devise for User sign in
 And CarrierWave for image uploads    
 
-Installed devise and newest version of CarrierWave:
-	
-    bundle install
-
-    rails g devise:install
-
-Set default home route:
-
-    root to: "home#index"
-
-In config/environments/development.rb input:
-
-	config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
-
-Added notices and alerts to layout
-
-    <p class="notice"><%= notice %></p>
-
-    <p class="alert"><%= alert %></p>
-
  Made a model for devise
 
 	rails g devise User

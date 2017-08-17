@@ -182,7 +182,7 @@
 		display: none;
 		.checklist {
 			label {
-			font-size: 12px;
+			font-size: 10px;
 
 			}
 			.row {
@@ -240,8 +240,11 @@
 		height: 400px;
 		background-color: rgba(241,186,96,.2);
 		.posts {
-			height: 120px;
+			height: 150px;
 			width: 80%;
+			background-color: rgba(228,164,70,.3);
+			text-align: center;
+			border-top: 8px solid rgba(228,164,70,.4);
 		}
 		.row {
 			margin: 1px auto;
@@ -249,8 +252,9 @@
 		}
 		p {
 			min-height: 25px;
-			height: 36px;
 			overflow-y: scroll;
+			margin: 5px 0 0 0;
+			font-size: 10px;
 		}
 		img {
 			max-width: 95%;
@@ -258,6 +262,10 @@
 			width: auto;
   		height: auto;
 			size: relative;
+			margin: 0 auto;
+		}
+		a {
+			font-size: 12px;
 		}
 	}
 		#map {

@@ -239,11 +239,11 @@ Favorite.create([
 	])
 
 Post.create([
-	{post_name: "Amazing Night!!!", text: "Girlfriends been bugging me to going out and have a fun night clubbing and dancing, and she actually screamed in excitement when the Uber stopped in front of Le Bain",user_id: 1, venue_id: 1},
-	{post_name: 'Best music in town', text: "Really nice night out at Rockwood Music Hall. They had amazing artists and the vybe was perfect for a 3rd date. We hung out and then went to the bar and hung out for another two hours. We're planning on coming back next week!",user_id: 1, venue_id: 36},
-	{post_name: "Didn't know vegan food could be this good!!", text: "First date with this vegetarian chick, and was worried i'd pick a bad place, and I was prepared to deal with whatever vegan place we went to. But after the first few bites I more than enjoyed it! And she was amazed that I brought her to one of her favorite places.",user_id: 1, venue_id: 29},
-	{post_name: "OMG", text: "Best idea ever!! I said I wanted to surprise her and to clear her schedule for the day. We went out to Long Island and went skydiving!! Had no idea there was something this crazy so close to the city! Best date ive ever had. Hands down.",user_id: 1, venue_id: 32},
-	{post_name: "Cheeseboat. Cheeseboat. Cheeseboat.", text: "Brought guy i've been seeing here and treated him to the Khachapuri. I think he fell in love with it more than me! Haha we've decided to come here every week",user_id: 1, venue_id: 17}
+	{post_name: "Amazing Night!!!", text: "Girlfriends been bugging me to going out and have a fun night clubbing and dancing, and she actually screamed in excitement when the Uber stopped in front of Le Bain",user_id: 1, venue_id: 1, image: File.new("#{Rails.root}/images/postlebain.jpg")},
+	{post_name: 'Best music in town', text: "Really nice night out at Rockwood Music Hall. They had amazing artists and the vybe was perfect for a 3rd date. We hung out and then went to the bar and hung out for another two hours. We're planning on coming back next week!",user_id: 1, venue_id: 36, image: File.new("#{Rails.root}/images/postrockwood.jpg")},
+	{post_name: "Didn't know vegan food could be this good!!", text: "First date with this vegetarian chick, and was worried i'd pick a bad place, and I was prepared to deal with whatever vegan place we went to. But after the first few bites I more than enjoyed it! And she was amazed that I brought her to one of her favorite places.",user_id: 1, venue_id: 29, image: File.new("#{Rails.root}/images/postwildginger.jpg")},
+	{post_name: "OMG", text: "Best idea ever!! I said I wanted to surprise her and to clear her schedule for the day. We went out to Long Island and went skydiving!! Had no idea there was something this crazy so close to the city! Best date ive ever had. Hands down.",user_id: 1, venue_id: 32, image: File.new("#{Rails.root}/images/postskydiving.jpg"},
+	{post_name: "Cheeseboat. Cheeseboat. Cheeseboat.", text: "Brought guy i've been seeing here and treated him to the Khachapuri. I think he fell in love with it more than me! Haha we've decided to come here every week",user_id: 1, venue_id: 17, image: File.new("#{Rails.root}/images/postcheeseboat.jpg")}
 
 	])
 
