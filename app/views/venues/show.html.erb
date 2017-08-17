@@ -53,7 +53,8 @@
             <% @venue.posts.each do |post| %>
               <div class="row posts">
                 <div class="col-md-4">
-                  <%= image_tag ( "#{post.venue.image}" ) %>
+                  <% if !post.image.blank? then postsrc = post.image else postsrc = post.venue.image end %>
+                  <%= image_tag ( postsrc ) %>
                 </div>
                 <div class="col-md-8">
                   <div class="row">
