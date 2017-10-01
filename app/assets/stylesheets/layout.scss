@@ -18,52 +18,93 @@ a {
 }
 header {
 	width: 100%;
-	height: 150px;
+	height: 100%;
 	background-image: url('header8.jpg');
 	background-size: cover;
 	background-repeat: no-repeat;
-	background-position: 50% 50%;
-	h1 {
-		padding: 20px;
-		width: 250px;
-		display: inline-block;
-		font-family: 'Oleo Script', cursive;
-		text-shadow: 1px 1px rgba(255,255,255,.9);
-		font-size: 35px;
-		margin-left: 10%;
-		margin-top: 1%;
-	}
-	#signout, #signup, #signin {
-		background-color: rgba(255,255,255,.53);
-		&:hover {
-			opacity: .8;
-		}
-	}
+	// background-position: 50% 50%;
 	nav {
-		height: 25px;
-		padding-left: 15%;
-		background-color: rgba(255,255,255,.6);
-		a {
-			margin-left: 50px;
-
+		height: 40px;
+		margin-bottom: 20px;
+		#links {
+			height: 40px;
+			text-align: right;
+			a, img {
+				height: 30px;
+				display: inline-block;
+			}
+			a {
+				margin: 0 10px;
+			}
+			#otherlinks {
+				position: absolute;
+				top: 20px;
+				right: 140px;
+				height: 30px;
+			}
+			#imglinks {
+				position: absolute;
+				top: 15px;
+				right: 30px;
+				height: 40px;
+			}
+			h4, #signout, #signin, #signup {
+				margin-top: -10px;
+			}
 		}
 	}
 	.heading {
-		height: 125px;
+		text-align: center;
+		padding-bottom: 20px;
+		a {
+			font-family: 'Oleo Script', cursive;
+			text-shadow: 1px 1px rgba(255,255,255,.9);
+			font-size: 50px;
+			width: 250px;
+			margin: 20px auto 40px auto;
+		}
 	}
 	.container-fluid {
 		padding: 0;
-		height: 150px;
 	}
-	#links {
-		margin: 40px;
-		float: right;
-		a {
-			margin: 20px;
-			padding: 5px;
-			border: 1px solid grey;
+	.index {
+		margin: 50px;
+		text-align: center;
+		display: block;
+		// background-color: rgba(99,102,128,.7);
+		h2 {
+			width: 100%;
+			color: rgba(167,0,0,1);
+			text-shadow: 2px 2px black;
+			margin: 20px auto;
+			display: inline-block;
+			font-size: 30px;
+		}
+		.bars, .restaurants, .activities {
+			height: 100%;
+			text-align: center;
+			width: 200px;
+			height: 200px;
+			overflow: break-word;
+			padding: 10px;
+			h5 {
+				color: white;
+				height: 80px;
+				width: 200px;
+				margin: 0 auto;
+			}
+			a, h3 {
+				margin: 0 auto;
+				width: 200px;
+				height: 30px;
+				text-align: center;
+				cursor: pointer;
+				&:hover {
+					text-shadow: .5px .5px grey;
+				}
 			}
 		}
+	}
 }
 .notice, .alert {
 	color: rgba(152,0,0,.8);
@@ -83,18 +124,25 @@ footer {
 	}
 }
 #sibox, #subox{
-	width: 600px;
-	height: 300px;
-	background-color: rgba(0,0,0,0.8);
+	width: 60%;
+	height: 60%;
+	overflow: scroll;
+	background-color: rgba(0,0,0,0.9);
 	border: 2px solid grey;
 	padding: 30px 50px;
 	position: fixed;
-	top: 25%;
+	top: 15%;
 	left: 25%;
 	text-align: center;
 	z-index: 2;
 	color: white;
 	display: none;
+	label, input {
+		margin: 8px auto;
+	}
+	h3 {
+		margin-bottom: 20px;
+	}
 	#close, #close2{
 		right: 15px;
 		top: 10px;

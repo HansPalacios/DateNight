@@ -1,11 +1,12 @@
-<header>
-	<div class="container-fluid">
-		<div class="row">
-			<div class="col-md-12 heading">
-				<h1>
-					<%= link_to '/' do "Date Night" end %>
-				</h1>
-       	<div id="links">
+<header class="container-fluid">
+		<nav class="row">
+			<div id="links" class="col-md-12">
+				<div id="otherlinks">
+					<% if user_signed_in? && current_user.admin? %>pappl
+						<%= link_to new_venue_path do %>
+							<h4>New Venue</h4>
+						<% end %>
+					<% end %>
 					<% if user_signed_in? %>
 	  						<%= link_to "Sign Out", destroy_user_session_path, method: :delete, :id => 'signout' %>
 	  					<% else %>
@@ -13,25 +14,59 @@
 		 				<%= link_to 'Sign In', '#', :id => 'signin' %>
 	 				<% end %>
 	 			</div>
+ 				<div id="imglinks">
+					<%= link_to venues_path do %>
+						<%= image_tag "search.png" %>
+					<% end %>
+					<%= link_to profile_index_path do %>
+						<%= image_tag "profile.png" %>
+					<% end %>
+				</div>
  			</div>
-		</div>	
-		<nav class="row">
-			<%= link_to root_path do %>
-				<h4>Home</h4>
-			<% end %>
-			<%= link_to venues_path do %>
-				<h4>All Venues</h4>
-			<% end %>
-			<%= link_to posts_path do %>
-				<h4>Forum</h4>
-			<% end %>
-			<% if user_signed_in? && current_user.admin? %>
-				<%= link_to new_venue_path do %>
-					<h4>New Venue</h4>
-				<% end %>
-			<% end %>
-			<p class="notice"><%= notice %></p>
-      <p class="alert"><%= alert %></p>
 		</nav>	
-	</div>
+		<div class="row">
+			<div class="col-md-12 heading">
+				<%= link_to '/' do "Date Night" end %>
+       	<p class="notice"><%= notice %></p>
+      	<p class="alert"><%= alert %></p>
+ 			</div>
+		</div>
+		<% if @homepage %>
+			<div class="row index">
+				<div class="row">
+					<h2>First Choose the Type of Date</h2>
+					<div class="col-md-4 bars">
+						<div class="row">
+							<!-- <h5>Fun night out listening to music, dancing, or at a lounge to mingle?</h5> -->
+						</div>
+						<div class="row">
+							<%= link_to venues_path, :id => "barcat" do %>
+								<h2>Bars/Clubs</h2>
+							<% end %>
+						</div>
+					</div>
+					<div class="col-md-4 restaurants">
+						<div class="row">
+							<!-- <h5>Looking for a good vibe? Or do you want to dress up and treat them to a special night?</h5> -->
+						</div>
+						<div class="row">
+							<%= link_to venues_page_path(:restcat), :id => "restcat" do %>
+								<h2>Restaurants</h2>
+							<% end %>
+						</div>
+					</div>
+					<div class="col-md-4 activities">
+						<div class="row">
+							<!-- <h5>Tired of the average date? Let's take a jump and do something new!</h5> -->
+						</div>
+						<div class="row">
+							<%= link_to venues_page_path(:actcat), :id => "actcat" do %>
+								<h2>Activities</h2>
+							<% end %>
+						</div>
+					</div>
+				</div>
+		<!--  -->
+			</div>
+		<% end %>	
 </header>
