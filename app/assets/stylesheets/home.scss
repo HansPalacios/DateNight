@@ -1,44 +1,36 @@
 #home {
 	#weekly {
 		text-align: center;
-		// background-color: rgba(5,22,62, 1);
 		h2 {
 			margin: 10px auto;
-			color: rgba(202,202,202,1);
+			color: rgba(182,192,226,1);
 			text-shadow: 1px 1px black;
 		}
-		.sponsors {
-			padding: 10px 0;
-			display: inline-block;
-			margin: 2%;
-			width: 45%;
-background-image: url('wood2.jpg');
+	}
+	#membership {
+		text-align: center;
+		background-image: url('wine3.jpg');
 		background-size: cover;
-		background-position: 20% 0%;			.img {
-			 height: 200px;
-			 width: 200px;
-			 margin: 0 auto;
-			 background-position: center;
-			 background-size: cover;
-			}
-			h5 {
-				margin: 0 auto;
-				width: 90%;
-			}
-			.padding {
-				padding: 0;
-				margin: 10px;
-				display: inline-block;
-			}
-			.venuerating{
+		background-repeat: no-repeat;
+		background-position: center;
+		background-attachment: fixed;
+		height: 800px;
+		position: relative;
+		h1 {
+			width: 60%;
+			margin: 50px auto;
+			text-shadow: 1px 1px white;
+		}
+		#memberform {
+			background-color: rgba(250,250,250,.6);
+			margin: 50px auto;
+			text-align: center;
+			height: 300px;
+			width: 70%;
+			.field {
+				width: 200px;
+				margin: 5px auto;
 				text-align: center;
-				.ratetitle {
-					width: 100px;
-					margin: 0 0;
-					height: 29.47px;
-					padding-top: 7px;
-					display: inline-block;
-				}
 			}
 		}
 	}
