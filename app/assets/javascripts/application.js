@@ -23,15 +23,6 @@ document.addEventListener('DOMContentLoaded', function () {
 	var subox = document.getElementById( 'subox' )
 	var close = document.getElementById( 'close' )
 	var close2 = document.getElementById( 'close2' )
-
-	$('.autoplay').slick({
-	  slidesToShow: 1,
-	  slidesToScroll: 1,
-	  autoplay: true,
-	  autoplaySpeed: 3000,
-	  adaptiveHeight: true,
-	  arrows: false,
-	});
 			
 
 	if( signin )

@@ -13,16 +13,25 @@ a {
 	text-decoration-line: none;
 	text-decoration-color: none;
 }
-#body {
+html {
+	height: 100%;
+}
+body {
+	min-height: 100%;
+  margin: 0;
+  padding-bottom: 100px;
+  min-height: 100%;
+	position: relative;
 	background-color: rgba(255,212,158,.13);
 }
-header {
-	width: 100%;
+.page {
 	height: 100%;
+}
+header {
 	background-image: url('header8.jpg');
 	background-size: cover;
 	background-repeat: no-repeat;
-	// background-position: 50% 50%;
+	background-position: center;
 	nav {
 		height: 40px;
 		margin-bottom: 20px;
@@ -71,10 +80,9 @@ header {
 		margin: 50px;
 		text-align: center;
 		display: block;
-		// background-color: rgba(99,102,128,.7);
 		h2 {
 			width: 100%;
-			color: rgba(167,0,0,1);
+			color: rgba(210,210,210,1);
 			text-shadow: 2px 2px black;
 			margin: 20px auto;
 			display: inline-block;
@@ -92,15 +100,16 @@ header {
 				height: 80px;
 				width: 200px;
 				margin: 0 auto;
+				text-shadow: 1.5px 1.5px black;
 			}
-			a, h3 {
+			a, h2 {
 				margin: 0 auto;
 				width: 200px;
 				height: 30px;
 				text-align: center;
 				cursor: pointer;
 				&:hover {
-					text-shadow: .5px .5px grey;
+					font-size:31px;
 				}
 			}
 		}
@@ -111,12 +120,17 @@ header {
 	margin-left: 20%;
 }
 footer {
-	display: block;
+	// display: block;
 	width: 100%;
-	height: 130px;
+	height: 100px;
 	padding: 20px;
 	background-color: white;
 	padding-bottom: 10px;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	margin: 0;
 	h5, #signout, #signup, #signin {
 		font-size: 12px;
 		display: block;

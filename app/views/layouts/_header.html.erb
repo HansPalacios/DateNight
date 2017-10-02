@@ -2,7 +2,7 @@
 		<nav class="row">
 			<div id="links" class="col-md-12">
 				<div id="otherlinks">
-					<% if user_signed_in? && current_user.admin? %>pappl
+					<% if user_signed_in? && current_user.admin? %>
 						<%= link_to new_venue_path do %>
 							<h4>New Venue</h4>
 						<% end %>
@@ -26,7 +26,7 @@
 		</nav>	
 		<div class="row">
 			<div class="col-md-12 heading">
-				<%= link_to '/' do "Date Night" end %>
+				<%= link_to '/' do "Datenight" end %>
        	<p class="notice"><%= notice %></p>
       	<p class="alert"><%= alert %></p>
  			</div>
@@ -37,7 +37,7 @@
 					<h2>First Choose the Type of Date</h2>
 					<div class="col-md-4 bars">
 						<div class="row">
-							<!-- <h5>Fun night out listening to music, dancing, or at a lounge to mingle?</h5> -->
+							<h5>Fun night out listening to music, dancing, or at a lounge to mingle?</h5>
 						</div>
 						<div class="row">
 							<%= link_to venues_path, :id => "barcat" do %>
@@ -47,7 +47,7 @@
 					</div>
 					<div class="col-md-4 restaurants">
 						<div class="row">
-							<!-- <h5>Looking for a good vibe? Or do you want to dress up and treat them to a special night?</h5> -->
+							<h5>Looking for a good vibe? Or do you want to dress up and treat them to a special night?</h5>
 						</div>
 						<div class="row">
 							<%= link_to venues_page_path(:restcat), :id => "restcat" do %>
@@ -57,7 +57,7 @@
 					</div>
 					<div class="col-md-4 activities">
 						<div class="row">
-							<!-- <h5>Tired of the average date? Let's take a jump and do something new!</h5> -->
+							<h5>Tired of the average date? Let's take a jump and do something new!</h5>
 						</div>
 						<div class="row">
 							<%= link_to venues_page_path(:actcat), :id => "actcat" do %>
@@ -66,7 +66,17 @@
 						</div>
 					</div>
 				</div>
-		<!--  -->
 			</div>
+			<style>
+				/*body {
+					min-height: none;
+					height: 100%;
+				}*/
+				header {
+					position: relative;
+					height: 95%;
+					background-attachment: fixed;
+				}
+			</style>
 		<% end %>	
 </header>

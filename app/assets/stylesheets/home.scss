@@ -1,6 +1,4 @@
-// Place all the styles related to the home controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+<!-- 
 #homepage {
 	padding-top: 20px;
 	height: 780px;
@@ -45,25 +43,6 @@
 				width: 330px;
 				text-align: center;
 			}
-		}
-		#carousel1 {
-			background-image: url('<%= Venue.find(10).image %>');
-		}
-		#carousel2 {
-			background-image: url('<%= Venue.find(45).image %>');
-		}
-		#carousel3 {
-			background-image: url('<%= Venue.find(6).image %>');
-		}
-		#carousel4 {
-			background-image: url('<%= Venue.find(26).image %>');
-		}
-		#carousel5 {
-			background-image: url('<%= Venue.find(13).image %>');
-		}
-		#carousel6 {
-
-			background-image: url('<%= Venue.find(17).image %>');
 		}
 	}
 	.leftbar {
@@ -177,3 +156,4 @@
 		}
 	}
 }
+ -->
