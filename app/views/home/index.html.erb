@@ -1,0 +1,49 @@
+<div id="home">
+	<div class="row" id="weekly">
+		<div class="col-md-12">
+			<div class="row">
+				<h2>Weekly Favorites</h2>
+			</div>
+			<% @venues.each do |venue| %>
+				<% if venue.sponsor == true %>
+					<style>
+  	        .venue-<%= venue.id %> {
+							background-image: url("<%= venue.image %>");}
+  	      </style>
+  	      <div class="eachvenue">
+  	        <div class="row">
+  	          <div class="col-md-6 padding">
+  	          <a href="/venues/<%= venue.id %>"><article class="image venue-<%= venue.id %>"></article></a>
+  	          </div>
+  	          <div class="col-md-6 padding info">
+  	            <div class="row">
+  	              <h3><%= venue.name %></h3>
+  	            </div>
+  	            <div class="row">
+  	              <p class="center"><%= venue.address %>}</p>
+  	            </div>
+  	            <div class="row">
+  	              <p class="center"><%= venue.phone %></p>
+  	            </div>
+  	            <div class="row venuerating">
+  	              <p class="ratetitle">DateNight:</p>
+			          <span style="width:<%= 23 * venue.mean_rating %>px" id="stars"></span>
+  	            </div>
+  	            <div class="row venuerating">
+  	              <p class="ratetitle">Yelp:</p>
+			           <span style="width:<%= 23 * (venue.google_rating || 0)%>px" id="stars"></span>
+  	            </div>
+  	            <div class="row venuerating">
+  	              <p class="ratetitle">Google:</p>
+			          <span style="width:<%= 23 * (venue.yelp_rating || 0)%>px" id="stars"></span>
+  	            </div>
+  	          </div>
+  	        </div>
+          </div>
+				<% end %>
+			<% end %>
+			<div class="row arrow">
+			</div>
+		</div>
+	</div>
+</div>
