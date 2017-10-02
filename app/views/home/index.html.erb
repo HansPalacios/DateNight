@@ -61,7 +61,7 @@
 
 				    <div class="field">
 				      <%= f.label :email %><br>
-				      <%= f.email_field :email, autofocus: true %>
+				      <%= f.email_field :email %>
 				    </div>
 
 				    <div class="field">
@@ -101,7 +101,7 @@
 
 						    <div class="field">
 						      <%= f.label :email %><br>
-						      <%= f.email_field :email, autofocus: true %>
+						      <%= f.email_field :email %>
 						    </div>
 
 						    <div class="field">
@@ -130,7 +130,7 @@
 							<%= form_for(:user, :url => new_user_session_path) do |f| %>
 						  <div class="field">
 						    <%= f.label :email %><br />
-						    <%= f.email_field :email, autofocus: true %>
+						    <%= f.email_field :email %>
 						  </div>
 						  <div class="field">
 						    <%= f.label :password %><br />

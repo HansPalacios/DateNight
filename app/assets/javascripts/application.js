@@ -13,8 +13,6 @@
 //= require jquery3
 //= require rails-ujs
 //= require_tree .
-//= require jquery.slick
-
 
 document.addEventListener('DOMContentLoaded', function () {
 	var signin = document.getElementById( 'signin' )
