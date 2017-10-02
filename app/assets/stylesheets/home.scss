@@ -1,13 +1,18 @@
 #home {
 	#weekly {
 		text-align: center;
-		background-color: rgba(10,8,39,1);
+		background-color: rgba(210,153,99,.28);
 		padding: 50px 0;
 		h1 {
 			margin: 10px auto;
-			color: white;
-			text-shadow: 1px 1px black;
 		}
+	}
+	img {
+	  -moz-animation: bounce 2s infinite;
+	  -webkit-animation: bounce 2s infinite;
+	  animation: bounce 2s infinite;
+	  height: 20px;
+	  margin: 0 auto;
 	}
 	#membership {
 		text-align: center;
