@@ -305,11 +305,13 @@
 			}
 		}
 }
+
+// list view: each individual venue box
 .eachvenue {
 		height: 266px;
-		width: 40%;
+		width: 26%;
 		padding: 8px;
-		margin: 50px;
+		margin: 50px 15px;
 		display: inline-block;
 		background-image: url('wood2.jpg');
 		background-size: cover;
@@ -344,15 +346,15 @@
 			}
 			p {
 				width: 300px;
-				margin: 10px auto;
+				margin: 5px auto;
 				text-align: center;
-				font-size: 13px;	
+				font-size: 11px;	
 			}
 		}
 		.venuerating{
 			text-align: center;
 			.ratetitle {
-				width: 100px;
+				width: 65px;
 				margin: 0 0;
 				height: 29.47px;
 				padding-top: 7px;

@@ -28,10 +28,10 @@ body {
 	height: 100%;
 }
 header {
-	background-image: url('header8.jpg');
+	background-image: url('header10.jpg');
 	background-size: cover;
 	background-repeat: no-repeat;
-	background-position: center;
+	background-position: 0% 40%;
 	nav {
 		height: 40px;
 		margin-bottom: 20px;
@@ -66,12 +66,20 @@ header {
 		text-align: center;
 		padding-bottom: 20px;
 		a {
-			font-family: 'Oleo Script', cursive;
-			text-shadow: 1px 1px rgba(255,255,255,.9);
+			font-family: 'Merienda One', cursive;
+			// text-shadow: 2px 2px black;
 			font-size: 70px;
 			width: 250px;
-			margin: 20px auto 40px auto;
-			color: rgba(125,24,24,1);
+			margin: 0 auto 40px auto;
+			position: relative;
+			top: -10px;
+			// color: rgba(154,1,1,1);
+			background-image: url('sunset5.jpg');
+			background-size: cover;
+			background-position: 0% 10%;
+   		-webkit-background-clip: text;
+   		background-clip: text;
+    	color: rgba(0,0,0,0);
 		}
 	}
 	.container-fluid {
@@ -84,7 +92,7 @@ header {
 		display: block;
 		h2 {
 			width: 100%;
-			color: rgba(210,210,210,1);
+			color: rgba(189,0,0,1);
 			text-shadow: 2px 2px black;
 			margin: 20px auto;
 			display: inline-block;
@@ -98,7 +106,7 @@ header {
 			overflow: break-word;
 			padding: 10px;
 			h5 {
-				color: white;
+				color: rgba(226,226,226,1);
 				height: 80px;
 				width: 200px;
 				margin: 0 auto;

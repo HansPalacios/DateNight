@@ -1,0 +1,62 @@
+<div class="row" id="profile">
+	<div class="col-md-3" id="acctinfo">
+		<div class="row">
+			<div id="profilepic">
+			</div>
+		</div>
+		<div class="row">	
+			<pre><%= current_user.fname %> <%= current_user.lname %></pre>
+		</div>
+		<div class="row">	
+			<pre>City State</pre>
+		</div>
+		<div class="row">	
+			<div class="col-md-12">
+			<hr>
+				<div class="row">
+						<h4>Friends List</h4>
+				</div>
+				<div class="row">
+						<input placeholder="Search for friends"></input>
+				</div>
+				<hr>
+				<br>
+				<br>
+				<!-- <#% if !current_user.friends == nil %>
+					<#% current_user.friends.each do |friend| %>
+						<div class="row">
+							<div class="col-md-12">
+								<pre><#%= friend.fname %> <#%= friend.lname %></pre>
+							</div>
+							<div class="col-md-6"></div>
+						</div>
+					<#% end %>
+				<#% end %> -->
+			</div>
+		</div>
+	</div>
+	<div class="col-md-8">
+		<% if !current_user.favorites == nil %>
+			<% current_user.favorites.each do |favorite| %>
+				<div class="fav">
+					<div class="col-md-6">
+						<%= image_tag "favorite.venue.image" %>
+					</div>
+					<div class="col-md-6"></div>
+				</div>
+			<% end %>
+		<% end %>
+	</div>
+</div>
+<style>
+	#profilepic {
+		height: 150px;
+		width: 150px;
+		margin: 20px auto;
+		border-radius: 10px;
+    <% if !current_user.avatar.blank? then imgsrc = current_user.avatar else imgsrc = "assets/profile.png" end %>
+		background-image: url(<%= imgsrc %>);
+		background-size: cover;
+		background-position: center;
+	}
+</style>

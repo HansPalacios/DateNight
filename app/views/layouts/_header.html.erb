@@ -26,7 +26,7 @@
 		</nav>	
 		<div class="row">
 			<div class="col-md-12 heading">
-				<%= link_to '/' do "Spiffy Date" end %>
+				<%= link_to '/' do "DateNight" end %>
        	<p class="notice"><%= notice %></p>
       	<p class="alert"><%= alert %></p>
  			</div>
@@ -34,7 +34,7 @@
 		<% if @homepage %>
 			<div class="row index">
 				<div class="row">
-					<h2>Just Choose the Type of Date to Browse</h2>
+					<h2>First Choose the Type of Date to Browse</h2>
 					<div class="col-md-4 bars">
 						<div class="row">
 							<h5>Fun night out listening to music, dancing, or at a lounge to mingle?</h5>
@@ -83,6 +83,8 @@
 					position: relative;
 					height: 95%;
 					background-attachment: fixed;
+					background-position: center;
+
 				}
 				header .heading a {
 					font-size: 120px;
@@ -108,6 +110,8 @@
 					background-image: none;
 					background-color: rgba(216,185,153,1);
 				}
+
+
 			</style>
 		<% end %>	
 </header>
