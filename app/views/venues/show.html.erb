@@ -8,6 +8,10 @@
       </div>
       <div class="col-md-5">
         <div class="row">
+          <% if user_signed_in? %>
+            <%= link_to favorites_path(@venue), method: :post, :class => "linkfav" do  image_tag 'addfav.png', :class => 'addfav'
+             end %>
+          <% end %>
           <h2><strong><em><%= @venue.name %></em></strong></h2>
         </div>
         <div class="row">
@@ -42,13 +46,61 @@
       <div class="col-md-7">
         <div class="row" id="map"></div>
       </div>
+
+      <!-- reviews -->
+
       <div class="col-md-5">
-        <div class="row showforum homeforum">
-          <div class="row title">
+        <div class="row reviews">
+          <div class="row">
             <%= link_to posts_path do %>
-              <h2>This Venues Posts</h2>
+              <h2>Reviews</h2>
             <% end %>
           </div>
+
+          <div class="row newreview">
+            <% if user_signed_in? %>
+              <h4>New Review</h4>
+              <div class="row">
+                <div class="col-md-7">
+                  <%= form_for :post, url: posts_path do |form| %>
+                    <% if @post && @post.errors.any? %>
+                      <div id="error_explanation">
+                        <h2><%= pluralize(@post.errors.count, "error") %> prohibited this post from being saved:</h2>
+                        <ul>
+                        <% @post.errors.full_messages.each do |message| %>
+                          <li><%= message %></li>
+                        <% end %>
+                        </ul>
+                      </div>
+                    <% end %>
+                    <div class=" row field">
+                      <%= form.label "Title: " %>
+                      <%= form.text_field :post_name, :placeholder => 'Title', :class => " postinput", :id => "editpostname"  %>
+                    </div>
+
+                    <div class=" row field">
+                      <%= form.label "Content: " %>
+                      <%= form.text_area :text, :placeholder => 'Your post content', :class => " postinput", :id => "editposttext"  %>
+                    </div>
+                </div>
+                <div class="col-md-5">
+                    <div class="row field">
+                      <%= form.label "Image: " %>
+                      <%= form.file_field :image, :class => " postinput", id: "editpostimage"  %>
+                    </div>
+
+                    <div class="row actions">
+                      <%= form.submit %>
+                    </div>
+                  <% end %>
+                </div>
+              </div>
+            <% end %>
+          </div>
+
+
+
+
           <div class="row">
             <% @venue.posts.each do |post| %>
               <div class="row posts">

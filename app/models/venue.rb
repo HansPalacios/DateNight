@@ -4,6 +4,7 @@ class Venue < ApplicationRecord
 	has_many :categories, :through => :venue_categories
 	has_many :ratings
 	has_many :favorites
+	has_many :users , :through => :favorites
 	has_many :posts
 
 	def mean_rating

@@ -30,7 +30,7 @@ class PostsController < ApplicationController
     #@posts = Post.all
     @post = Post.new(post_params)
     @post.user_id = current_user.id
-    #@venues = Venue.all
+    :venue_id = @venue.id
     #@post = Post.new(venue_id: params[:venue_id], user_id: current_user.id)
 
     respond_to do |format|

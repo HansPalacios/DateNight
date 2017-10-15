@@ -14,7 +14,17 @@ class FavoritesController < ApplicationController
 
   # GET /favorites/new
   # def new
-  #   @favorite = Favorite.new
+  #   # @favorite = Favorite.new
+  #   @favorite = Favorite.new(venue_id: params[:venue_id], user_id: current_user.id) unless @favorite
+  #   respond_to do
+  #     if @favorite.save
+  #       format.html { redirect_to @venue, notice: 'Favorite was successfully created.' }
+  #       format.json { render @venue, status: :created, location: @venue }
+  #     else
+  #       format.html { render :show, notice: 'Favorite was not successfully created.'}
+  #       format.json { render json: @favorite.errors, status: :unprocessable_entity }
+  #     end
+  #   end
   # end
 
   # GET /favorites/1/edit
@@ -24,12 +34,12 @@ class FavoritesController < ApplicationController
   # POST /favorites
   # POST /favorites.json
   def create
-    @favorite = Favorite.find_by(bar_id: params[:bar_id], user_id: current_user.id)
-    @favorite = Favorite.new(bar_id: params[:bar_id], user_id: current_user.id) unless @favorite
+    @favorite = Favorite.find_by(venue_id: params[:venue_id], user_id: current_user.id)
+    @favorite = Favorite.new(venue_id: params[:venue_id], user_id: current_user.id) unless @favorite
     respond_to do |format|
       if @favorite.save
-        format.html { redirect_to :root, notice: 'Favorite was successfully created.' }
-        format.json { render :show, status: :created, location: @favorite }
+        format.html { redirect_to :root, notice: 'Favorite was successfully created.'}
+        format.json {render :show, status: :created, location: @favorite }
       else
         format.html { render :new }
         format.json { render json: @favorite.errors, status: :unprocessable_entity }
@@ -50,7 +60,6 @@ class FavoritesController < ApplicationController
       end
     end
   end
-
   # DELETE /favorites/1
   # DELETE /favorites/1.json
   def destroy
@@ -64,7 +73,7 @@ class FavoritesController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_favorite
-      @favorite = current_user.favorites.find_by(bar_id: params[:bar_id])
+      @favorite = current_user.favorites.find_by(venue_id: params[:venue_id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

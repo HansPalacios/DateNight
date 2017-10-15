@@ -6,6 +6,7 @@ class User < ApplicationRecord
   mount_uploader :avatar, AvatarUploader
   has_many :ratings
   has_many :favorites
+  has_many :venues, :through => :favorites
   has_many :posts
   has_many :comments
 end

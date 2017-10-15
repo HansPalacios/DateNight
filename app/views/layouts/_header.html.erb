@@ -1,4 +1,5 @@
 <header class="container-fluid">
+		<div class="tint">
 		<nav class="row">
 			<div id="links" class="col-md-12">
 				<div id="otherlinks">
@@ -26,7 +27,7 @@
 		</nav>	
 		<div class="row">
 			<div class="col-md-12 heading">
-				<%= link_to '/' do "DateNight" end %>
+				<%= link_to '/' do "Rondivu" end %>
        	<p class="notice"><%= notice %></p>
       	<p class="alert"><%= alert %></p>
  			</div>
@@ -47,7 +48,7 @@
 					</div>
 					<div class="col-md-4 restaurants">
 						<div class="row">
-							<h5>Looking for a good vibe? Or do you want to dress up and treat them to a special night?</h5>
+							<h5>Looking for a good vibe? Or do you want to dress up and treat them to a special night.</h5>
 						</div>
 						<div class="row">
 							<%= link_to venues_page_path(:restcat), :id => "restcat" do %>
@@ -114,4 +115,5 @@
 
 			</style>
 		<% end %>	
+	</div>
 </header>

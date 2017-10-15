@@ -69,6 +69,7 @@ ActiveRecord::Schema.define(version: 20170807175052) do
     t.string "lname"
     t.string "phone"
     t.string "avatar"
+    t.string "location"
     t.boolean "member"
     t.boolean "admin"
     t.string "email", default: "", null: false
